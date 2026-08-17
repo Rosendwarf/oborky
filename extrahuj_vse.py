@@ -10,9 +10,6 @@ LEGACY_PDF_DIR = Path("data/pdf/legacy")
 ACTIVE_OUTPUT_PATH = Path("data/badges.json")
 LEGACY_OUTPUT_PATH = Path("data/badges_legacy.json")
 
-# Složka s obrázky nášivek
-BADGES_IMG_DIR = "data/nasivky"
-
 CAT_MAP = {
     'TECHNICKÉ': 'Technické', 'SPORTOVNÍ': 'Sportovní', 'UMĚLECKÉ': 'Umělecké',
     'PŘÍRODOVĚDECKÉ': 'Přírodovědné', 'PŘÍRODOVĚDNÉ': 'Přírodovědné',
@@ -23,17 +20,12 @@ CAT_MAP = {
 
 def clean_text(text):
     if not text: return ""
-    
-    # 1. Spojení rozdělených slov s pomlčkou (včetně mezer kolem ní)
     text = re.sub(r'([a-záčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ])-[\s]+([a-záčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ])', r'\1\2', text)
-    
-    # 2. Odstranění podivných rozeskákaných mezer uvnitř slov (např. "živ hi í k é h" nebo "ži- vot")
-    # Zde můžeme ošetřit známé zkomoleniny nebo sjednotit nadbytečné mezery
-    text = re.sub(r'\s+', ' ', text).strip()
-    
-    return text
+    text = text.replace('ﬂ ash', 'flash').replace('ﬁ lm', 'film').replace('graﬁ c', 'grafic')
+    text = text.replace('ﬂ ', 'fl').replace('ﬁ ', 'fi').replace('ﬂ', 'fl').replace('ﬁ', 'fi')
+    return re.sub(r'\s+', ' ', text).strip()
+
 def slugify(text):
-    """Převede text na bezpečné ID a název souboru bez diakritiky a mezer"""
     text = text.lower()
     chars = {
         'á':'a','č':'c','ď':'d','é':'e','ě':'e','í':'i','ň':'n','ó':'o',
@@ -45,7 +37,6 @@ def slugify(text):
     return re.sub(r'\-+', '-', text).strip('-')
 
 def format_title_from_filename(filename_stem):
-    """Převede název souboru na hezký název se zachováním diakritiky"""
     clean_name = filename_stem.replace('_', ' ').replace('-', ' ')
     words = clean_name.split()
     formatted_words = [w.capitalize() for w in words]
@@ -97,39 +88,31 @@ def parse_single_pdf(pdf_path):
             category = cat_name
             break
 
-    # Spolehlivější extrakce popisu (Cíle)
     desc = ""
-    # 1. Zkusíme najít text specificky za "CÍL:"
     m_cil = re.search(r'CÍL:\s*(.*?)(?=\n\s*(?:POČTY KE SPLNĚNÍ|DOKAŽ TO|UKAŽ SE|ZADÁNÍ AKTIVITY|POPIS AKTIVITY)|\Z)', full_text, re.DOTALL | re.IGNORECASE)
     
     if m_cil:
         raw_desc = m_cil.group(1)
     else:
-        # 2. Pokud odborka nemá explicitní "CÍL:", vezmeme úvodní text mezi názvem a první sekcí úkolů
         m_fallback = re.search(r'(?:CÍL[:\s]*)?(.*?)(?=\n\s*(?:POČTY KE SPLNĚNÍ|DOKAŽ TO|UKAŽ SE|ZADÁNÍ AKTIVITY|POPIS AKTIVITY)|\Z)', full_text, re.DOTALL | re.IGNORECASE)
         raw_desc = m_fallback.group(1) if m_fallback else ""
 
     if raw_desc:
         raw_desc = clean_text(raw_desc)
-        
-        # Bezpečné odříznutí šablonového balastu (pokud v textu vůbec je)
         stop_triggers = [
             "Měli by vědět", "Skautská odborka", "Mám splněno", 
             "Zapiš si", "Zelená –", "Oranžová –", "Červená –", "Pokud již máš"
         ]
         for trigger in stop_triggers:
             idx = raw_desc.find(trigger)
-            if idx != -1 and idx > 20: # Ochrana, aby to neuřízlo hned ze začátku
+            if idx != -1 and idx > 20:
                 raw_desc = raw_desc[:idx]
                 
         desc = clean_text(raw_desc)
-        
-        # Pokud by byl popis podezřele dlouhý (přetekl přes půl stránky), vezmeme jen první 3 věty
         sentences = re.split(r'(?<=[.!?])\s+', desc)
         if len(sentences) > 4:
             desc = " ".join(sentences[:3])
 
-    # Úkoly Dokaž to
     dt_pages = [p for p in pages if "ZADÁNÍ AKTIVITY" in p or "CO PLNĚNÍM AKTIVITY" in p]
     if not dt_pages: dt_pages = pages
 
@@ -153,7 +136,6 @@ def parse_single_pdf(pdf_path):
                     "title": f"{letter}. {t_clean}" if not t_clean.startswith(f"{letter}.") else t_clean
                 })
 
-    # Úkoly Ukaž se
     us_pages = [p for p in pages if "POPIS AKTIVITY" in p or "UKAŽ SE" in p]
     ukaz_se = []
     for p in us_pages:
@@ -213,60 +195,42 @@ def parse_single_pdf(pdf_path):
             "roveri": {"dokaz_to": dt_req[2], "ukaz_se": us_req[2]}
         }
 
-    badge_image_path = f"{BADGES_IMG_DIR}/{slug}.png"
-
     return {
         "id": slug,
+        "url": slug,  # URL template (název bez diakritiky, mezery a podtržítka nahrazeny pomlčkou)
         "name": title,
         "category": category,
         "description": desc,
-        "icon": badge_image_path,
-        "methodology_url": f"https://odborky.skauting.cz/odborka/{slug}/",
         "requirements": requirements,
         "tasks": {
             "dokaz_to": dedup_dt,
             "ukaz_se": dedup_us
         }
     }
+
 def process_directory(directory_path):
     badges_dict = {}
     if not directory_path.exists():
-        print(f"Složka '{directory_path}' neexistuje, přeskakuji.")
         return badges_dict
 
     pdf_files = list(directory_path.glob("*.pdf"))
-    print(f"Nalezeno {len(pdf_files)} PDF souborů ve složce {directory_path}.")
-
     for pdf_path in pdf_files:
-        print(f"Zpracovávám: {pdf_path.name} ... ", end="")
         badge = parse_single_pdf(pdf_path)
-        
         if badge:
             badges_dict[badge["id"]] = badge
-            print(f"OK ({badge['name']} - DT: {len(badge['tasks']['dokaz_to'])}, US: {len(badge['tasks']['ukaz_se'])})")
-        else:
-            print("✗ Přeskočeno (není to odborka nebo chybí úkoly)")
             
     return badges_dict
 
 def main():
-    print("--- Zpracovávám aktuální odborky ---")
     active_badges = process_directory(ACTIVE_PDF_DIR)
     ACTIVE_OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(ACTIVE_OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(active_badges, f, ensure_ascii=False, indent=2)
 
-    print("\n--- Zpracovávám legacy odborky ---")
     legacy_badges = process_directory(LEGACY_PDF_DIR)
     LEGACY_OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(LEGACY_OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(legacy_badges, f, ensure_ascii=False, indent=2)
-
-    print(f"\n======================================================")
-    print(f"HOTOVO:")
-    print(f"- Uloženo {len(active_badges)} aktivních odborek do {ACTIVE_OUTPUT_PATH.resolve()}")
-    print(f"- Uloženo {len(legacy_badges)} legacy odborek do {LEGACY_OUTPUT_PATH.resolve()}")
-    print(f"======================================================")
 
 if __name__ == "__main__":
     main()

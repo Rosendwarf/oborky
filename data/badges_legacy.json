@@ -1,11 +1,10 @@
 {
   "ajtak": {
     "id": "ajtak",
+    "url": "ajtak",
     "name": "Ajťák",
     "category": "Technické",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli rozumět počítačům, vyznat se v jejich hardwarech a umět pracovat s jejich soft wary. Měli by znát základy práce v operačních systémech. Vědět, že se počítače dají spojovat do sítí.",
-    "icon": "data/nasivky/ajtak.png",
-    "methodology_url": "https://odborky.skauting.cz/odborka/ajtak/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 3,
@@ -40,7 +39,7 @@
         },
         {
           "id": "dt_e",
-          "title": "E. Online život. Mám mail, umím ho používat a mám mailový kontakt na většinu členů a členek svého oddílu. Mám proﬁ l na libovolné sociální síti, ukážu, jak se s ní zachází, vyjmenuji, co všechno je nebezpečné sdílet veřejně, a jsem na ní ve spojení s někým ze svojí družiny."
+          "title": "E. Online život. Mám mail, umím ho používat a mám mailový kontakt na většinu členů a členek svého oddílu. Mám profil na libovolné sociální síti, ukážu, jak se s ní zachází, vyjmenuji, co všechno je nebezpečné sdílet veřejně, a jsem na ní ve spojení s někým ze svojí družiny."
         },
         {
           "id": "dt_f",
@@ -48,7 +47,7 @@
         },
         {
           "id": "dt_g",
-          "title": "G. Skriptování. Napíšu jednoduchý skript, který mi ulehčí práci s mým počítačem, např. načasované vypnutí, automatický restart routeru, spuštění více programů najednou, automatické překopírovávání fotograﬁ í, automatické zálohování atd."
+          "title": "G. Skriptování. Napíšu jednoduchý skript, který mi ulehčí práci s mým počítačem, např. načasované vypnutí, automatický restart routeru, spuštění více programů najednou, automatické překopírovávání fotografií, automatické zálohování atd."
         }
       ],
       "ukaz_se": [
@@ -78,11 +77,11 @@
         },
         {
           "id": "us_7",
-          "title": "7. Skautský graﬁ cký manuál. Vyrobím pro oddíl nebo středisko graﬁ ckou šablonu, která se začne používat (například na zvací plakáty, oznámení, časopis, maily…). Využiju Skautský graﬁ cký manuál."
+          "title": "7. Skautský grafický manuál. Vyrobím pro oddíl nebo středisko grafickou šablonu, která se začne používat (například na zvací plakáty, oznámení, časopis, maily…). Využiju Skautský grafický manuál."
         },
         {
           "id": "us_8",
-          "title": "8. Pozvánka. V graﬁ ckém programu vyrobím pěknou pozvánku na oddílovou nebo střediskovou akci a zajistím její rozšíření."
+          "title": "8. Pozvánka. V grafickém programu vyrobím pěknou pozvánku na oddílovou nebo střediskovou akci a zajistím její rozšíření."
         },
         {
           "id": "us_9",
@@ -102,7 +101,7 @@
         },
         {
           "id": "us_13",
-          "title": "13. Operační systém na disku. Vyrobím live distribuci operačního systému na ﬂ ashce nebo externím disku a předvedu jeho úspěšné spuštění. Do operačního systému uložím data, která tam po jeho restartu zůstanou zachovaná."
+          "title": "13. Operační systém na disku. Vyrobím live distribuci operačního systému na flashce nebo externím disku a předvedu jeho úspěšné spuštění. Do operačního systému uložím data, která tam po jeho restartu zůstanou zachovaná."
         },
         {
           "id": "us_14",
@@ -125,11 +124,10 @@
   },
   "bezec": {
     "id": "bezec",
+    "url": "bezec",
     "name": "Běžec",
     "category": "Sportovní",
     "description": "Ti, kteří by chtěli splnit tuto odborku, rádi běhají. Běhání je pro ně smysluplné trávení volného času, příležitost se zdokonalovat po technické i vytrvalostní stránce.",
-    "icon": "data/nasivky/bezec.png",
-    "methodology_url": "https://odborky.skauting.cz/odborka/bezec/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -265,11 +263,10 @@
   },
   "chovatel-pestitel": {
     "id": "chovatel-pestitel",
+    "url": "chovatel-pestitel",
     "name": "Chovatel Pěstitel",
     "category": "Přírodovědné",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli doma mít rostliny nebo zvířata, o které se pravidelně starají, např. pokojové rostliny, psa, rybičky v akváriu, zvíře v teráriu, rostliny na zahradě nebo na balkóně apod. Měli by umět vytvořit vhodné podmínky pro chov zvířete či pěstování rostliny a dlouhodobě se o ně starat.",
-    "icon": "data/nasivky/chovatel-pestitel.png",
-    "methodology_url": "https://odborky.skauting.cz/odborka/chovatel-pestitel/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -346,7 +343,7 @@
         },
         {
           "id": "us_9",
-          "title": "9. Umělecké ztvárnění. Libovolně umělecky ztvárním své chované nebo pěstované druhy (fotograﬁ e, kresba, povídka apod.) a při vhodné příležitosti své výtvory představím."
+          "title": "9. Umělecké ztvárnění. Libovolně umělecky ztvárním své chované nebo pěstované druhy (fotografie, kresba, povídka apod.) a při vhodné příležitosti své výtvory představím."
         },
         {
           "id": "us_10",
@@ -381,11 +378,10 @@
   },
   "ekolog": {
     "id": "ekolog",
+    "url": "ekolog",
     "name": "Ekolog",
     "category": "Přírodovědné",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli rozumět vztahům v přírodě, znát základní ekologické pojmy a umět je vysvětlit ostatním. Vše, co znají, by měli umět pozorovat a ukázat na konkrétních příkladech v přírodě. Své znalosti a porozumění by měli umět uplatnit v praxi.",
-    "icon": "data/nasivky/ekolog.png",
-    "methodology_url": "https://odborky.skauting.cz/odborka/ekolog/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -474,7 +470,7 @@
         },
         {
           "id": "us_12",
-          "title": "12. Vegetační stupně. Při výpravě v horách ukážu výškové vegetační stupně. Popíši je a vysvětlím ostatním. Svá pozorování graﬁ cky zpracuji do výškového řezu, kde popíši své pozorování."
+          "title": "12. Vegetační stupně. Při výpravě v horách ukážu výškové vegetační stupně. Popíši je a vysvětlím ostatním. Svá pozorování graficky zpracuji do výškového řezu, kde popíši své pozorování."
         },
         {
           "id": "us_13",
@@ -505,11 +501,10 @@
   },
   "elektronik": {
     "id": "elektronik",
+    "url": "elektronik",
     "name": "Elektronik",
     "category": "Technické",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli mít základní znalosti z oblasti elektroniky, tj. znát Ohmův zákon, základní schematické značky, mít přehled o základních součástkách a vědět, kde tyto součástky sehnat, a umět svůj obor představit družině/oddílu. Plněním této odborky je možné si rozšířit znalosti z různých oblastí elektroniky pomocí zajímavých zapojení.",
-    "icon": "data/nasivky/elektronik.png",
-    "methodology_url": "https://odborky.skauting.cz/odborka/elektronik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -540,7 +535,7 @@
         },
         {
           "id": "dt_d",
-          "title": "D. Plošný spoj. Zvolím si schéma dle vlastního výběru. Pro toto schéma si na papír navrhnu plošný spoj, který pak lihovým ﬁ xem překreslím na Cuprexit. Po vyleptání desku opracuji, ošetřím přípravkem pro snazší pájení a vyvrtám otvory. Desku osadím součástkami a obvod oživím."
+          "title": "D. Plošný spoj. Zvolím si schéma dle vlastního výběru. Pro toto schéma si na papír navrhnu plošný spoj, který pak lihovým fixem překreslím na Cuprexit. Po vyleptání desku opracuji, ošetřím přípravkem pro snazší pájení a vyvrtám otvory. Desku osadím součástkami a obvod oživím."
         },
         {
           "id": "dt_e",
@@ -629,11 +624,10 @@
   },
   "elektrotechnik": {
     "id": "elektrotechnik",
+    "url": "elektrotechnik",
     "name": "Elektrotechnik",
     "category": "Technické",
     "description": "Ti, kteří chtějí získat tuto odborku, by měli mít hlubší zájem o elektrotechniku a formou od jednoduchých pokusů až po náročné úkoly nastínit základní problematiku oboru.",
-    "icon": "data/nasivky/elektrotechnik.png",
-    "methodology_url": "https://odborky.skauting.cz/odborka/elektrotechnik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 1,
@@ -652,7 +646,7 @@
       "dokaz_to": [
         {
           "id": "dt_a",
-          "title": "A. Úraz elektrickým proudem. Připravím přednášku pro ostatní na téma „úraz elektrickým proudem“ (jak nejlépe úrazu předcházet, první pomoc po úrazu atd.). Vedle patrona či patronky (dohlížející osoby) potvrdí splnění úkolu i zdravotník nebo zdravotnice (zdravotnicky kvaliﬁ kovaná osoba)."
+          "title": "A. Úraz elektrickým proudem. Připravím přednášku pro ostatní na téma „úraz elektrickým proudem“ (jak nejlépe úrazu předcházet, první pomoc po úrazu atd.). Vedle patrona či patronky (dohlížející osoby) potvrdí splnění úkolu i zdravotník nebo zdravotnice (zdravotnicky kvalifikovaná osoba)."
         },
         {
           "id": "dt_b",
@@ -664,11 +658,11 @@
         },
         {
           "id": "dt_d",
-          "title": "D. Ovládání světel. Nakreslím ﬁ ktivní instalační schéma pro ovládání žárovky ze tří různých míst. Navrhnu vhodný materiál (vypínače, kabely, instalační krabice, …) a vyhledám cenu (za metr, za kus, …). Zapojení mohu po dohodě s vedením realizovat jako diodové osvětlení kuchyně nebo některé táborové stavby (např. na 12V baterii)."
+          "title": "D. Ovládání světel. Nakreslím fiktivní instalační schéma pro ovládání žárovky ze tří různých míst. Navrhnu vhodný materiál (vypínače, kabely, instalační krabice, …) a vyhledám cenu (za metr, za kus, …). Zapojení mohu po dohodě s vedením realizovat jako diodové osvětlení kuchyně nebo některé táborové stavby (např. na 12V baterii)."
         },
         {
           "id": "dt_e",
-          "title": "E. Znalosti k vyhlášce 50/1978 Sb. Patron nebo patronka a další kvaliﬁ kovaná ( odborně způsobilá osoba) mě přezkouší z níže uvedených okruhů. Pokud nikoho takového po pečlivém hledání nenajdu, tak si vytvořím vlastní test zkoušející mé znalosti k vyhlášce 50/1978 Sb. Test bude mít 30 otázek z těchto oblastí: 1) Paragrafy vyhl. 50/1978 Sb. – kvaliﬁ kace pracovníků 2) Ochrana před nebezpečným dotykem živých a neživých částí 3) Sítě IT , TT , TN-C, TN-S, TN-C-S 4) Prostory z hlediska nebezpečí úrazu el. proudem 5) Proudový chránič, funkce, podmínky použití 6) Barvy vodičů, možnost přeznačování 7) Libovolné další tři otázky k tématu mimo tyto vyjmenované. Patron či patronka mi test zkontroluje. Po měsíci si ho vyplním a opravím."
+          "title": "E. Znalosti k vyhlášce 50/1978 Sb. Patron nebo patronka a další kvalifikovaná ( odborně způsobilá osoba) mě přezkouší z níže uvedených okruhů. Pokud nikoho takového po pečlivém hledání nenajdu, tak si vytvořím vlastní test zkoušející mé znalosti k vyhlášce 50/1978 Sb. Test bude mít 30 otázek z těchto oblastí: 1) Paragrafy vyhl. 50/1978 Sb. – kvalifikace pracovníků 2) Ochrana před nebezpečným dotykem živých a neživých částí 3) Sítě IT , TT , TN-C, TN-S, TN-C-S 4) Prostory z hlediska nebezpečí úrazu el. proudem 5) Proudový chránič, funkce, podmínky použití 6) Barvy vodičů, možnost přeznačování 7) Libovolné další tři otázky k tématu mimo tyto vyjmenované. Patron či patronka mi test zkontroluje. Po měsíci si ho vyplním a opravím."
         }
       ],
       "ukaz_se": [
@@ -698,7 +692,7 @@
         },
         {
           "id": "us_7",
-          "title": "7. Návrh elektroinstalace koupelny. Vytvořím ideový návrh elektroinstalace koupelny pro rodinný dům nebo byt (pokud máme koupelnu v klubovně, tak tam). Do koupelny umístím spotřebiče, zásuvky a vypínače do správných zón (zakótuju hranice zón), zvolím správné jištění a další ochrany. Návrh posoudí mimo patrona nebo patronky (dohlížející osoby) i další kvaliﬁ kovaná (odborně způsobilá) osoba."
+          "title": "7. Návrh elektroinstalace koupelny. Vytvořím ideový návrh elektroinstalace koupelny pro rodinný dům nebo byt (pokud máme koupelnu v klubovně, tak tam). Do koupelny umístím spotřebiče, zásuvky a vypínače do správných zón (zakótuju hranice zón), zvolím správné jištění a další ochrany. Návrh posoudí mimo patrona nebo patronky (dohlížející osoby) i další kvalifikovaná (odborně způsobilá) osoba."
         },
         {
           "id": "us_8",
@@ -714,7 +708,7 @@
         },
         {
           "id": "us_11",
-          "title": "11. Elektrotechnické zajímavosti v okolí. Zjistím, kde se v okolí nachází elektrotechnické pamětihodnosti, zvláštnosti či nedostatky. Tyto objekty vyfotím a z fotek sestavím prezentaci. K fotkám si připravím přednášku/aktivitu pro oddíl o důvodu zhotovení právě těchto fotograﬁ í, čím jsou zvláštní, příp. co je na nich špatně."
+          "title": "11. Elektrotechnické zajímavosti v okolí. Zjistím, kde se v okolí nachází elektrotechnické pamětihodnosti, zvláštnosti či nedostatky. Tyto objekty vyfotím a z fotek sestavím prezentaci. K fotkám si připravím přednášku/aktivitu pro oddíl o důvodu zhotovení právě těchto fotografií, čím jsou zvláštní, příp. co je na nich špatně."
         },
         {
           "id": "us_12",
@@ -737,11 +731,10 @@
   },
   "geocacher": {
     "id": "geocacher",
+    "url": "geocacher",
     "name": "Geocacher",
     "category": "Tábornicko-cestovatelské",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli hrát hru Geocaching a měli by být schopni ostatním vysvětlit pravidla a principy této hry. Měli by také umět vysvětlit fungování GNSS a umět pomoct s přípravou programu pro družinu/ /oddíl s tématikou GNSS nebo hledáním keší.",
-    "icon": "data/nasivky/geocacher.png",
-    "methodology_url": "https://odborky.skauting.cz/odborka/geocacher/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -849,11 +842,10 @@
   },
   "hacker": {
     "id": "hacker",
+    "url": "hacker",
     "name": "Hacker",
     "category": "Technické",
     "description": "Ti, kteří by chtěli získat tuto odborku, by se měli hluboce zajímat o svět kolem sebe a být poháněni nekonečnou zvědavostí dozvědět se o všem, co se děje okolo nich. Hackeři jsou schopni upravovat a měnit věci, aby fungovaly jinak, než bylo jejich původním účelem a smyslem. Výsledkem jsou věci sloužící jinému účelu než původně, vylepšené, demonstrace fyzikálního jevu, ukázka technické zajímavosti či prostá radost z pocitu „ To vím, to znám, to ovládám“.",
-    "icon": "data/nasivky/hacker.png",
-    "methodology_url": "https://odborky.skauting.cz/odborka/hacker/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -918,7 +910,7 @@
         },
         {
           "id": "us_6",
-          "title": "6. USB klíčenka. Vyrobím velmi netradiční obal na USB klíčenku, kde si ji můžu schovat a nikdo ji tam nebude čekat – například do kusu dřeva, do PET lahve, knoﬂ íčku od košile a podobně."
+          "title": "6. USB klíčenka. Vyrobím velmi netradiční obal na USB klíčenku, kde si ji můžu schovat a nikdo ji tam nebude čekat – například do kusu dřeva, do PET lahve, knoflíčku od košile a podobně."
         },
         {
           "id": "us_7",
@@ -973,11 +965,10 @@
   },
   "historik": {
     "id": "historik",
+    "url": "historik",
     "name": "Historik",
     "category": "Humanitní",
     "description": "Ti, kteří usilují o tuto odborku, by měli prokázat hluboký zájem o historii, včetně dostatečných znalostí přiměřeně svému věku.",
-    "icon": "data/nasivky/historik.png",
-    "methodology_url": "https://odborky.skauting.cz/odborka/historik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -1012,7 +1003,7 @@
         },
         {
           "id": "dt_e",
-          "title": "E. Setkání s pamětníkem/pamětnicí. K nedávnému historickému tématu vyhledám osobu, která zažila danou dobu, a povedu s ní rozhovor na toto téma. Zaznamenané vzpomínky zpracuji a zasadím do oﬁ ciálního historického záznamu. O výsledky svého bádaní se podělím s družinou nebo oddílem."
+          "title": "E. Setkání s pamětníkem/pamětnicí. K nedávnému historickému tématu vyhledám osobu, která zažila danou dobu, a povedu s ní rozhovor na toto téma. Zaznamenané vzpomínky zpracuji a zasadím do oficiálního historického záznamu. O výsledky svého bádaní se podělím s družinou nebo oddílem."
         },
         {
           "id": "dt_f",
@@ -1030,7 +1021,7 @@
         },
         {
           "id": "us_3",
-          "title": "3. Rodokmen. Sestavím vlastní rodokmen minimálně čtyři generace zpětně (po praprarodiče) se základními údaji (jméno, životní data, bydliště, povolání). Zkusím ke každému z nich dohledat jeho fotograﬁ i."
+          "title": "3. Rodokmen. Sestavím vlastní rodokmen minimálně čtyři generace zpětně (po praprarodiče) se základními údaji (jméno, životní data, bydliště, povolání). Zkusím ke každému z nich dohledat jeho fotografii."
         },
         {
           "id": "us_4",
@@ -1042,7 +1033,7 @@
         },
         {
           "id": "us_6",
-          "title": "6. Prezidenti českého státu. Po poradě s patronem či patronkou vytvořím program / hru / diskusi / scénky / krátký ﬁ lm / stínové divadlo / …, b ěhem kterého představím všechny prezidenty Československa a České republiky od roku 1918."
+          "title": "6. Prezidenti českého státu. Po poradě s patronem či patronkou vytvořím program / hru / diskusi / scénky / krátký film / stínové divadlo / …, b ěhem kterého představím všechny prezidenty Československa a České republiky od roku 1918."
         },
         {
           "id": "us_7",
@@ -1050,7 +1041,7 @@
         },
         {
           "id": "us_8",
-          "title": "8. Historický ﬁ lm. Vyhledám ﬁ lmové zpracování libovolné historické události a porovnám děj s fakty v odborné literatuře. Nakonec zpracuji své krátké hodnocení o objektivnosti a přesnosti ﬁ lmu."
+          "title": "8. Historický film. Vyhledám filmové zpracování libovolné historické události a porovnám děj s fakty v odborné literatuře. Nakonec zpracuji své krátké hodnocení o objektivnosti a přesnosti filmu."
         },
         {
           "id": "us_9",
@@ -1062,7 +1053,7 @@
         },
         {
           "id": "us_11",
-          "title": "11. Historie v souvislostech. Na základě aktuálních zpráv z novin, televizního vysílání či internetu si vyberu jednu událost, která mě zaujala (např. konﬂ ikt mezi Palestinou a Izraelem, válka ve Vietnamu, Karibská krize, arabské jaro, konﬂ ikt v Sýrii, okupace Krymu, …). Nastuduji si historické souvislosti, které se vybrané oblasti týkají, a své závěry představím družině."
+          "title": "11. Historie v souvislostech. Na základě aktuálních zpráv z novin, televizního vysílání či internetu si vyberu jednu událost, která mě zaujala (např. konflikt mezi Palestinou a Izraelem, válka ve Vietnamu, Karibská krize, arabské jaro, konflikt v Sýrii, okupace Krymu, …). Nastuduji si historické souvislosti, které se vybrané oblasti týkají, a své závěry představím družině."
         },
         {
           "id": "us_12",
@@ -1077,11 +1068,10 @@
   },
   "jezisuvkamarad": {
     "id": "jezisuvkamarad",
+    "url": "jezisuvkamarad",
     "name": "Ježíšův Kamarád",
     "category": "Duchovní",
     "description": "Od těch, kteří by chtěli získat tuto odborku, se očekává schopnost hlubšího pochopení věrouky své církve a prohloubení křesťanské víry. Také schopnost srozumitelně vysvětlit, čemu a proč věří, co pro ně znamená Bůh a život v církvi. Měli by mít hlubší vhled do historie křesťanství.",
-    "icon": "data/nasivky/jezisuvkamarad.png",
-    "methodology_url": "https://odborky.skauting.cz/odborka/jezisuvkamarad/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -1126,7 +1116,7 @@
       "ukaz_se": [
         {
           "id": "us_1",
-          "title": "1. Život církve. Pomocí fotograﬁ í nebo jiných materiálů přiblížím přátelům hlavní podoby života své církve (pomoc a služba, slavení, svědectví, společenství)."
+          "title": "1. Život církve. Pomocí fotografií nebo jiných materiálů přiblížím přátelům hlavní podoby života své církve (pomoc a služba, slavení, svědectví, společenství)."
         },
         {
           "id": "us_2",
@@ -1134,7 +1124,7 @@
         },
         {
           "id": "us_3",
-          "title": "3. Vliv náboženství. Ukážu, jak může křesťanská víra ovlivňovat kulturu, vztahy mezi lidmi, architekturu, zvyky, mezinárodní vztahy… Krom ě křesťanství najdu konkrétní příklady i v jiných náboženstvích: judaismus (židovství), konfuciánství (taoismus), hinduismus, buddhismus, islám. Ukázky najdu v dokumentech, obrazech, fotograﬁ ích, textech, písních apod."
+          "title": "3. Vliv náboženství. Ukážu, jak může křesťanská víra ovlivňovat kulturu, vztahy mezi lidmi, architekturu, zvyky, mezinárodní vztahy… Krom ě křesťanství najdu konkrétní příklady i v jiných náboženstvích: judaismus (židovství), konfuciánství (taoismus), hinduismus, buddhismus, islám. Ukázky najdu v dokumentech, obrazech, fotografiích, textech, písních apod."
         },
         {
           "id": "us_4",
@@ -1174,7 +1164,7 @@
         },
         {
           "id": "us_14",
-          "title": "14. Recenze na ﬁ lm. Zhlédnu dva vybrané ﬁ lmy s křesťanskou tematikou a napíšu na ně recenze. Recenze uveřejním v časopise nebo na internetových stránkách."
+          "title": "14. Recenze na film. Zhlédnu dva vybrané filmy s křesťanskou tematikou a napíšu na ně recenze. Recenze uveřejním v časopise nebo na internetových stránkách."
         },
         {
           "id": "us_15",
@@ -1189,11 +1179,10 @@
   },
   "jogin": {
     "id": "jogin",
+    "url": "jogin",
     "name": "Jogín",
     "category": "Sportovní",
     "description": "Odborka je pro všechny, kteří rádi cvičí jógu a chtěli by pro ni nadchnout i ostatní. Vědí, jak důležité je mít pružné tělo a klidnou mysl. Je pro všechny, kdo umějí ukázat silnou vůli a ochotu se rozvíjet. Vědí, že jóga pro děti a pro dospělé je velmi odlišná.",
-    "icon": "data/nasivky/jogin.png",
-    "methodology_url": "https://odborky.skauting.cz/odborka/jogin/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -1290,15 +1279,15 @@
         },
         {
           "id": "us_14",
-          "title": "14. Filozoﬁ e jógy – jamy a nijamy. Seznámím se s prvními dvěma stupni z Patandžaliho osmidílné cesty (Jógasútry) – 5 jam a 5 nijam. Napíšu zamyšlení nad tím, v čem mi jsou tyto principy blízké, v čem ne. Zamyslím se nad podobností s etickými principy obsaženými např. ve skautských zákonech."
+          "title": "14. Filozofie jógy – jamy a nijamy. Seznámím se s prvními dvěma stupni z Patandžaliho osmidílné cesty (Jógasútry) – 5 jam a 5 nijam. Napíšu zamyšlení nad tím, v čem mi jsou tyto principy blízké, v čem ne. Zamyslím se nad podobností s etickými principy obsaženými např. ve skautských zákonech."
         },
         {
           "id": "us_15",
-          "title": "15. Beneﬁ ty cvi čení jógy. Ztvárním plakátem, komixem, … pro č je dobré cvičit jógu, jaké má účinky na naše fyzické tělo a duševní rozpoložení. Zahrnu další metody kromě cvičení jógových pozic, které se v józe využívají. Např.: dechová cvičení, relaxační a meditační cvičení. Výsledek představím družině/oddílu."
+          "title": "15. Benefity cvi čení jógy. Ztvárním plakátem, komixem, … pro č je dobré cvičit jógu, jaké má účinky na naše fyzické tělo a duševní rozpoložení. Zahrnu další metody kromě cvičení jógových pozic, které se v józe využívají. Např.: dechová cvičení, relaxační a meditační cvičení. Výsledek představím družině/oddílu."
         },
         {
           "id": "us_16",
-          "title": "16. Jóga bezpečně. Vysvětlím, na co si při cvičení jógy dát pozor. Zahrnu, od jakého věku je vhodné jógu cvičit a jaká jsou speciﬁ ka ve cvičení dětské jógy a jógy pro dospělé (věk 16+). Představím další příklady, kdy jóga nebo konkrétní jógová pozice není vhodná."
+          "title": "16. Jóga bezpečně. Vysvětlím, na co si při cvičení jógy dát pozor. Zahrnu, od jakého věku je vhodné jógu cvičit a jaká jsou specifika ve cvičení dětské jógy a jógy pro dospělé (věk 16+). Představím další příklady, kdy jóga nebo konkrétní jógová pozice není vhodná."
         },
         {
           "id": "us_17",
@@ -1313,11 +1302,10 @@
   },
   "krajinar": {
     "id": "krajinar",
+    "url": "krajinar",
     "name": "Krajinář",
     "category": "Přírodovědné",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli vědět, jak přírodní podmínky v území určují lidskou obživu, strukturu osídlení a kulturu a jak kultura ovlivňuje tvář a charakter krajiny. Měli by mít představy o plánování využití krajiny a vědět, jak chránit a rozvíjet její pozitivní rysy i jak minimalizovat ty negativní, a řešit problémy. Měli by takto umět popsat krajinu svého regionu – tábořiště, bydliště, tradiční cíle výprav, poznatky vztáhnout i na krajinu neznámou. Měli by umět během výprav oddílu ukázat zajímavé prvky v krajině.",
-    "icon": "data/nasivky/krajinar.png",
-    "methodology_url": "https://odborky.skauting.cz/odborka/krajinar/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -1340,11 +1328,11 @@
         },
         {
           "id": "dt_b",
-          "title": "B. Umění a krajina. Seznámím se s několika uměleckými zpracováními místní krajiny (v literatuře, malířství, fotograﬁ i, …). Zkusím zjistit, zda zobrazená krajina skutečně existuje nebo existovala, či je to jen umělecké zpracování. Vybraná umělecká díla ukážu družině."
+          "title": "B. Umění a krajina. Seznámím se s několika uměleckými zpracováními místní krajiny (v literatuře, malířství, fotografii, …). Zkusím zjistit, zda zobrazená krajina skutečně existuje nebo existovala, či je to jen umělecké zpracování. Vybraná umělecká díla ukážu družině."
         },
         {
           "id": "dt_c",
-          "title": "C. Krajina v čase. Zjistím, jak lidé v průběhu času měnili strukturu a pokryv krajiny. Udělám časovou sondu – např. sérii map či fotograﬁ í (které zobrazují zejména využití půdy, sídla, cesty) a grafy vyjadřující změny využití půdy a změny počtu obyvatel a domů."
+          "title": "C. Krajina v čase. Zjistím, jak lidé v průběhu času měnili strukturu a pokryv krajiny. Udělám časovou sondu – např. sérii map či fotografií (které zobrazují zejména využití půdy, sídla, cesty) a grafy vyjadřující změny využití půdy a změny počtu obyvatel a domů."
         },
         {
           "id": "dt_d",
@@ -1425,11 +1413,10 @@
   },
   "meteorolog": {
     "id": "meteorolog",
+    "url": "meteorolog",
     "name": "Meteorolog",
     "category": "Přírodovědné",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli dokázat pozorovat a popsat jevy, které se dějí nejen na obloze, ale i okolo nich. Měli by mít představu o tom, jak se počasí mění během dne i v průběhu celého roku, a dokázat jej předpovídat. Měli by znát krásu i nebezpečí meteorologických jevů a umět se před nepřízní počasí chránit. Znalosti o počasí by měli dokázat využít při každodenní činnosti.",
-    "icon": "data/nasivky/meteorolog.png",
-    "methodology_url": "https://odborky.skauting.cz/odborka/meteorolog/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -1464,7 +1451,7 @@
         },
         {
           "id": "dt_e",
-          "title": "E. Předpověď počasí. Na základě pozorovaných jevů předpovím počasí na nejbližší hodiny nebo i celý den. Při předpovědi si všímám i přírodních úkazů, které mohou předpověď zpřesnit. Svůj úsudek si ověřím u oﬁ ciálních zdrojů předpovědi počasí (např. ČHMÚ)."
+          "title": "E. Předpověď počasí. Na základě pozorovaných jevů předpovím počasí na nejbližší hodiny nebo i celý den. Při předpovědi si všímám i přírodních úkazů, které mohou předpověď zpřesnit. Svůj úsudek si ověřím u oficiálních zdrojů předpovědi počasí (např. ČHMÚ)."
         }
       ],
       "ukaz_se": [
@@ -1474,7 +1461,7 @@
         },
         {
           "id": "us_2",
-          "title": "2. Druhy oblaků. Rozpoznám jednotlivé druhy oblaků na obloze a odhadnu, v jaké výšce se nacházejí. Do deníku si podle obrázků z knížek nebo internetu zakreslím všech 10 druhů oblaků. Záznamy doplním fotograﬁ emi nebo vlastními skicami. Co můžu z jednotlivých oblaků vypozorovat?"
+          "title": "2. Druhy oblaků. Rozpoznám jednotlivé druhy oblaků na obloze a odhadnu, v jaké výšce se nacházejí. Do deníku si podle obrázků z knížek nebo internetu zakreslím všech 10 druhů oblaků. Záznamy doplním fotografiemi nebo vlastními skicami. Co můžu z jednotlivých oblaků vypozorovat?"
         },
         {
           "id": "us_3",
@@ -1549,11 +1536,10 @@
   },
   "ropeskipper": {
     "id": "ropeskipper",
+    "url": "ropeskipper",
     "name": "Ropeskipper",
     "category": "Sportovní",
     "description": "Ti, kteří chtějí splnit tuto odborku, by měli mít rádi pohyb a skákání. Měli by ovládat techniku skoku a triků, vytrvalost, umět se správně rozcvičit i protáhnout.",
-    "icon": "data/nasivky/ropeskipper.png",
-    "methodology_url": "https://odborky.skauting.cz/odborka/ropeskipper/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -1681,11 +1667,10 @@
   },
   "skateboardista": {
     "id": "skateboardista",
+    "url": "skateboardista",
     "name": "Skateboardista",
     "category": "Sportovní",
     "description": "Skateboarding je jednou z variant odborky Sportovec/ Sportovkyně. Je určen všem, kdo rádi skejtují, mají silnou vůli, ochotu rozvíjet se, překonávat překážky a chovat se podle pravidel fair play.",
-    "icon": "data/nasivky/skateboardista.png",
-    "methodology_url": "https://odborky.skauting.cz/odborka/skateboardista/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -1716,7 +1701,7 @@
         },
         {
           "id": "dt_d",
-          "title": "D. Skateboarding pro oddíl. Ve skateparku nebo na jiném vhodném místě připravím pro družinu/oddíl akci, během které si všichni budou moci vyzkoušet jízdu na skejtu. Vysvětlím, jak udržet rovnováhu a další základy skateboardingu (triky, překážky ve skateparku atd.). Představím pravidla skateboardingu, podstatu fair play a způsoby, jak předcházet konﬂ iktním situacím, které mohou nastat."
+          "title": "D. Skateboarding pro oddíl. Ve skateparku nebo na jiném vhodném místě připravím pro družinu/oddíl akci, během které si všichni budou moci vyzkoušet jízdu na skejtu. Vysvětlím, jak udržet rovnováhu a další základy skateboardingu (triky, překážky ve skateparku atd.). Představím pravidla skateboardingu, podstatu fair play a způsoby, jak předcházet konfliktním situacím, které mohou nastat."
         },
         {
           "id": "dt_e",
@@ -1724,7 +1709,7 @@
         },
         {
           "id": "dt_f",
-          "title": "F. Sportovní cíl. Stanovím si cíl ve skateboardingu, který je pro mne reálný, ale zároveň výzvou (např. účast na závodech Czechskateboarding, založení oﬁ ciálního klubu). Naplánuji si, jak jej dosáhnu. Cíl i plán zkonzultuji s patronem/patronkou. Cíle dosáhnu."
+          "title": "F. Sportovní cíl. Stanovím si cíl ve skateboardingu, který je pro mne reálný, ale zároveň výzvou (např. účast na závodech Czechskateboarding, založení oficiálního klubu). Naplánuji si, jak jej dosáhnu. Cíl i plán zkonzultuji s patronem/patronkou. Cíle dosáhnu."
         }
       ],
       "ukaz_se": [
@@ -1758,7 +1743,7 @@
         },
         {
           "id": "us_8",
-          "title": "8. Účast v soutěži. Zúčastním se oﬁ ciálních závodů vypsaných některým skejtovým klubem nebo Českou asociací skateboardingu."
+          "title": "8. Účast v soutěži. Zúčastním se oficiálních závodů vypsaných některým skejtovým klubem nebo Českou asociací skateboardingu."
         },
         {
           "id": "us_9",
@@ -1778,7 +1763,7 @@
         },
         {
           "id": "us_13",
-          "title": "13. Skatepark. Podílím se na provozu nebo údržbě skateparku. Pomáhám s úklidem, opravami překážek nebo řešením konﬂ iktů. Vysvětlím novým návštěvníkům, jak skatepark funguje a jaká pravidla v něm dodržovat."
+          "title": "13. Skatepark. Podílím se na provozu nebo údržbě skateparku. Pomáhám s úklidem, opravami překážek nebo řešením konfliktů. Vysvětlím novým návštěvníkům, jak skatepark funguje a jaká pravidla v něm dodržovat."
         },
         {
           "id": "us_14",
@@ -1794,7 +1779,7 @@
         },
         {
           "id": "us_17",
-          "title": "17. Pokročilé triky. Během tří měsíců natrénuji kick-ﬂ ip a shove-it. Oba triky pak předvedu ostatním. Pokud už oba triky dokážu, vyberu si jiné dva, které dosud neumím."
+          "title": "17. Pokročilé triky. Během tří měsíců natrénuji kick-flip a shove-it. Oba triky pak předvedu ostatním. Pokud už oba triky dokážu, vyberu si jiné dva, které dosud neumím."
         },
         {
           "id": "us_18",
@@ -1809,11 +1794,10 @@
   },
   "skautskyhistorik": {
     "id": "skautskyhistorik",
+    "url": "skautskyhistorik",
     "name": "Skautský Historik",
     "category": "Život v oddíle",
     "description": "Ti, kteří by chtěli získat tuto odborku, by se měli zajímat o skautskou historii, symboliku a dokázat o ní poutavě vyprávět. Měli by spolupracovat na dokumentaci historie a činnosti oddílu, protože historie začíná už teď. Měli by si také vyzkoušet, jak se žilo skautům a skautkám dříve a navštívit místa spjatá se skautskou historií.",
-    "icon": "data/nasivky/skautskyhistorik.png",
-    "methodology_url": "https://odborky.skauting.cz/odborka/skautskyhistorik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -1836,7 +1820,7 @@
         },
         {
           "id": "dt_b",
-          "title": "B. Historie oddílu a střediska. Na určitou dobu (alespoň pět měsíců) se ujmu role zaznamenávání historie oddílu či střediska. Zajistím, aby byly správně vedeny kroniky, tvořeny fotograﬁ e či další záznamy, a postarám se, aby byly správně uloženy (včetně elektronických dokumentů). Vysvětlím ostatním, proč je důležité zaznamenávat současné dění a vracet se k tomu minulému. Napíšu alespoň jeden článek z historie svého střediska tak, aby mj. dokázal seznámit veřejnost s vývojem skautingu v obci/regionu. Článek zveřejním na webu střediska/oddílu, ve střediskovém/ /oddílovém časopise nebo v místním tisku."
+          "title": "B. Historie oddílu a střediska. Na určitou dobu (alespoň pět měsíců) se ujmu role zaznamenávání historie oddílu či střediska. Zajistím, aby byly správně vedeny kroniky, tvořeny fotografie či další záznamy, a postarám se, aby byly správně uloženy (včetně elektronických dokumentů). Vysvětlím ostatním, proč je důležité zaznamenávat současné dění a vracet se k tomu minulému. Napíšu alespoň jeden článek z historie svého střediska tak, aby mj. dokázal seznámit veřejnost s vývojem skautingu v obci/regionu. Článek zveřejním na webu střediska/oddílu, ve střediskovém/ /oddílovém časopise nebo v místním tisku."
         },
         {
           "id": "dt_c",
@@ -1874,7 +1858,7 @@
         },
         {
           "id": "us_5",
-          "title": "5. Skautský archív. Udělám si přehled o všech existujících kronikách a archiváliích z mého střediska/oddílu (např. o starých fotograﬁ ích, dokumentech, nášivkách apod.), ujistím se, že se svým uložením neničí, a v případě potřeby provedu jejich údržbu. Písemný výstup předám středisku."
+          "title": "5. Skautský archív. Udělám si přehled o všech existujících kronikách a archiváliích z mého střediska/oddílu (např. o starých fotografiích, dokumentech, nášivkách apod.), ujistím se, že se svým uložením neničí, a v případě potřeby provedu jejich údržbu. Písemný výstup předám středisku."
         },
         {
           "id": "us_6",
@@ -1882,7 +1866,7 @@
         },
         {
           "id": "us_7",
-          "title": "7. Historie místa. Vyhledám místa, která byla v minulosti významná pro můj oddíl/středisko (bývalá tábořiště, slibová místa, klubovny apod.). Pokusím se nalézt staré fotograﬁ e či kresby těchto míst a alespoň dvě taková místa navštívit, vyfotit a porovnat jejich dnešní vzhled s minulostí. Fotograﬁ e ukážu lidem, kteří na ona místa vzpomínají. Nebo můžu udělat mapu do klubovny, místa do ní zaznamenat a k nim napsat, čím jsou významná. Po vybranou dobu do ní budu zaznamenávat místa nová."
+          "title": "7. Historie místa. Vyhledám místa, která byla v minulosti významná pro můj oddíl/středisko (bývalá tábořiště, slibová místa, klubovny apod.). Pokusím se nalézt staré fotografie či kresby těchto míst a alespoň dvě taková místa navštívit, vyfotit a porovnat jejich dnešní vzhled s minulostí. Fotografie ukážu lidem, kteří na ona místa vzpomínají. Nebo můžu udělat mapu do klubovny, místa do ní zaznamenat a k nim napsat, čím jsou významná. Po vybranou dobu do ní budu zaznamenávat místa nová."
         },
         {
           "id": "us_8",
@@ -1945,11 +1929,10 @@
   },
   "smartphonista": {
     "id": "smartphonista",
+    "url": "smartphonista",
     "name": "Smartphonista",
     "category": "Technické",
     "description": "Ti, kteří by chtěli získat tuto odborku, by m ěli prokázat, že se nejen orientují ve světě smartphonů, ale také ovládají své chování v ůči okolí a dokáží bez smartphonu p řežít. M ěli by ho um ět využít v oddílové činnosti a inspirovat ostatní.",
-    "icon": "data/nasivky/smartphonista.png",
-    "methodology_url": "https://odborky.skauting.cz/odborka/smartphonista/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -2026,7 +2009,7 @@
         },
         {
           "id": "us_10",
-          "title": "10. Focení. Využiji smartphone k záznamu oddílové výpravy. Fotograﬁ e pak zveřejním (na oddílových stránkách, …)."
+          "title": "10. Focení. Využiji smartphone k záznamu oddílové výpravy. Fotografie pak zveřejním (na oddílových stránkách, …)."
         },
         {
           "id": "us_11",
@@ -2061,11 +2044,10 @@
   },
   "zelenyedison": {
     "id": "zelenyedison",
+    "url": "zelenyedison",
     "name": "Zelený Edison",
     "category": "Přírodovědné",
     "description": "Ti, kteří usilují o tuto odborku, by měli mít přehled o současných možnostech, technologiích, postupech a trendech šetrných k životnímu prostředí. Měli by být schopni v konkrétních příkladech analyzovat dopad na životní prostředí a na základě svých znalostí hledat šetrnější alternativy. V praktickém životě by se měli uplatnit v inovacích environmentálně příznivých technologií, obnovitelných zdrojů a úspor energie, ale i v odpovědném občanském životě. V činnosti oddílu by měli přispět k šetrnému provozu klubovny, tábora i výprav.",
-    "icon": "data/nasivky/zelenyedison.png",
-    "methodology_url": "https://odborky.skauting.cz/odborka/zelenyedison/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -2126,7 +2108,7 @@
         },
         {
           "id": "us_7",
-          "title": "7. Certiﬁ kace. Zjistím, jak různé certiﬁ kace (BIO, Fair Trade, FSC…) ovliv ňují dopad výroby na životní prostředí, a připravím o tom program pro družinu/oddíl."
+          "title": "7. Certifikace. Zjistím, jak různé certifikace (BIO, Fair Trade, FSC…) ovliv ňují dopad výroby na životní prostředí, a připravím o tom program pro družinu/oddíl."
         },
         {
           "id": "us_8",
@@ -2142,7 +2124,7 @@
         },
         {
           "id": "us_11",
-          "title": "11. Úspora přírodních zdrojů. Vyberu si některý přírodní zdroj (voda, plyn, elektřina). Zjistím dopady výroby/těžby/spotřeby tohoto zdroje na životní prostředí. Vypátrám, jaká je jeho celoroční spotřeba v domácnosti nebo v klubovně. Navrhnu opatření vedoucí ke snížení spotřeby vybraného zdroje v kategoriích beznákladová, nízkonákladová (do 40 tis. Kč) a nákladná (nad 40 tis. Kč). Pro vybrané úsporné opatření spočítám ekonomickou návratnost investice a zjistím možnosti ﬁ nanční podpory této investice (např. Zelená úsporám)."
+          "title": "11. Úspora přírodních zdrojů. Vyberu si některý přírodní zdroj (voda, plyn, elektřina). Zjistím dopady výroby/těžby/spotřeby tohoto zdroje na životní prostředí. Vypátrám, jaká je jeho celoroční spotřeba v domácnosti nebo v klubovně. Navrhnu opatření vedoucí ke snížení spotřeby vybraného zdroje v kategoriích beznákladová, nízkonákladová (do 40 tis. Kč) a nákladná (nad 40 tis. Kč). Pro vybrané úsporné opatření spočítám ekonomickou návratnost investice a zjistím možnosti finanční podpory této investice (např. Zelená úsporám)."
         },
         {
           "id": "us_12",
@@ -2161,11 +2143,10 @@
   },
   "zongler": {
     "id": "zongler",
+    "url": "zongler",
     "name": "Žongler",
     "category": "Sportovní",
     "description": "Odborka je pro všechny, kteří rádi žonglují např. s míčky, s poi, diabolem. Umějí ukázat silnou vůli, ochotu se učit nové triky, být trpěliví a nevzdávat se.",
-    "icon": "data/nasivky/zongler.png",
-    "methodology_url": "https://odborky.skauting.cz/odborka/zongler/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -2262,7 +2243,7 @@
         },
         {
           "id": "us_14",
-          "title": "14. Žonglér na druhou. Naučím se zákady žonglování s další žonglérskou pomůckou (např.: míčky, poiky, diabolo, kužely, ﬂ owerstick, tyč, talíř)."
+          "title": "14. Žonglér na druhou. Naučím se zákady žonglování s další žonglérskou pomůckou (např.: míčky, poiky, diabolo, kužely, flowerstick, tyč, talíř)."
         },
         {
           "id": "us_15",

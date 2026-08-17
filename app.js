@@ -1,5 +1,5 @@
 /**
- * Frontend logika pro Skautské odborky Tracker (včetně legacy, nášivek, plánování úkolů a duálních progress barů)
+ * Frontend logika pro Skautské odborky Tracker (využití url šablony a id pro nášivky)
  */
 
 const CATEGORY_COLORS = {
@@ -19,7 +19,7 @@ let state = {
     user: null,
     stavyOdborek: {},
     wishlistBadges: new Set(),
-    ukolyStavy: {}, // Mapa `${badgeId}:${taskId}` -> 'chci_plnit' nebo 'splneno'
+    ukolyStavy: {}, 
     badges: {},
     isLegacyMode: false,
     filters: {
@@ -325,6 +325,9 @@ function renderBadgesGrid() {
         const userStatus = state.stavyOdborek[b.id];
         const isWishlisted = state.wishlistBadges.has(b.id);
         const theme = CATEGORY_COLORS[b.category] || { color: '#2d6a4f', bg: '#d8f3dc' };
+        
+        // Cesta k nášivce generovaná z ID
+        const iconPath = `data/nasivky/${b.id}.png`;
 
         const card = document.createElement('div');
         card.className = `badge-card ${state.isLegacyMode ? 'is-legacy' : ''}`;
@@ -343,7 +346,7 @@ function renderBadgesGrid() {
                     </div>
                 </div>
                 <div class="card-header-main">
-                    ${b.icon ? `<img src="${b.icon}" alt="${b.name}" class="badge-icon-img" onerror="this.style.display='none'">` : ''}
+                    <img src="${iconPath}" alt="${b.name}" class="badge-icon-img" onerror="this.style.display='none'">
                     <div>
                         <h3>${b.name}</h3>
                         <p>${b.description || ''}</p>
@@ -375,20 +378,15 @@ function openBadgeModal(badgeId) {
     modal.style.setProperty('--badge-theme-bg', state.isLegacyMode ? '#fef3c7' : theme.bg);
 
     const modalIcon = document.getElementById('modal-badge-icon');
-    if (badge.icon) {
-        modalIcon.src = badge.icon;
-        modalIcon.style.display = 'block';
-    } else {
-        modalIcon.style.display = 'none';
-    }
+    modalIcon.src = `data/nasivky/${badge.id}.png`;
+    modalIcon.style.display = 'block';
 
+    // Generování URL z uložené url šablony
     const methodologyLink = document.getElementById('modal-methodology-link');
-    if (badge.methodology_url) {
-        methodologyLink.href = badge.methodology_url;
-        methodologyLink.style.display = 'inline-flex';
-    } else {
-        methodologyLink.style.display = 'none';
-    }
+    methodologyLink.href = `https://odborky.skauting.cz/odborka/${badge.url}/`;
+
+    const junshopLink = document.getElementById('modal-junshop-link');
+    junshopLink.href = `https://www.junshop.cz/odborka-${badge.url}`;
 
     document.getElementById('modal-badge-category').textContent = badge.category + (state.isLegacyMode ? ' (Ve výslužbě)' : '');
     document.getElementById('modal-badge-title').textContent = badge.name;
@@ -478,7 +476,6 @@ function renderModalTasks(badge) {
                 </div>
             `;
 
-            // Obsluha zaškrtnutí splnění úkolu
             li.querySelector('input').addEventListener('change', async (e) => {
                 const checked = e.target.checked;
                 const newStatus = checked ? 'splneno' : null;
@@ -508,7 +505,6 @@ function renderModalTasks(badge) {
                 renderBadgesGrid();
             });
 
-            // Obsluha tlačítka plánování (hvězdička)
             li.querySelector('.task-plan-btn').addEventListener('click', async () => {
                 const currentlyPlanned = state.ukolyStavy[key] === 'chci_plnit';
                 const newStatus = currentlyPlanned ? null : 'chci_plnit';

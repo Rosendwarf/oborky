@@ -1,11 +1,10 @@
 {
   "ajtak": {
     "id": "ajtak",
+    "url": "ajtak",
     "name": "Ajťák",
     "category": "Technické",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli umět používat počítač jako spolehlivý nástroj pro práci, komunikaci i zábavu. Měli by rozumět základům fungování počítače, chránit sebe i ostatní na internetu a umět si poradit s běžnými digitálními situacemi.",
-    "icon": "data/nasivky/ajtak.png",
-    "methodology_url": "https://odborky.skauting.cz/ajtak",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -125,11 +124,10 @@
   },
   "atlet": {
     "id": "atlet",
+    "url": "atlet",
     "name": "Atlet",
     "category": "Sportovní",
     "description": "Ti, kteří usilují o tuto odborku, by měli prokázat připravenost na sportovní aktivitu, volit vhodné oblečení, dbát na rozcvičení a protažení celého těla. Měli by si vyzkoušet různé atletické disciplíny, být všestranně sportovně zaměřeni a motivováni své sportovní výkony zlepšovat. Také by měli být schopni zapojit atletiku do oddílového života.",
-    "icon": "data/nasivky/atlet.png",
-    "methodology_url": "https://odborky.skauting.cz/atlet/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -222,7 +220,7 @@
         },
         {
           "id": "us_14",
-          "title": "14. Běžecká akce. Zúčastním se beneﬁ ční běžecké akce. Doběhnu do cíle."
+          "title": "14. Běžecká akce. Zúčastním se benefiční běžecké akce. Doběhnu do cíle."
         },
         {
           "id": "us_15",
@@ -237,11 +235,10 @@
   },
   "cestovatel": {
     "id": "cestovatel",
+    "url": "cestovatel",
     "name": "Cestovatel",
     "category": "Tábornicko-cestovatelské",
     "description": "Ti, kteří usilují o tuto odborku, by měli velmi rádi cestovat. Procházet krajinou, lesy, loukami, horami, vesnicemi i městy. Měli by projevit hluboký zájem o okolní prostředí a sžít se s ním. Ale také by se o svoji zálibu měli umět podělit s ostatními, vzít je s sebou, naplánovat jim výlet.",
-    "icon": "data/nasivky/cestovatel.png",
-    "methodology_url": "https://odborky.skauting.cz/cestovatel/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 1,
@@ -294,7 +291,7 @@
         },
         {
           "id": "us_5",
-          "title": "5. Představení putování. Připravím pro družinu, oddíl či středisko program, při kterém představím libovolným zajímavým způsobem svoje putování ( promítání fotek s povídáním, promítání ﬁ lmu apod.)."
+          "title": "5. Představení putování. Připravím pro družinu, oddíl či středisko program, při kterém představím libovolným zajímavým způsobem svoje putování ( promítání fotek s povídáním, promítání filmu apod.)."
         },
         {
           "id": "us_6",
@@ -310,15 +307,15 @@
         },
         {
           "id": "us_9",
-          "title": "9. Historická památka. Podniknu víkendovou výpravu, při které za pomoci oddílu či kmene zdokumentujeme (fotograﬁ e, popis, nákres, zaměření, …) n ějakou méně známou historickou památku (kostel, zříceninu apod.). O památce zjistíme co nejvíce informací a ty spolu s našimi údaji dáme na internet či jinak zveřejníme."
+          "title": "9. Historická památka. Podniknu víkendovou výpravu, při které za pomoci oddílu či kmene zdokumentujeme (fotografie, popis, nákres, zaměření, …) n ějakou méně známou historickou památku (kostel, zříceninu apod.). O památce zjistíme co nejvíce informací a ty spolu s našimi údaji dáme na internet či jinak zveřejníme."
         },
         {
           "id": "us_10",
-          "title": "10. Církevní památky. Uskutečním víkendovou výpravu, při které zdokumentuji (pořídím náčrt, fotograﬁ i, GPS měření, video) min. osm drobných církevních památek (kapličky, křížky, boží muka). O památkách zjistím co nejvíce informací a ty spolu s dokumentací dám na internet nebo jinak uveřejním."
+          "title": "10. Církevní památky. Uskutečním víkendovou výpravu, při které zdokumentuji (pořídím náčrt, fotografii, GPS měření, video) min. osm drobných církevních památek (kapličky, křížky, boží muka). O památkách zjistím co nejvíce informací a ty spolu s dokumentací dám na internet nebo jinak uveřejním."
         },
         {
           "id": "us_11",
-          "title": "11. Proﬁ l putování. Zpracuji proﬁ l trasy svého putování nebo putování mojí družiny či oddílu. Vyznačím významná místa a vrcholy. (Proﬁ lem se myslí graf: svisle nadmořská výška, vodorovně ušlá vzdálenost rozdělená do dnů.)"
+          "title": "11. Profil putování. Zpracuji profil trasy svého putování nebo putování mojí družiny či oddílu. Vyznačím významná místa a vrcholy. (Profilem se myslí graf: svisle nadmořská výška, vodorovně ušlá vzdálenost rozdělená do dnů.)"
         },
         {
           "id": "us_12",
@@ -334,7 +331,7 @@
         },
         {
           "id": "us_15",
-          "title": "15. Beseda. Zúčastním se besedy s cestovatelem nebo cestovatelkou, případně navštívím festival cestovatelských ﬁ lmů."
+          "title": "15. Beseda. Zúčastním se besedy s cestovatelem nebo cestovatelkou, případně navštívím festival cestovatelských filmů."
         },
         {
           "id": "us_16",
@@ -349,11 +346,10 @@
   },
   "chemik": {
     "id": "chemik",
+    "url": "chemik",
     "name": "Chemik",
     "category": "Přírodovědné",
     "description": "Ti, kteří chtějí získat tuto odborku, by měli prokázat znalost chemie a zájem o ni. Měli by mít představu o zákonitostech chemie i o významu chemie pro člověka. Umějí bezpečně provádět experimenty a rozumějí jejich podstatě.",
-    "icon": "data/nasivky/chemik.png",
-    "methodology_url": "https://odborky.skauting.cz/chemik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 1,
@@ -489,11 +485,10 @@
   },
   "chovatel": {
     "id": "chovatel",
+    "url": "chovatel",
     "name": "Chovatel",
     "category": "Přírodovědné",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli doma mít zvířata, o které se pravidelně starají, např. psa, rybičky v akváriu, zvíře v teráriu apod. Měli by umět vytvořit vhodné podmínky pro chov zvířete a dlouhodobě se o ně starat.",
-    "icon": "data/nasivky/chovatel.png",
-    "methodology_url": "https://odborky.skauting.cz/chovatel/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -609,11 +604,10 @@
   },
   "chuvak": {
     "id": "chuvak",
+    "url": "chuvak",
     "name": "Chůvák",
     "category": "Služba bližním",
     "description": "Ti, kteří by chtěli získat tuto odborku, by se měli umět postarat o dítě a vědět, jak o něj správně pečovat. Měli by přemýšlet o alternativách a dokázat zhodnotit jejich přínosy i negativa.",
-    "icon": "data/nasivky/chuvak.png",
-    "methodology_url": "https://odborky.skauting.cz/chuva/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -705,11 +699,10 @@
   },
   "cyklista": {
     "id": "cyklista",
+    "url": "cyklista",
     "name": "Cyklista",
     "category": "Sportovní",
     "description": "Odborka je určena zejména těm, kteří považují jízdní kolo za praktický dopravní prostředek pro cesty do školy, za prací či jinam, a také pro trávení volného času. Ti, kteří by chtěli získat tuto odborku, by měli prokázat, že znají pravidla silničního provozu, vědí, jaká jsou kola a jak o ně pečovat, jsou schopni podniknout různé výlety na kole v různém prostředí, umějí připravit cyklovýpravu, jsou schopni prokázat svou zdatnost a vytrvalost.",
-    "icon": "data/nasivky/cyklista.png",
-    "methodology_url": "https://odborky.skauting.cz/cyklista/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -817,11 +810,10 @@
   },
   "deskovkar": {
     "id": "deskovkar",
+    "url": "deskovkar",
     "name": "Deskovkář",
     "category": "Život v oddíle",
     "description": "Cílem této odborky je prověřit znalosti a dovednosti potřebné ke hraní deskových her jak se zkušenými, tak i s novými hrá či, v oddíle i jinde. Ti, kte ří by chtěli získat tuto odborku, by se měli o deskové hry dlouhodob ě zajímat, vhodně s nimi zacházet a umět vysvětlovat pravidla. Měli by být zkušenými hráči a zároveň příjemnými společníky a společnicemi schopnými poradit a pomoci při hře.",
-    "icon": "data/nasivky/deskovkar.png",
-    "methodology_url": "https://odborky.skauting.cz/deskovkar/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -949,11 +941,10 @@
   },
   "divadelnik": {
     "id": "divadelnik",
+    "url": "divadelnik",
     "name": "Divadelník",
     "category": "Umělecké",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli být schopni dobré scénické a rétorické interpretace, mít přehled o divadelních druzích a žánrech, znát základní díla a aktivně se zajímat o současnou divadelní tvorbu. Tento svůj zájem by měli umět využít v oddílových aktivitách. DIVADELNÍK/DIVADELNICE",
-    "icon": "data/nasivky/divadelnik.png",
-    "methodology_url": "https://odborky.skauting.cz/divadelnik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 3,
@@ -972,7 +963,7 @@
       "dokaz_to": [
         {
           "id": "dt_a",
-          "title": "A. Vlastní scénická tvorba. S družinou připravím společný výstup. Ujmu se dramaturgie, režie, případně scénograﬁ e."
+          "title": "A. Vlastní scénická tvorba. S družinou připravím společný výstup. Ujmu se dramaturgie, režie, případně scénografie."
         },
         {
           "id": "dt_b",
@@ -984,7 +975,7 @@
         },
         {
           "id": "dt_d",
-          "title": "D. Terminologie. Prakticky využiju divadelní termíny (jeviště, hlediště, kukátková scéna, praktikábl, scénograﬁ e, režie, dramaturgie, dramatický text, scénická hudba, choreograﬁ e, reﬂ ektor, role, alternace, etuda, loutky se spodovým/vrchním vedením, rekvizita vs. kulisa, zástupné a imaginární rekvizity). Popíšu hlavní pracovní náplň profese: scénograﬁ e, divadelní dramaturgie, režie, choreograﬁ e a dirigentství."
+          "title": "D. Terminologie. Prakticky využiju divadelní termíny (jeviště, hlediště, kukátková scéna, praktikábl, scénografie, režie, dramaturgie, dramatický text, scénická hudba, choreografie, reflektor, role, alternace, etuda, loutky se spodovým/vrchním vedením, rekvizita vs. kulisa, zástupné a imaginární rekvizity). Popíšu hlavní pracovní náplň profese: scénografie, divadelní dramaturgie, režie, choreografie a dirigentství."
         },
         {
           "id": "dt_e",
@@ -998,7 +989,7 @@
         },
         {
           "id": "us_2",
-          "title": "2. Účast na přehlídkách. Zúčastním se oﬁ ciální divadelní přehlídky a diskusí o jednotlivých dílech s porotou. Např. oblastní postupová kola nebo vyšší kola: Šrámkův Písek, Jiráskův Hronov, Mladá scéna, Dětská scéna, Otevřeno aj."
+          "title": "2. Účast na přehlídkách. Zúčastním se oficiální divadelní přehlídky a diskusí o jednotlivých dílech s porotou. Např. oblastní postupová kola nebo vyšší kola: Šrámkův Písek, Jiráskův Hronov, Mladá scéna, Dětská scéna, Otevřeno aj."
         },
         {
           "id": "us_3",
@@ -1010,7 +1001,7 @@
         },
         {
           "id": "us_5",
-          "title": "5. Scénograﬁ e. Navrhnu a realizuji pro divadelní výstup scénograﬁ i včetně kostýmní výpravy a rekvizit. Nezapomenu ani na potřebné osvětlení a jeho umístění."
+          "title": "5. Scénografie. Navrhnu a realizuji pro divadelní výstup scénografii včetně kostýmní výpravy a rekvizit. Nezapomenu ani na potřebné osvětlení a jeho umístění."
         },
         {
           "id": "us_6",
@@ -1045,11 +1036,10 @@
   },
   "ekonom": {
     "id": "ekonom",
+    "url": "ekonom",
     "name": "Ekonom",
     "category": "Humanitní",
-    "description": "Ti, kteří by chtěli získat tuto odborku, by měli znát základy ﬁ nanční gramotnosti (hospodaření domácnosti, osobní ﬁ nance, pojištění, investice, apod.), náležitosti prvotních a účetních dokladů, měli by umět řešit smlouvy (na pronájem, koupi a prodej) a reklamace, ovládat hospodaření malé akce včetně sestavení rozpočtu a evidence a znát způsob hospodaření střediska.",
-    "icon": "data/nasivky/ekonom.png",
-    "methodology_url": "https://odborky.skauting.cz/ekonom/",
+    "description": "Ti, kteří by chtěli získat tuto odborku, by měli znát základy finanční gramotnosti (hospodaření domácnosti, osobní finance, pojištění, investice, apod.), náležitosti prvotních a účetních dokladů, měli by umět řešit smlouvy (na pronájem, koupi a prodej) a reklamace, ovládat hospodaření malé akce včetně sestavení rozpočtu a evidence a znát způsob hospodaření střediska.",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -1084,7 +1074,7 @@
         },
         {
           "id": "dt_e",
-          "title": "E. Účetnictví. Zjistím, jaký systém využívá moje středisko, a popíšu jeho základní principy. Vysvětlím to patronovi či patronce a nahlédnu do účetnictví s hospodářem. Odhadnu, jak vysokou by mělo mít středisko ﬁ nanční rezervu."
+          "title": "E. Účetnictví. Zjistím, jaký systém využívá moje středisko, a popíšu jeho základní principy. Vysvětlím to patronovi či patronce a nahlédnu do účetnictví s hospodářem. Odhadnu, jak vysokou by mělo mít středisko finanční rezervu."
         },
         {
           "id": "dt_f",
@@ -1126,7 +1116,7 @@
         },
         {
           "id": "us_9",
-          "title": "9. Fundraising. Zjistím, co znamená fundraising. Pokud je to možné, vyzkouším si to, tzn. na větší akci pořádané naším střediskem spolu s vedoucí/m akce zhodnotím možné zdroje ﬁ nancí, vytipuji možné sponzory a pomohu s jejich oslovením (příprava argumentů, prezentace apod.). Vím, jaké dotace může získat naše středisko od ústředí Junáka – českého skauta."
+          "title": "9. Fundraising. Zjistím, co znamená fundraising. Pokud je to možné, vyzkouším si to, tzn. na větší akci pořádané naším střediskem spolu s vedoucí/m akce zhodnotím možné zdroje financí, vytipuji možné sponzory a pomohu s jejich oslovením (příprava argumentů, prezentace apod.). Vím, jaké dotace může získat naše středisko od ústředí Junáka – českého skauta."
         },
         {
           "id": "us_10",
@@ -1146,7 +1136,7 @@
         },
         {
           "id": "us_14",
-          "title": "14. Fiktivní ﬁ rma. Vytvořím pod dohledem patrona ﬁ ktivní ﬁ rmu. Vyberu obor podnikání, vhodnou právní formu, stanovím organizační strukturu a cíle společnosti. Vytvořím potřebné zakládací listiny, podnikatelský záměr včetně propočtu nákladů na statky/služby, stanovím marži na statky/služby a konečnou prodejní cenu. Na základě takového plánu vytvořím propočet nákladů a výnosů a plán zisku min. na jeden rok. V podnikatelském záměru uvedu důležité skutečnosti, např. na které trhy se zaměřím či kteří zákazníci a zákaznice jsou cílovou skupinou. Míru podrobností určí patron odborky. Alternativou může být má účast při založení ﬁ ktivní ﬁ rmy v rámci školní výuky vedené přes Centrum ﬁ ktivních ﬁ rem (tzv. CEFIF). Tuto účast musím být schopen prokázat například potvrzením od vyučujícího atp."
+          "title": "14. Fiktivní firma. Vytvořím pod dohledem patrona fiktivní firmu. Vyberu obor podnikání, vhodnou právní formu, stanovím organizační strukturu a cíle společnosti. Vytvořím potřebné zakládací listiny, podnikatelský záměr včetně propočtu nákladů na statky/služby, stanovím marži na statky/služby a konečnou prodejní cenu. Na základě takového plánu vytvořím propočet nákladů a výnosů a plán zisku min. na jeden rok. V podnikatelském záměru uvedu důležité skutečnosti, např. na které trhy se zaměřím či kteří zákazníci a zákaznice jsou cílovou skupinou. Míru podrobností určí patron odborky. Alternativou může být má účast při založení fiktivní firmy v rámci školní výuky vedené přes Centrum fiktivních firem (tzv. CEFIF). Tuto účast musím být schopen prokázat například potvrzením od vyučujícího atp."
         },
         {
           "id": "us_15",
@@ -1173,11 +1163,10 @@
   },
   "elektrotechnik": {
     "id": "elektrotechnik",
+    "url": "elektrotechnik",
     "name": "Elektrotechnik",
     "category": "Technické",
     "description": "Ti, kteří chtějí získat tuto odborku, by měli mít hlubší zájem o elektrotechniku a formou od jednoduchých pokusů až po náročné úkoly nastínit základní problematiku oboru.",
-    "icon": "data/nasivky/elektrotechnik.png",
-    "methodology_url": "https://odborky.skauting.cz/elektrotechnik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -1281,11 +1270,10 @@
   },
   "filmar": {
     "id": "filmar",
+    "url": "filmar",
     "name": "Filmař",
     "category": "Umělecké",
-    "description": "Ti, kteří by chtěli nosit tuto odborku, musejí prokázat, že rozumějí ﬁ lmu ze všech stran. Musejí ovládat techniku, umět natáčet, stříhat, ale i vědět, jak se ﬁ lm vyrábí od A do Z a co se děje ve světě ﬁ lmu. A to vše musejí umět předávat i ostatním v oddíle. FILMAŘ/FILMAŘKA",
-    "icon": "data/nasivky/filmar.png",
-    "methodology_url": "https://odborky.skauting.cz/filmar/",
+    "description": "Ti, kteří by chtěli nosit tuto odborku, musejí prokázat, že rozumějí filmu ze všech stran. Musejí ovládat techniku, umět natáčet, stříhat, ale i vědět, jak se film vyrábí od A do Z a co se děje ve světě filmu. A to vše musejí umět předávat i ostatním v oddíle. FILMAŘ/FILMAŘKA",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -1304,7 +1292,7 @@
       "dokaz_to": [
         {
           "id": "dt_a",
-          "title": "A. Základní funkce. Předvedu a vysvětlím družině možnosti použití a nastavení kamery (ﬁ lmové, video, ve fotoaparátu nebo v chytrém telefonu): nastavení formátu, rozlišení, počet snímků, natavení teploty chromatičnosti (bílé). Vysvětlím rozdíl ve formátech PAL, FullHD, 4K."
+          "title": "A. Základní funkce. Předvedu a vysvětlím družině možnosti použití a nastavení kamery (filmové, video, ve fotoaparátu nebo v chytrém telefonu): nastavení formátu, rozlišení, počet snímků, natavení teploty chromatičnosti (bílé). Vysvětlím rozdíl ve formátech PAL, FullHD, 4K."
         },
         {
           "id": "dt_b",
@@ -1320,7 +1308,7 @@
         },
         {
           "id": "dt_e",
-          "title": "E. Filmový přehled. Vyberu deset ﬁ lmů podle klíče, který si sám zvolím a dobře zdůvodním. Připravím pro družinu pásmo ukázek z těchto ﬁ lmů a zajímavý kvíz."
+          "title": "E. Filmový přehled. Vyberu deset filmů podle klíče, který si sám zvolím a dobře zdůvodním. Připravím pro družinu pásmo ukázek z těchto filmů a zajímavý kvíz."
         },
         {
           "id": "dt_f",
@@ -1330,15 +1318,15 @@
       "ukaz_se": [
         {
           "id": "us_1",
-          "title": "1. Oddílová ﬁ lma řina. Po dobu alespoň jednoho roku pravidelně natáčím činnost oddílu a umisťuji své reportáže na web."
+          "title": "1. Oddílová filma řina. Po dobu alespoň jednoho roku pravidelně natáčím činnost oddílu a umisťuji své reportáže na web."
         },
         {
           "id": "us_2",
-          "title": "2. Návštěva ﬁ lmu. Zorganizuji pro družinu návštěvu kina. Vyberu kvalitní ﬁ lm (např. oceněný Oscarem, podle kritiky, tématu, co řešíme apod.)."
+          "title": "2. Návštěva filmu. Zorganizuji pro družinu návštěvu kina. Vyberu kvalitní film (např. oceněný Oscarem, podle kritiky, tématu, co řešíme apod.)."
         },
         {
           "id": "us_3",
-          "title": "3. Filmové efekty. Na ukázce vhodně použiji přechodové efekty (prolnutí, stírání, vložení, apod..) a další úpravy videa (černobílý ﬁ ltr, barevné korekce, úprava rychlosti)."
+          "title": "3. Filmové efekty. Na ukázce vhodně použiji přechodové efekty (prolnutí, stírání, vložení, apod..) a další úpravy videa (černobílý filtr, barevné korekce, úprava rychlosti)."
         },
         {
           "id": "us_4",
@@ -1346,23 +1334,23 @@
         },
         {
           "id": "us_5",
-          "title": "5. Tvorba ﬁ lmu. Vytvořím přehled nejčastějších funkcí, které se vykonávají při natáčení ﬁ lmu (režisér, scénárista, herci,…). Každému z družiny dám jednu z těchto rolí a společně pak natočíme ﬁ lm. Při natáčení si členové a členky družiny tyto role vyzkoušejí."
+          "title": "5. Tvorba filmu. Vytvořím přehled nejčastějších funkcí, které se vykonávají při natáčení filmu (režisér, scénárista, herci,…). Každému z družiny dám jednu z těchto rolí a společně pak natočíme film. Při natáčení si členové a členky družiny tyto role vyzkoušejí."
         },
         {
           "id": "us_6",
-          "title": "6. Scénář. Sepíši scénář krátkého ﬁ lmu. Alespoň jednu scénu z něj natočím."
+          "title": "6. Scénář. Sepíši scénář krátkého filmu. Alespoň jednu scénu z něj natočím."
         },
         {
           "id": "us_7",
-          "title": "7. Režiséři a režisérky. Připravím pro družinu hru, ve které bude úkolem poznat režiséra či režisérku ﬁ lmu. Hra bude obsahovat min. tři české a tři světové režiséry či režisérky."
+          "title": "7. Režiséři a režisérky. Připravím pro družinu hru, ve které bude úkolem poznat režiséra či režisérku filmu. Hra bude obsahovat min. tři české a tři světové režiséry či režisérky."
         },
         {
           "id": "us_8",
-          "title": "8. Hlavní ﬁ lmové festivaly. Doporučím kamarádům různé ﬁ lmové festivaly a popíši, co se na nich děje."
+          "title": "8. Hlavní filmové festivaly. Doporučím kamarádům různé filmové festivaly a popíši, co se na nich děje."
         },
         {
           "id": "us_9",
-          "title": "9. Filmové žánry. Vyberu si jeden příběh. Natočím ho v pěti různých ﬁ lmových žánrech (např. pohádka, drama, komedie, horor, sci-ﬁ , groteska, western…)."
+          "title": "9. Filmové žánry. Vyberu si jeden příběh. Natočím ho v pěti různých filmových žánrech (např. pohádka, drama, komedie, horor, sci-fi, groteska, western…)."
         },
         {
           "id": "us_10",
@@ -1370,15 +1358,15 @@
         },
         {
           "id": "us_11",
-          "title": "11. Krátký ﬁ lm. Vyrobím krátký ﬁ lm technikou focené animace (stop-motion)."
+          "title": "11. Krátký film. Vyrobím krátký film technikou focené animace (stop-motion)."
         },
         {
           "id": "us_12",
-          "title": "12. Názory. Napíši alespoň deset recenzních příspěvků na ﬁ lmy na csfd.cz nebo imdb.com."
+          "title": "12. Názory. Napíši alespoň deset recenzních příspěvků na filmy na csfd.cz nebo imdb.com."
         },
         {
           "id": "us_13",
-          "title": "13. Recenze. Napíši recenzi na ﬁ lm do skautského časopisu (oddílového, střediskového nebo celostátního)."
+          "title": "13. Recenze. Napíši recenzi na film do skautského časopisu (oddílového, střediskového nebo celostátního)."
         },
         {
           "id": "us_14",
@@ -1401,11 +1389,10 @@
   },
   "fotograf": {
     "id": "fotograf",
+    "url": "fotograf",
     "name": "Fotograf",
     "category": "Umělecké",
-    "description": "Ti, kteří by chtěli získat tuto odborku, by měli znát různé techniky umělecké i dokumentární fotograﬁ e, zvládat graﬁ cké zpracování fotograﬁ í a jejich prezentaci. Měli by se zajímat o významné osobnosti fotograﬁ e, znát zdroje fotograﬁ cké literatury a s jejich pomocí se v tomto oboru zdokonalovat.",
-    "icon": "data/nasivky/fotograf.png",
-    "methodology_url": "https://odborky.skauting.cz/fotograf/",
+    "description": "Ti, kteří by chtěli získat tuto odborku, by měli znát různé techniky umělecké i dokumentární fotografie, zvládat grafické zpracování fotografií a jejich prezentaci. Měli by se zajímat o významné osobnosti fotografie, znát zdroje fotografické literatury a s jejich pomocí se v tomto oboru zdokonalovat.",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 3,
@@ -1428,23 +1415,23 @@
         },
         {
           "id": "dt_b",
-          "title": "B. Výstava. Uspořádám výstavu svých nejlepších fotograﬁ í za posledního půl roku."
+          "title": "B. Výstava. Uspořádám výstavu svých nejlepších fotografií za posledního půl roku."
         },
         {
           "id": "dt_c",
-          "title": "C. Úpravy fotograﬁ e. Z webového úložiště si stáhnu fotograﬁ i a ve vhodném programu s ní provedu tyto operace: otočení, ořez, změnu jasu nebo barevnosti, zmenšení rozměrů na polovinu. Poté upravenou fotku znovu nahraji na webové úložiště."
+          "title": "C. Úpravy fotografie. Z webového úložiště si stáhnu fotografii a ve vhodném programu s ní provedu tyto operace: otočení, ořez, změnu jasu nebo barevnosti, zmenšení rozměrů na polovinu. Poté upravenou fotku znovu nahraji na webové úložiště."
         },
         {
           "id": "dt_d",
-          "title": "D. Série fotograﬁ í. Vyfotím tři lidi z oddílu, tři zátiší s aranžovaným oddílovým inventářem a tři další motivy související s oddílem. Fotograﬁ ím vymyslím jména a představím je při vhodné příležitosti (nástěnka, prezentace, časopis, oddílové oslavy atp.)."
+          "title": "D. Série fotografií. Vyfotím tři lidi z oddílu, tři zátiší s aranžovaným oddílovým inventářem a tři další motivy související s oddílem. Fotografiím vymyslím jména a představím je při vhodné příležitosti (nástěnka, prezentace, časopis, oddílové oslavy atp.)."
         },
         {
           "id": "dt_e",
-          "title": "E. Využití. Přečtu si alespoň jednu knihu o fotograﬁ i. Znám časopis zabývající se fotograﬁ í a alespoň dva weby, ze kterých odebírám články věnující se fotograﬁ i. Vyberu si fotograﬁ ckou techniku nebo postup, kterému mě některý z těchto zdrojů naučil. S využitím tohoto postupu zhotovím v oddílovém prostředí tři fotograﬁ e a vystavím je v klubovně nebo webové galerii."
+          "title": "E. Využití. Přečtu si alespoň jednu knihu o fotografii. Znám časopis zabývající se fotografií a alespoň dva weby, ze kterých odebírám články věnující se fotografii. Vyberu si fotografickou techniku nebo postup, kterému mě některý z těchto zdrojů naučil. S využitím tohoto postupu zhotovím v oddílovém prostředí tři fotografie a vystavím je v klubovně nebo webové galerii."
         },
         {
           "id": "dt_f",
-          "title": "F. Rozšířené funkce. Znám rozšířené režimy a funkce fotoaparátu (nastavení ISO, vyvážení bílé, režimy PASM, režimy ostření a měření expozice) a předvedu, jak jednotlivá nastavení ovlivňují výsledné fotograﬁ e. Pokud fotím na ﬁ lm, znám také odlišnosti mezi jeho základními druhy."
+          "title": "F. Rozšířené funkce. Znám rozšířené režimy a funkce fotoaparátu (nastavení ISO, vyvážení bílé, režimy PASM, režimy ostření a měření expozice) a předvedu, jak jednotlivá nastavení ovlivňují výsledné fotografie. Pokud fotím na film, znám také odlišnosti mezi jeho základními druhy."
         },
         {
           "id": "dt_g",
@@ -1452,17 +1439,17 @@
         },
         {
           "id": "dt_h",
-          "title": "H. Vznik fotograﬁ e. Poutavě vysvětlím družině, jak vzniká fotograﬁ e."
+          "title": "H. Vznik fotografie. Poutavě vysvětlím družině, jak vzniká fotografie."
         }
       ],
       "ukaz_se": [
         {
           "id": "us_1",
-          "title": "1. Hodnocení. Vyberu si pět cizích fotograﬁ í (např. z domácího nebo oddílového alba) a u každé zhodnotím, co se mi na ní líbí a jak by se dala vylepšit."
+          "title": "1. Hodnocení. Vyberu si pět cizích fotografií (např. z domácího nebo oddílového alba) a u každé zhodnotím, co se mi na ní líbí a jak by se dala vylepšit."
         },
         {
           "id": "us_2",
-          "title": "2. Panoramatická fotograﬁ e. Najdu zajímavý výhled na město nebo krajinu v okolí bydliště a na sérii 4 panoramatických fotograﬁ í jej zachytím v různých situacích (denní doba či roční období, svátky apod.). Pro sérii vymyslím jméno, fotograﬁ e nechám vytisknout a vystavím je v klubovně."
+          "title": "2. Panoramatická fotografie. Najdu zajímavý výhled na město nebo krajinu v okolí bydliště a na sérii 4 panoramatických fotografií jej zachytím v různých situacích (denní doba či roční období, svátky apod.). Pro sérii vymyslím jméno, fotografie nechám vytisknout a vystavím je v klubovně."
         },
         {
           "id": "us_3",
@@ -1470,7 +1457,7 @@
         },
         {
           "id": "us_4",
-          "title": "4. Graﬁ cké efekty. Na fotograﬁ i úspěšně vyzkouším pokročilejší graﬁ cký efekt (např. výraznou změnu barev nebo jasu, retuše, prolnutí několika snímků do jednoho, vytvoření koláže). Dvojici fotek před úpravou a po ní vystavím na oddílové nástěnce nebo webové galerii."
+          "title": "4. Grafické efekty. Na fotografii úspěšně vyzkouším pokročilejší grafický efekt (např. výraznou změnu barev nebo jasu, retuše, prolnutí několika snímků do jednoho, vytvoření koláže). Dvojici fotek před úpravou a po ní vystavím na oddílové nástěnce nebo webové galerii."
         },
         {
           "id": "us_5",
@@ -1482,43 +1469,43 @@
         },
         {
           "id": "us_7",
-          "title": "7. Doplňky k fotoaparátu. Své družině předvedu práci s fotoaparátem a vysvětlím použití nějakého rozšiřujícího příslušenství fotoaparátu (např. stativ, polarizační ﬁ ltr, externí blesk, předsádka nebo výměnné objektivy)."
+          "title": "7. Doplňky k fotoaparátu. Své družině předvedu práci s fotoaparátem a vysvětlím použití nějakého rozšiřujícího příslušenství fotoaparátu (např. stativ, polarizační filtr, externí blesk, předsádka nebo výměnné objektivy)."
         },
         {
           "id": "us_8",
-          "title": "8. Publikace. Nabídnu své fotograﬁ e k publikování ve skautských časopisech nebo se zúčastním některé z fotosoutěží (např. Polibek Múzy)."
+          "title": "8. Publikace. Nabídnu své fotografie k publikování ve skautských časopisech nebo se zúčastním některé z fotosoutěží (např. Polibek Múzy)."
         },
         {
           "id": "us_9",
-          "title": "9. Klasická fotograﬁ e. Na alespoň deseti fotograﬁ ích si vyzkouším focení fotoaparátem na klasický ﬁ lm. Zhodnotím, jaké možnosti a komplikace přinesl tento postup oproti focení na digitál. Fotograﬁ e nechám vyvolat přímo (drogerie, fotoateliéry apod.)."
+          "title": "9. Klasická fotografie. Na alespoň deseti fotografiích si vyzkouším focení fotoaparátem na klasický film. Zhodnotím, jaké možnosti a komplikace přinesl tento postup oproti focení na digitál. Fotografie nechám vyvolat přímo (drogerie, fotoateliéry apod.)."
         },
         {
           "id": "us_10",
-          "title": "10. Vyvolání ﬁ lmu. Vyvolám ﬁ lm ve fotokomoře. Během vyvolávání budu dodržovat bezpečnostní opatření, aby nedošlo k ohrožení zdraví. Zhodnotím, jaké možnosti a komplikace přinesl tento postup oproti přímému vyvolání ﬁ lmu ve fotolabu."
+          "title": "10. Vyvolání filmu. Vyvolám film ve fotokomoře. Během vyvolávání budu dodržovat bezpečnostní opatření, aby nedošlo k ohrožení zdraví. Zhodnotím, jaké možnosti a komplikace přinesl tento postup oproti přímému vyvolání filmu ve fotolabu."
         },
         {
           "id": "us_11",
-          "title": "11. Tematická série. Vytvořím tematickou sérii alespoň dvaceti fotograﬁ í (např. rostliny, zvířata, architektura apod.). Fotograﬁ e nechám vytisknout a vytvořím pro ně složku. Časem takto může vzniknout celý oddílový fotoatlas."
+          "title": "11. Tematická série. Vytvořím tematickou sérii alespoň dvaceti fotografií (např. rostliny, zvířata, architektura apod.). Fotografie nechám vytisknout a vytvořím pro ně složku. Časem takto může vzniknout celý oddílový fotoatlas."
         },
         {
           "id": "us_12",
-          "title": "12. Návštěva výstavy. Navštívím jednu fotograﬁ ckou výstavu (např. Czech Press Photo) nebo se zúčastním debaty s profesionálem či profesionálkou."
+          "title": "12. Návštěva výstavy. Navštívím jednu fotografickou výstavu (např. Czech Press Photo) nebo se zúčastním debaty s profesionálem či profesionálkou."
         },
         {
           "id": "us_13",
-          "title": "13. Moderní techniky. Na dvou fotograﬁ ích využiju techniky HDR (High Dynamic Range). Fotograﬁ e pořídím ve formátu RAW a popíšu jeho výhody."
+          "title": "13. Moderní techniky. Na dvou fotografiích využiju techniky HDR (High Dynamic Range). Fotografie pořídím ve formátu RAW a popíšu jeho výhody."
         },
         {
           "id": "us_14",
-          "title": "14. Hromadná úprava. Použiju alespoň dva programy na hromadné úpravy fotograﬁ í (přejmenování, změna velikosti, formátu). Vím, kdy se hodí jednotlivé úpravy provést."
+          "title": "14. Hromadná úprava. Použiju alespoň dva programy na hromadné úpravy fotografií (přejmenování, změna velikosti, formátu). Vím, kdy se hodí jednotlivé úpravy provést."
         },
         {
           "id": "us_15",
-          "title": "15. Fotograﬁ cký kurz. Zúčastním se fotograﬁ ckého kurzu."
+          "title": "15. Fotografický kurz. Zúčastním se fotografického kurzu."
         },
         {
           "id": "us_16",
-          "title": "16. Fotograﬁ e no ční oblohy. Vyzkouším si fotografování noční oblohy, hvězd nebo ohňostroje. Použiju správnou fotograﬁ ckou techniku."
+          "title": "16. Fotografie no ční oblohy. Vyzkouším si fotografování noční oblohy, hvězd nebo ohňostroje. Použiju správnou fotografickou techniku."
         },
         {
           "id": "us_17",
@@ -1533,11 +1520,10 @@
   },
   "fyzik": {
     "id": "fyzik",
+    "url": "fyzik",
     "name": "Fyzik",
     "category": "Přírodovědné",
     "description": "Ti, kteří chtějí získat tuto odborku, by měli prokázat znalost fyziky a zájem o ni. Měli by mít představu o základních principech fyziky i o významu fyziky pro člověka. Umí použít fyzikální zákony v běžném a skautském životě, provádět experimenty a orientovat se ve fyzikálních jednotkách.",
-    "icon": "data/nasivky/fyzik.png",
-    "methodology_url": "https://odborky.skauting.cz/fyzik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -1689,11 +1675,10 @@
   },
   "grafik": {
     "id": "grafik",
+    "url": "grafik",
     "name": "Grafik",
     "category": "Umělecké",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli chtít rozvíjet svůj estetický cit a kladný vztah k tvorbě vizuálních výstupů, převážně na počítači. Měli by být schopni pomoci oddílu/středisku s přípravou potřebných materiálů a vědět, co všechno to obnáší – od formování idejí přes přípravu podkladů a zpětnou vazbu až po závěrečný export.",
-    "icon": "data/nasivky/grafik.png",
-    "methodology_url": "https://odborky.skauting.cz/grafik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 1,
@@ -1712,7 +1697,7 @@
       "dokaz_to": [
         {
           "id": "dt_a",
-          "title": "A. Graﬁ cké šablony. Vytvořím a využiji tři graﬁ cké výstupy. Dva vytvořím z existujících generátorů na stránce generator.skaut.cz a další v nástroji Canva."
+          "title": "A. Grafické šablony. Vytvořím a využiji tři grafické výstupy. Dva vytvořím z existujících generátorů na stránce generator.skaut.cz a další v nástroji Canva."
         },
         {
           "id": "dt_b",
@@ -1720,15 +1705,15 @@
         },
         {
           "id": "dt_c",
-          "title": "C. Technické základy. Vytvořím výstupy v různých graﬁ ckých programech (jeden pro vektor, druhý pro rastr). Vysvětlím, proč jsem si vybral/a tyto programy. Vysvětlím, podle čeho se rozhodovat, jak v programech nastavit správné barevné modely nebo rozlišení výstupu."
+          "title": "C. Technické základy. Vytvořím výstupy v různých grafických programech (jeden pro vektor, druhý pro rastr). Vysvětlím, proč jsem si vybral/a tyto programy. Vysvětlím, podle čeho se rozhodovat, jak v programech nastavit správné barevné modely nebo rozlišení výstupu."
         },
         {
           "id": "dt_d",
-          "title": "D. Graﬁ ka na zadání. Se zadavatelem se domluvím na zadání graﬁ ky (funkce výstupu, formát, použití). Nadeﬁ nuji požadované podklady (texty, fotky, ilustrace), v případě potřeby využiji stažené podklady s licencí zdarma. Podle zadání a podkladů vytvořím graﬁ ku."
+          "title": "D. Grafika na zadání. Se zadavatelem se domluvím na zadání grafiky (funkce výstupu, formát, použití). Nadefinuji požadované podklady (texty, fotky, ilustrace), v případě potřeby využiji stažené podklady s licencí zdarma. Podle zadání a podkladů vytvořím grafiku."
         },
         {
           "id": "dt_e",
-          "title": "E. Skautský graﬁ cký manuál. Uvedu 5 příkladů ze Skautského graﬁ ckého manuálu a ukážu použití těchto pravidel na mých dílech."
+          "title": "E. Skautský grafický manuál. Uvedu 5 příkladů ze Skautského grafického manuálu a ukážu použití těchto pravidel na mých dílech."
         },
         {
           "id": "dt_f",
@@ -1738,15 +1723,15 @@
       "ukaz_se": [
         {
           "id": "us_1",
-          "title": "1. Tisk. Připravím graﬁ ku do tisku. Zvážím výběr materiálu, cenu, funkci, vyberu vhodnou tiskárnu, zjistím způsob odevzdání podkladů, a soubor odevzdám (ořezové značky, spadávka, správný barevný proﬁ l a kvalita fotek a obrázků)."
+          "title": "1. Tisk. Připravím grafiku do tisku. Zvážím výběr materiálu, cenu, funkci, vyberu vhodnou tiskárnu, zjistím způsob odevzdání podkladů, a soubor odevzdám (ořezové značky, spadávka, správný barevný profil a kvalita fotek a obrázků)."
         },
         {
           "id": "us_2",
-          "title": "2. Sociální sítě. Vytvořím graﬁ ku pro příspěvek nebo událost na sociálních sítích. Hlídám si potřebné rozměry a formáty, testuji čitelnost výstupů na různých zařízeních (počítač, telefon)."
+          "title": "2. Sociální sítě. Vytvořím grafiku pro příspěvek nebo událost na sociálních sítích. Hlídám si potřebné rozměry a formáty, testuji čitelnost výstupů na různých zařízeních (počítač, telefon)."
         },
         {
           "id": "us_3",
-          "title": "3. Podpora správce webu. Vytvořím drobné graﬁ cké výstupy (ikony, bannery, zpracování fotek ke kontaktům, …) pro web podle daných požadavk ů. Beru přitom v úvahu účel, rozměry i formát obrázků."
+          "title": "3. Podpora správce webu. Vytvořím drobné grafické výstupy (ikony, bannery, zpracování fotek ke kontaktům, …) pro web podle daných požadavk ů. Beru přitom v úvahu účel, rozměry i formát obrázků."
         },
         {
           "id": "us_4",
@@ -1758,23 +1743,23 @@
         },
         {
           "id": "us_6",
-          "title": "6. Zpěvník nebo časopis. Navrhnu a zrealizuji oddílový zpěvník nebo časopis. Vysvětlím, proč jsem zvolil/a vybraný font včetně jeho velikosti a jak jsem zamezil/a gramatickým a typograﬁ ckým chybám. Při tvorbě si hlídám zalamování slov, zarovnávání odstavců a učím se tvořit dle mřížky účaří."
+          "title": "6. Zpěvník nebo časopis. Navrhnu a zrealizuji oddílový zpěvník nebo časopis. Vysvětlím, proč jsem zvolil/a vybraný font včetně jeho velikosti a jak jsem zamezil/a gramatickým a typografickým chybám. Při tvorbě si hlídám zalamování slov, zarovnávání odstavců a učím se tvořit dle mřížky účaří."
         },
         {
           "id": "us_7",
-          "title": "7. Setkání. Navštívím výstavu nebo jinou událost (například workshop) související s graﬁ ckým designem. Kamarádovi či kamarádce sdělím, co mi přišlo na akci nejvíc přínosné a co jsem se naučil/a."
+          "title": "7. Setkání. Navštívím výstavu nebo jinou událost (například workshop) související s grafickým designem. Kamarádovi či kamarádce sdělím, co mi přišlo na akci nejvíc přínosné a co jsem se naučil/a."
         },
         {
           "id": "us_8",
-          "title": "8. Osobnost. Vyzkouším si techniky a postupy, které používají známé osobnosti graﬁ ckého designu: připravím plakát nebo jiný výstup ve stylu známého autora."
+          "title": "8. Osobnost. Vyzkouším si techniky a postupy, které používají známé osobnosti grafického designu: připravím plakát nebo jiný výstup ve stylu známého autora."
         },
         {
           "id": "us_9",
-          "title": "9. Historie. Družině představím 5 zajímavých faktů z vybrané oblasti historie graﬁ ckého designu. Můžu se zaměřit například na loga známých společností, první graﬁ cké programy apod."
+          "title": "9. Historie. Družině představím 5 zajímavých faktů z vybrané oblasti historie grafického designu. Můžu se zaměřit například na loga známých společností, první grafické programy apod."
         },
         {
           "id": "us_10",
-          "title": "10. Pomoc. Pomůžu někomu s graﬁ kou. Např. kamarádovi či kamarádce s typograﬁ ckými pravidly a formátováním školní práce, rodičům doma s důležitým dokumentem, prarodičům s řazením kuchařky aj."
+          "title": "10. Pomoc. Pomůžu někomu s grafikou. Např. kamarádovi či kamarádce s typografickými pravidly a formátováním školní práce, rodičům doma s důležitým dokumentem, prarodičům s řazením kuchařky aj."
         },
         {
           "id": "us_11",
@@ -1782,11 +1767,11 @@
         },
         {
           "id": "us_12",
-          "title": "12. Typograﬁ e. Připravím pro družinu typograﬁ ckou hru. Během hry se seznámíme s různými typy písma v učebnicích, knihách, webových stránkách, aplikacích atp. Poté společně diskutujeme, které písmo je na který formát nejvhodnější. Pozorujeme také, jestli má písmo českou diakritiku (háčky a čárky)."
+          "title": "12. Typografie. Připravím pro družinu typografickou hru. Během hry se seznámíme s různými typy písma v učebnicích, knihách, webových stránkách, aplikacích atp. Poté společně diskutujeme, které písmo je na který formát nejvhodnější. Pozorujeme také, jestli má písmo českou diakritiku (háčky a čárky)."
         },
         {
           "id": "us_13",
-          "title": "13. Typograﬁ cká pravidla. Posbírám 5 letáků, graﬁ ckých výstupů nebo reklamních příspěvků. Ukážu na nich družině, jak se správně píše datum a čas, jaký je rozdíl mezi pomlčkou a spojovníkem a další základní pravidla."
+          "title": "13. Typografická pravidla. Posbírám 5 letáků, grafických výstupů nebo reklamních příspěvků. Ukážu na nich družině, jak se správně píše datum a čas, jaký je rozdíl mezi pomlčkou a spojovníkem a další základní pravidla."
         },
         {
           "id": "us_14",
@@ -1798,11 +1783,11 @@
         },
         {
           "id": "us_16",
-          "title": "16. Zpětná vazba. Svůj výtvor pošlu do facebookové skupiny Bavíme se o skautské graﬁ ce a požádám o zpětnou vazbu. Po 3 dnech rady vyhodnotím, zvážím a na jejich základě výtvor upravím."
+          "title": "16. Zpětná vazba. Svůj výtvor pošlu do facebookové skupiny Bavíme se o skautské grafice a požádám o zpětnou vazbu. Po 3 dnech rady vyhodnotím, zvážím a na jejich základě výtvor upravím."
         },
         {
           "id": "us_17",
-          "title": "17. Rada ostatním. Dvakrát konstruktivně okomentuji výstupy ve facebookové skupině Bavíme se o skautské graﬁ ce."
+          "title": "17. Rada ostatním. Dvakrát konstruktivně okomentuji výstupy ve facebookové skupině Bavíme se o skautské grafice."
         },
         {
           "id": "us_18",
@@ -1817,11 +1802,10 @@
   },
   "historik": {
     "id": "historik",
+    "url": "historik",
     "name": "Historik",
     "category": "Humanitní",
     "description": "Ti, kteří usilují o tuto odborku, by měli rozvíjet schopnost vnímat minulost jako něco, co ovlivňuje přítomnost i budoucnost. Učí se hledat příběhy lidí a událostí, chápat souvislosti, trvání i změnu, vnímat různé dobové perspektivy a přemýšlet o tom, jak a proč si minulost připomínáme. POČTY KE SPLNĚNÍ ODBORKY (aktivity si vybírám sám po poradě s patronem/patronkou)",
-    "icon": "data/nasivky/historik.png",
-    "methodology_url": "https://odborky.skauting.cz/historik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 1,
@@ -1941,11 +1925,10 @@
   },
   "horolezec": {
     "id": "horolezec",
+    "url": "horolezec",
     "name": "Horolezec",
     "category": "Sportovní",
     "description": "Ti, kteří usilují o tuto odborku, by měli rádi lézt. Ať už na bouldery, překližky, led či skály. Při veškerém lezení musejí dodržovat pravidla bezpečnosti, mít zkušené patrony a patronky a ovládat první pomoc. Měli by se chtít zdokonalovat a rozšiřovat své znalosti.",
-    "icon": "data/nasivky/horolezec.png",
-    "methodology_url": "https://odborky.skauting.cz/horolezec/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -2054,7 +2037,7 @@
         },
         {
           "id": "us_15",
-          "title": "15. Horolezecká inspirace. Přečtu si knihu/ nebo se podívám na ﬁ lm s horolezeckou tématikou využiju ho jako symbolický rámec ke hře."
+          "title": "15. Horolezecká inspirace. Přečtu si knihu/ nebo se podívám na film s horolezeckou tématikou využiju ho jako symbolický rámec ke hře."
         },
         {
           "id": "us_16",
@@ -2081,11 +2064,10 @@
   },
   "hvezdar": {
     "id": "hvezdar",
+    "url": "hvezdar",
     "name": "Hvězdář",
     "category": "Přírodovědné",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli dokázat vnímat fenomén noční oblohy jako součást toho, co nás obklopuje. Měli by mít představu, jak vesmír vznikl, co se na obloze vyskytuje, a dokázat pro to zaujmout i oddíl (nebo tuto problematiku přiblížit). Měli by dokázat využít oblohu pro orientaci v čase a prostoru a vědět, jaká technika či fyzika může pomoci pro jejich určování.",
-    "icon": "data/nasivky/hvezdar.png",
-    "methodology_url": "https://odborky.skauting.cz/hvezdar/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -2178,7 +2160,7 @@
         },
         {
           "id": "us_13",
-          "title": "13. Vesmírné sci-ﬁ . Najdu a převyprávím sci-ﬁ příběh s vesmírným námětem. V družině se na základě doložených odborných údajů pobavíme, co je nebo by mohlo by být v budoucnu reálné, a co naopak ne."
+          "title": "13. Vesmírné sci-fi. Najdu a převyprávím sci-fi příběh s vesmírným námětem. V družině se na základě doložených odborných údajů pobavíme, co je nebo by mohlo by být v budoucnu reálné, a co naopak ne."
         },
         {
           "id": "us_14",
@@ -2205,11 +2187,10 @@
   },
   "jachtar": {
     "id": "jachtar",
+    "url": "jachtar",
     "name": "Jachtař",
     "category": "Vodácké",
     "description": "Ti, kteří usilují o tuto odborku, by měli dobře ovládat plachetnici, jezdit bezpečně, znát teorii plachtění a umět řešit i nestandardní situace.",
-    "icon": "data/nasivky/jachtar.png",
-    "methodology_url": "https://odborky.skauting.cz/jachtar/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 3,
@@ -2290,7 +2271,7 @@
         },
         {
           "id": "us_10",
-          "title": "10. Windsurﬁ ng. Zvládám jízdu na windsurfu."
+          "title": "10. Windsurfing. Zvládám jízdu na windsurfu."
         },
         {
           "id": "us_11",
@@ -2298,7 +2279,7 @@
         },
         {
           "id": "us_12",
-          "title": "12. Kniha nebo ﬁ lm. Přečtu knihu nebo shlédnu ﬁ lm s jachtařskou tématikou a využiju je jako symbolický rámec ke hře."
+          "title": "12. Kniha nebo film. Přečtu knihu nebo shlédnu film s jachtařskou tématikou a využiju je jako symbolický rámec ke hře."
         },
         {
           "id": "us_13",
@@ -2313,11 +2294,10 @@
   },
   "jazykar": {
     "id": "jazykar",
+    "url": "jazykar",
     "name": "Jazykář",
     "category": "Humanitní",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli ovládat cizí jazyk na komunikační úrovni a aktivně ho používat. Měli by komunikovat s kamarády a kamarádkami písemně i ústně (např. přes Facebook, Skype) a vyhledávat příležitosti, kde by své znalosti cizího jazyka mohli uplatnit. (3) (6) (11) HUMANITNÍ",
-    "icon": "data/nasivky/jazykar.png",
-    "methodology_url": "https://odborky.skauting.cz/jazykar/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -2366,7 +2346,7 @@
         },
         {
           "id": "us_3",
-          "title": "3. Nešťastné titulky. Připravím si krátkou prezentaci, ve které poukážu na největší nedostatky titulků (chybný překlad, chybějící překlad) u konkrétního ﬁ lmu nebo jednoho dílu seriálu."
+          "title": "3. Nešťastné titulky. Připravím si krátkou prezentaci, ve které poukážu na největší nedostatky titulků (chybný překlad, chybějící překlad) u konkrétního filmu nebo jednoho dílu seriálu."
         },
         {
           "id": "us_4",
@@ -2390,7 +2370,7 @@
         },
         {
           "id": "us_9",
-          "title": "9. Překlad povídky. Přeložím po dohodě s vůdcem či vůdkyní vybranou povídku z cizího jazyka, která ještě nebyla přeložená (např. fanﬁ kci či blog). Povídku posléze zveřejním (např. na svém blogu, případně ji přečtu nahlas přátelům atd.)."
+          "title": "9. Překlad povídky. Přeložím po dohodě s vůdcem či vůdkyní vybranou povídku z cizího jazyka, která ještě nebyla přeložená (např. fanfikci či blog). Povídku posléze zveřejním (např. na svém blogu, případně ji přečtu nahlas přátelům atd.)."
         },
         {
           "id": "us_10",
@@ -2445,11 +2425,10 @@
   },
   "jezisuvucednik": {
     "id": "jezisuvucednik",
+    "url": "jezisuv-kamarad",
     "name": "Ježíšův Učedník",
     "category": "Duchovní",
     "description": "Od těch, kteří by chtěli získat tuto odborku, se očekává schopnost hlubšího pochopení věrouky své církve a prohloubení křesťanské víry. Také schopnost srozumitelně vysvětlit, čemu a proč věří, co pro ně znamená Bůh a život v církvi. Měli by mít hlubší vhled do historie křesťanství.",
-    "icon": "data/nasivky/jezisuvucednik.png",
-    "methodology_url": "https://odborky.skauting.cz/jezisuvucednik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -2557,11 +2536,10 @@
   },
   "kouzelnik": {
     "id": "kouzelnik",
+    "url": "kouzelnik",
     "name": "Kouzelník",
     "category": "Umělecké",
     "description": "Ti, kteří plní tuto odborku, by měli být schopni zaujmout publikum kouzlením. Měli by zvládat pracovat s rekvizitami, doprovodit svá kouzla mluveným projevem či hudbou a sestavit vystoupení přiměřené publiku a prostoru. Zajímají se o kouzelnickou scénu a své kouzlení neustále vylepšují. KOUZELNÍK/KOUZELNICE",
-    "icon": "data/nasivky/kouzelnik.png",
-    "methodology_url": "https://odborky.skauting.cz/kouzelnik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -2630,7 +2608,7 @@
         },
         {
           "id": "us_7",
-          "title": "7. Proﬁ vystoupení. Navštívím kouzelnické vystoupení profesionálního kouzelníka či profesionální kouzelnice. Družině sdělím, co mě zaujalo a proč."
+          "title": "7. Profi vystoupení. Navštívím kouzelnické vystoupení profesionálního kouzelníka či profesionální kouzelnice. Družině sdělím, co mě zaujalo a proč."
         },
         {
           "id": "us_8",
@@ -2685,11 +2663,10 @@
   },
   "kuchar": {
     "id": "kuchar",
+    "url": "kuchar",
     "name": "Kuchař",
     "category": "Tábornicko-cestovatelské",
     "description": "Ti, kteří usilují o tuto odborku, by se měli rozvíjet v běžných kuchařských dovednostech a ve schopnostech mít na starosti vaření a zásobování na oddílových akcích. V neposlední řadě by měli prohlubovat svůj zájem o obor a předvádět ostatním svoje kuchařské umění.",
-    "icon": "data/nasivky/kuchar.png",
-    "methodology_url": "https://odborky.skauting.cz/kuchar/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -2849,11 +2826,10 @@
   },
   "kutil": {
     "id": "kutil",
+    "url": "kutil",
     "name": "Kutil",
     "category": "Technické",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli být nápomocni při praktické nebo technické péči o vybavení klubovny či střediska a při drobném kutění nejen na táboře.",
-    "icon": "data/nasivky/kutil.png",
-    "methodology_url": "https://odborky.skauting.cz/kutil/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -2973,11 +2949,10 @@
   },
   "mapar": {
     "id": "mapar",
+    "url": "mapar",
     "name": "Mapař",
     "category": "Tábornicko-cestovatelské",
     "description": "Ti, kteří usilují o tuto odborku, by měli rádi pracovat s různými mapami, orientovat se v terénu (mapa, buzola, GPS), umět pořídit plány a do nich promítnout nějakou charakteristiku v území, umět naplánovat trasu v ČR i v zahraničí (při použití různých internetových nástrojů) a připravit itinerář expedice v ČR i v zahraničí. Práci s mapou by měli využívat při oddílové činnosti a měli by s ní naučit pracovat i ostatní.",
-    "icon": "data/nasivky/mapar.png",
-    "methodology_url": "https://odborky.skauting.cz/mapar/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -3004,7 +2979,7 @@
         },
         {
           "id": "dt_c",
-          "title": "C. Geograﬁ cké informační systémy. Zjistím si, co jsou to geograﬁ cké informační systémy (GIS) a k čemu se používají. Postupně využiju alespoň pět různých map nebo informací z těchto systémů v programech pro oddíl."
+          "title": "C. Geografické informační systémy. Zjistím si, co jsou to geografické informační systémy (GIS) a k čemu se používají. Postupně využiju alespoň pět různých map nebo informací z těchto systémů v programech pro oddíl."
         },
         {
           "id": "dt_d",
@@ -3097,11 +3072,10 @@
   },
   "matematik": {
     "id": "matematik",
+    "url": "matematik",
     "name": "Matematik",
     "category": "Přírodovědné",
     "description": "Ti, kteří chtějí získat tuto odborku, by měli prokázat znalost matematiky a zájem o ni. Umí zařadit matematické operace do běžného a skautského života, tvořit tabulky, statisticky zpracovávat informace, zanést výsledky do grafu, luštit a vymýšlet šifry, rýsovat. Měli by mít představu o fungování matematiky a o významu matematiky pro člověka.",
-    "icon": "data/nasivky/matematik.png",
-    "methodology_url": "https://odborky.skauting.cz/matematik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -3253,11 +3227,10 @@
   },
   "mezinarodniskaut": {
     "id": "mezinarodniskaut",
+    "url": "mezinarodni-skaut",
     "name": "Mezinarodní Skaut",
     "category": "Život v oddíle",
     "description": "Ti, kteří usilují o tuto odborku, by se měli zajímat o mezinárodní dimenzi skautingu.",
-    "icon": "data/nasivky/mezinarodniskaut.png",
-    "methodology_url": "https://odborky.skauting.cz/mezinarodniskaut/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -3373,11 +3346,10 @@
   },
   "muzikant": {
     "id": "muzikant",
+    "url": "muzikant",
     "name": "Muzikant",
     "category": "Umělecké",
     "description": "Ti, kteří by chtěli splnit tuto odborku, by měli prokázat, že se hudbě aktivně věnují, chtějí se zdokonalovat ve hře na nástroj či ve zpěvu a že pro ně hudba představuje podstatnou hodnotu, která se promítá nejen v jejich vlastním životě, ale i do činnosti oddílu.",
-    "icon": "data/nasivky/muzikant.png",
-    "methodology_url": "https://odborky.skauting.cz/muzikant/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -3408,7 +3380,7 @@
         },
         {
           "id": "dt_d",
-          "title": "D. Skladatelská osobnost. Družině/oddílu představím zajímavou formou (např. komiks, hra, ﬁ ktivní rozhovor, vyprávění apod.) alespoň jednu českou a jednu zahraniční skladatelskou osobnost včetně historických souvislostí, životního osudu a ukázek."
+          "title": "D. Skladatelská osobnost. Družině/oddílu představím zajímavou formou (např. komiks, hra, fiktivní rozhovor, vyprávění apod.) alespoň jednu českou a jednu zahraniční skladatelskou osobnost včetně historických souvislostí, životního osudu a ukázek."
         },
         {
           "id": "dt_e",
@@ -3517,11 +3489,10 @@
   },
   "namornik": {
     "id": "namornik",
+    "url": "namornik",
     "name": "Námořník",
     "category": "Vodácké",
     "description": "Získání odborky předpokládá zájem o historii a současnost námořní plavby, resp. sportovního jachtingu. Ti, kteří usilují o tuto odborku, by si měli rozšiřovat obzor, v praxi pomáhat uplatňovat symbolickou a romantickou součást skautské výchovné metody v podobě hry na námořníky a být nápomocni při přípravě jednotlivců i posádek (družin) na plnění vybraných částí vodáckých doplňků skautské stezky.",
-    "icon": "data/nasivky/namornik.png",
-    "methodology_url": "https://odborky.skauting.cz/namornik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -3582,11 +3553,11 @@
         },
         {
           "id": "us_4",
-          "title": "4. Námět. Na základě přečtené knihy nebo zhlédnutého ﬁ lmu s námořní tematikou navrhnu hru a pomůžu ji uspořádat. Vysvětlím, jak a čím hra v námořnickém duchu pomáhá skautské výchově."
+          "title": "4. Námět. Na základě přečtené knihy nebo zhlédnutého filmu s námořní tematikou navrhnu hru a pomůžu ji uspořádat. Vysvětlím, jak a čím hra v námořnickém duchu pomáhá skautské výchově."
         },
         {
           "id": "us_5",
-          "title": "5. Příběh. Vhodně využiju v oddíle příběh některého českého námořníka, cestovatele, polárníka atp., případně uspořádám besedu s fotograﬁ emi či s účastí hosta."
+          "title": "5. Příběh. Vhodně využiju v oddíle příběh některého českého námořníka, cestovatele, polárníka atp., případně uspořádám besedu s fotografiemi či s účastí hosta."
         },
         {
           "id": "us_6",
@@ -3633,11 +3604,10 @@
   },
   "obcan": {
     "id": "obcan",
+    "url": "obcan",
     "name": "Občan",
     "category": "Humanitní",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli věřit, že „Pravda vítězí“, a zároveň se těšit ze zkoumání toho, co vše toto heslo znamenalo, znamená a může znamenat. Měli by být odhodláni s ostatními hledat spole čnou vizi a být schopni přispívat k jejímu uskutečňování. Svou cestu k hodnotnému občanství v demokratické společnosti pečlivě rozmýšlet a každý další krok podnikat s o to větší motivací.",
-    "icon": "data/nasivky/obcan.png",
-    "methodology_url": "https://odborky.skauting.cz/obcan/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 1,
@@ -3678,7 +3648,7 @@
         },
         {
           "id": "us_2",
-          "title": "2. Zkoumám konﬂ iktní situace. Po dobu jednoho týdne si budu zapisovat situace, ve kterých se ocitám a které vnímám jako konﬂ iktní. Na konci týdne si je projdu a zkusím pojmenovat, proč jsou pro mě konﬂ iktní. Zkusím si uvědomit, jak jsem se cítil/a a případně které hodnoty jsem vnímal/a jako ohrožené. Vybrané situace proberu se svým patronem a pobavíme se o tom, jak k nim lze přistupovat."
+          "title": "2. Zkoumám konfliktní situace. Po dobu jednoho týdne si budu zapisovat situace, ve kterých se ocitám a které vnímám jako konfliktní. Na konci týdne si je projdu a zkusím pojmenovat, proč jsou pro mě konfliktní. Zkusím si uvědomit, jak jsem se cítil/a a případně které hodnoty jsem vnímal/a jako ohrožené. Vybrané situace proberu se svým patronem a pobavíme se o tom, jak k nim lze přistupovat."
         },
         {
           "id": "us_3",
@@ -3741,11 +3711,10 @@
   },
   "obradnik": {
     "id": "obradnik",
+    "url": "obradnik",
     "name": "Obřadník",
     "category": "Život v oddíle",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli být oddílovým „vedoucím protokolu“. Měli by se vyznat v oddílových zvyklostech, tradicích a rituálech, hledat jejich hlubší význam a zajistit jejich p ředání mladším členům. Vedle toho by se měli orientovat v obřadech a rituálech i za hranicemi svého skautského oddílu.",
-    "icon": "data/nasivky/obradnik.png",
-    "methodology_url": "https://odborky.skauting.cz/obradnik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -3861,11 +3830,10 @@
   },
   "plavec": {
     "id": "plavec",
+    "url": "plavec",
     "name": "Plavec",
     "category": "Sportovní",
     "description": "Ti, kteří usilují o tuto odborku, by měli umět dobře plavat různými způsoby, u vody se chovat bezpečně, vědět, co se může stát, a dokázat pomoci tonoucímu.",
-    "icon": "data/nasivky/plavec.png",
-    "methodology_url": "https://odborky.skauting.cz/plavec/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -3973,11 +3941,10 @@
   },
   "polarnik": {
     "id": "polarnik",
+    "url": "polarnik",
     "name": "Polárník",
     "category": "Sportovní",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli umět pobývat v zimní krajině. Měli by se v ní umět pohybovat různými prostředky, nenechat se zaskočit drsným počasím, ale být naopak nápomocni méně zkušenějším kamarádům.",
-    "icon": "data/nasivky/polarnik.png",
-    "methodology_url": "https://odborky.skauting.cz/polarnik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 3,
@@ -4038,7 +4005,7 @@
         },
         {
           "id": "us_4",
-          "title": "4. Závody. Zúčastním se veřejného závodu v zimním prostředí (např. v běhu na lyžích, slalomu, …). Závod úsp ěšně dokončím bez diskvaliﬁ kace."
+          "title": "4. Závody. Zúčastním se veřejného závodu v zimním prostředí (např. v běhu na lyžích, slalomu, …). Závod úsp ěšně dokončím bez diskvalifikace."
         },
         {
           "id": "us_5",
@@ -4078,7 +4045,7 @@
         },
         {
           "id": "us_14",
-          "title": "14. Nebezpečí hor v příbězích. Zjistím, kdo to byli Hanč a Vrbata (dokument, článek, ﬁ lm). Navštívím místa spojená s osudným závodem v roce 1913 nebo navštívím jakýkoliv pomník lidem tragicky zemřelým v zimě v horách. Zjistím si o události vztahující se k pomníku podrobnosti."
+          "title": "14. Nebezpečí hor v příbězích. Zjistím, kdo to byli Hanč a Vrbata (dokument, článek, film). Navštívím místa spojená s osudným závodem v roce 1913 nebo navštívím jakýkoliv pomník lidem tragicky zemřelým v zimě v horách. Zjistím si o události vztahující se k pomníku podrobnosti."
         },
         {
           "id": "us_15",
@@ -4086,7 +4053,7 @@
         },
         {
           "id": "us_16",
-          "title": "16. Zimní umělecké tvoření. Umělecky ztvárním zimní putování (povídka, malba, série fotograﬁ í, …)."
+          "title": "16. Zimní umělecké tvoření. Umělecky ztvárním zimní putování (povídka, malba, série fotografií, …)."
         },
         {
           "id": "us_17",
@@ -4117,11 +4084,10 @@
   },
   "potapec": {
     "id": "potapec",
+    "url": "potapec",
     "name": "Potapěč",
     "category": "Vodácké",
     "description": "Ti, kteří usilují o tuto odborku, by měli prokázat znalosti a schopnosti při potápění se základní potápěčskou výstrojí (ABC – maska, ploutve, šnorchl). Měli by umět bezpečně pozorovat život pod hladinou (z hladiny nebo zanořováním se směrem ke dnu, v bazénu i ve volné vodě). Nezbytnými podmínkami pro plnění této odborky je schopnost umět plavat dvěma plaveckými styly (prsa a kraul) a nemít žádné zdravotní omezení s ohledem k potápění.",
-    "icon": "data/nasivky/potapec.png",
-    "methodology_url": "https://odborky.skauting.cz/potapec/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 4,
@@ -4229,11 +4195,10 @@
   },
   "poutnikzapravdou": {
     "id": "poutnikzapravdou",
+    "url": "poutnik-za-pravdou",
     "name": "Poutník Za Pravdou",
     "category": "Duchovní",
     "description": "Ti, kteří by chtěli získat tuto odborku, by se dlouhodobě měli věnovat poznání. Smyslem této odborky je podpořit skauty a skautky v touze „přicházet věcem na kloub“, učit je klást si otázku „Proč?“ a hledat na ni odpověď, vést je k odpovědnosti vůči Pravdě, které skauti slibují věrnou službu v první části skautského slibu. (3) (5) (8)",
-    "icon": "data/nasivky/poutnikzapravdou.png",
-    "methodology_url": "https://odborky.skauting.cz/poutnikzapravdou/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 1,
@@ -4278,7 +4243,7 @@
       "ukaz_se": [
         {
           "id": "us_1",
-          "title": "1. Můj odborný zájem. Vyberu si nějaký specializovaný časopis nebo magazín (např. Přírodovědci.cz, National Geograﬁ c, Lidé a Země, Živá historie, Hudební rozhledy, Forbes, Konstruktér, Ochrana přírody, Vesmír, Československý časopis pro fyziku a další), který pravidelně čtu v tištěné podobě nebo na internetu. Znám hlavní české osobnosti pracující v této odborné oblasti. Zúčastním se akce, na které je některá z těchto osobnostní hostem (přednáška, veřejná debata). Je-li to možné, získám kontakt a napíšu jí."
+          "title": "1. Můj odborný zájem. Vyberu si nějaký specializovaný časopis nebo magazín (např. Přírodovědci.cz, National Geografic, Lidé a Země, Živá historie, Hudební rozhledy, Forbes, Konstruktér, Ochrana přírody, Vesmír, Československý časopis pro fyziku a další), který pravidelně čtu v tištěné podobě nebo na internetu. Znám hlavní české osobnosti pracující v této odborné oblasti. Zúčastním se akce, na které je některá z těchto osobnostní hostem (přednáška, veřejná debata). Je-li to možné, získám kontakt a napíšu jí."
         },
         {
           "id": "us_2",
@@ -4290,7 +4255,7 @@
         },
         {
           "id": "us_4",
-          "title": "4. Lidské poznání. Lidské poznání má několik vzájemně propojených rovin: vědecké, ﬁ lozoﬁ cké, umělecké, zkušenostní a náboženské. Vyzkouším si dívat se na svět těmito všemi rovinami a zaměřím se na jejich přednosti i nedostatky. Např. při procházce po dešti se snažím dívat na život kolem sebe a ptát se: Jaký to má smysl? Jak to na mě působí? Jak to funguje? Vnímám někde přesah? O svých pozorováních se pobavím s patronem či patronkou a nějakým způsobem je zaznamenám (textově, výtvarně, hudebně)."
+          "title": "4. Lidské poznání. Lidské poznání má několik vzájemně propojených rovin: vědecké, filozofické, umělecké, zkušenostní a náboženské. Vyzkouším si dívat se na svět těmito všemi rovinami a zaměřím se na jejich přednosti i nedostatky. Např. při procházce po dešti se snažím dívat na život kolem sebe a ptát se: Jaký to má smysl? Jak to na mě působí? Jak to funguje? Vnímám někde přesah? O svých pozorováních se pobavím s patronem či patronkou a nějakým způsobem je zaznamenám (textově, výtvarně, hudebně)."
         },
         {
           "id": "us_5",
@@ -4302,15 +4267,15 @@
         },
         {
           "id": "us_7",
-          "title": "7. Bůh, Pravda a Láska. Vyberu si umělecké dílo nebo historickou událost, na které zkusím vysvětlit klukům a holkám v mém věku, jak vybrané náboženství nebo současný ﬁ lozoﬁ cký směr chápe některý z těchto pojmů: „Bůh“, „Pravda“ a „Láska“."
+          "title": "7. Bůh, Pravda a Láska. Vyberu si umělecké dílo nebo historickou událost, na které zkusím vysvětlit klukům a holkám v mém věku, jak vybrané náboženství nebo současný filozofický směr chápe některý z těchto pojmů: „Bůh“, „Pravda“ a „Láska“."
         },
         {
           "id": "us_8",
-          "title": "8. Vhled do ﬁ lozoﬁ e. Připravím aktivitu na zamyšlení se nad citáty slavných ﬁ lozofů a ﬁ lozofek. Na konci aktivity si účastníci zapíší citát, který je zaujal, a vědí, čím je zaujal."
+          "title": "8. Vhled do filozofie. Připravím aktivitu na zamyšlení se nad citáty slavných filozofů a filozofek. Na konci aktivity si účastníci zapíší citát, který je zaujal, a vědí, čím je zaujal."
         },
         {
           "id": "us_9",
-          "title": "9. Slavná osobnost ﬁ lozoﬁ e. Vyberu si jednoho ﬁ lozofa/ﬁ lozofku, zjistím informace o jeho/ /jejím životě a myšlenkách. Zajímavé texty zapojím do oddílových přemýšlivých programů a doplním je komentářem, aby je ostatní měli možnost pochopit."
+          "title": "9. Slavná osobnost filozofie. Vyberu si jednoho filozofa/filozofku, zjistím informace o jeho/ /jejím životě a myšlenkách. Zajímavé texty zapojím do oddílových přemýšlivých programů a doplním je komentářem, aby je ostatní měli možnost pochopit."
         },
         {
           "id": "us_10",
@@ -4322,7 +4287,7 @@
         },
         {
           "id": "us_12",
-          "title": "12. Kniha. Přečtu si zajímavou knížku o hledání pravdy (E. Zoller: Učíme děti ptát se a přemýšlet, J. Gaarder: Soﬁ in svět, J. Gaare: Pipi a Sokrates, …). M ůžu si nechat poradit patronem, patronkou nebo někým jiným."
+          "title": "12. Kniha. Přečtu si zajímavou knížku o hledání pravdy (E. Zoller: Učíme děti ptát se a přemýšlet, J. Gaarder: Sofiin svět, J. Gaare: Pipi a Sokrates, …). M ůžu si nechat poradit patronem, patronkou nebo někým jiným."
         },
         {
           "id": "us_13",
@@ -4353,11 +4318,10 @@
   },
   "programator": {
     "id": "programator",
+    "url": "programator",
     "name": "Programátor",
     "category": "Technické",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli rozumět počítačům na pokročilejší úrovni, znát základní datové struktury a algoritmy a umět využít programování k řešení problémů.",
-    "icon": "data/nasivky/programator.png",
-    "methodology_url": "https://odborky.skauting.cz/programator/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -4477,11 +4441,10 @@
   },
   "pruvodcekrestanskoukulturou": {
     "id": "pruvodcekrestanskoukulturou",
+    "url": "pruvodce-krestanskou-kulturou",
     "name": "Pruvodce Krestanskou Kulturou",
     "category": "Duchovní",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli mít hlubší vhled do tradic křesťanství a jeho základních směrů. Měli by pochopit hlavní křesťanské obřady a symboly a porozumět provázanosti křesťanství se západní kulturou.",
-    "icon": "data/nasivky/pruvodcekrestanskoukulturou.png",
-    "methodology_url": "https://odborky.skauting.cz/pruvodcekrestanskoukulturou/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -4526,7 +4489,7 @@
       "ukaz_se": [
         {
           "id": "us_1",
-          "title": "1. Velikonoční dny v obrazech. Připravím a do klubovny vyvěsím plakáty (vzniklé kresbou, koláží, pomocí počítačových graﬁ ckých programů, …), které budou p ředstavovat jednotlivé velikonoční dny a jejich souvislost s životem Ježíše Krista."
+          "title": "1. Velikonoční dny v obrazech. Připravím a do klubovny vyvěsím plakáty (vzniklé kresbou, koláží, pomocí počítačových grafických programů, …), které budou p ředstavovat jednotlivé velikonoční dny a jejich souvislost s životem Ježíše Krista."
         },
         {
           "id": "us_2",
@@ -4593,11 +4556,10 @@
   },
   "pestitel": {
     "id": "pestitel",
+    "url": "pestitel",
     "name": "Pěstitel",
     "category": "Přírodovědné",
     "description": "Ti, kteří by chtěli získat tuto odborku, by doma měli mít rostliny, o které se pravidelně starají, např. pokojové rostliny, rostliny na zahradě nebo na balkoně apod. Měli by umět vytvořit vhodné podmínky pro pěstování rostliny a dlouhodobě se o ně starat.",
-    "icon": "data/nasivky/pestitel.png",
-    "methodology_url": "https://odborky.skauting.cz/pestitel/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -4713,11 +4675,10 @@
   },
   "prirodovedec": {
     "id": "prirodovedec",
+    "url": "prirodovedec",
     "name": "Přírodovědec",
     "category": "Přírodovědné",
     "description": "Tato odborka je pro všechny se zájmem o živou i neživou přírodu – rostliny, živočichy i jiné organismy, o nerosty, zkameněliny, přírodní chemické látky apod. Ti, kdo by chtěli získat tuto odborku, by se měli specializovat – ať už ze systematického hlediska, z hlediska místního, nebo z hlediska stanoviště. Měli by systematicky zkoumat objekt svého zájmu, jak vzniká, jak se šíří, co jej ohrožuje apod. Měli by mít představu o jeho roli v přírodních vztazích a o jeho případném významu pro člověka.",
-    "icon": "data/nasivky/prirodovedec.png",
-    "methodology_url": "https://odborky.skauting.cz/prirodovedec/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -4736,7 +4697,7 @@
       "dokaz_to": [
         {
           "id": "dt_a",
-          "title": "A. Poznávání a pozorování. Při výpravě do přírody pozoruji vybrané přírodniny. Pozorování zaznamenám (např. formou zápisků, herbáře, fotogra- ﬁ í, sbírky, kresby). Nezapomenu si zapsat datum a místo svého pozorování."
+          "title": "A. Poznávání a pozorování. Při výpravě do přírody pozoruji vybrané přírodniny. Pozorování zaznamenám (např. formou zápisků, herbáře, fotogra- fií, sbírky, kresby). Nezapomenu si zapsat datum a místo svého pozorování."
         },
         {
           "id": "dt_b",
@@ -4790,7 +4751,7 @@
         },
         {
           "id": "us_10",
-          "title": "10. Podrobné pozorování. Z vybraný ch přírodnin si jednu zvolím a budu ji podrobně pozorovat (mikroskop, preparace, pitva, etologické pozorování, fyzikální a chemické vlastnosti apod.). Fotograﬁ e, nákresy, poznámky si můžu přidat do svého atlasu."
+          "title": "10. Podrobné pozorování. Z vybraný ch přírodnin si jednu zvolím a budu ji podrobně pozorovat (mikroskop, preparace, pitva, etologické pozorování, fyzikální a chemické vlastnosti apod.). Fotografie, nákresy, poznámky si můžu přidat do svého atlasu."
         },
         {
           "id": "us_11",
@@ -4806,7 +4767,7 @@
         },
         {
           "id": "us_14",
-          "title": "14. Přírodovědný ﬁ lm. Podívám se na přírodovědný ﬁ lm týkající se mé studované skupiny a zajímavé informace z něj zprostředkuji ostatním, např. převyprávím, sdílím s komentářem na sociální síti, blogu, v oddílovém časopisu apod."
+          "title": "14. Přírodovědný film. Podívám se na přírodovědný film týkající se mé studované skupiny a zajímavé informace z něj zprostředkuji ostatním, např. převyprávím, sdílím s komentářem na sociální síti, blogu, v oddílovém časopisu apod."
         },
         {
           "id": "us_15",
@@ -4829,11 +4790,10 @@
   },
   "reporter": {
     "id": "reporter",
+    "url": "reporter",
     "name": "Reportér",
     "category": "Humanitní",
-    "description": "Ti, kteří by chtěli získat tuto odborku, by měli znát rozdíl mezi publicistikou a zpravodajstvím a rozlišovat různé žurnalistické žánry. Měli by ovládat psaní článků i základní pořizování a úpravy zpravodajských fotograﬁ í a videí, zajímat se o dění ve svém okolí, sledovat média a chápat principy novinářské práce. Měli by umět informovat o skautingu i neskautskou veřejnost a využívat tradiční i moderní informační nástroje. (3) (8) (12)",
-    "icon": "data/nasivky/reporter.png",
-    "methodology_url": "https://odborky.skauting.cz/reporter/",
+    "description": "Ti, kteří by chtěli získat tuto odborku, by měli znát rozdíl mezi publicistikou a zpravodajstvím a rozlišovat různé žurnalistické žánry. Měli by ovládat psaní článků i základní pořizování a úpravy zpravodajských fotografií a videí, zajímat se o dění ve svém okolí, sledovat média a chápat principy novinářské práce. Měli by umět informovat o skautingu i neskautskou veřejnost a využívat tradiční i moderní informační nástroje. (3) (8) (12)",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 3,
@@ -4890,7 +4850,7 @@
         },
         {
           "id": "us_4",
-          "title": "4. Fotoreportáž. Znám způsoby vhodného zpracování fotograﬁ í. Vytvořím fotoreportáž z výpravy."
+          "title": "4. Fotoreportáž. Znám způsoby vhodného zpracování fotografií. Vytvořím fotoreportáž z výpravy."
         },
         {
           "id": "us_5",
@@ -4910,7 +4870,7 @@
         },
         {
           "id": "us_9",
-          "title": "9. Žurnalistika v praxi. Zhlédnu ﬁ lm s novinářskou tematikou (např. Spotlight, Vrtěti psem, Všichni prezidentovi muži, …) nebo p řečtu knihu o novinářské práci a promluvím o tom před družinou."
+          "title": "9. Žurnalistika v praxi. Zhlédnu film s novinářskou tematikou (např. Spotlight, Vrtěti psem, Všichni prezidentovi muži, …) nebo p řečtu knihu o novinářské práci a promluvím o tom před družinou."
         },
         {
           "id": "us_10",
@@ -4922,11 +4882,11 @@
         },
         {
           "id": "us_12",
-          "title": "12. Výstava a debata. Navštívím výstavu novinářských fotograﬁ í (např. Czech Press Photo) nebo debatu s novinářem či novinářkou."
+          "title": "12. Výstava a debata. Navštívím výstavu novinářských fotografií (např. Czech Press Photo) nebo debatu s novinářem či novinářkou."
         },
         {
           "id": "us_13",
-          "title": "13. Smartphone. Umím pro reportérskou práci využít výhody smartphonu. Natočím na smartphone rozhovor, vyfotím fotograﬁ e či natočím video, vše v telefonu upravím a zveřejním např. na sociálních sítích."
+          "title": "13. Smartphone. Umím pro reportérskou práci využít výhody smartphonu. Natočím na smartphone rozhovor, vyfotím fotografie či natočím video, vše v telefonu upravím a zveřejním např. na sociálních sítích."
         },
         {
           "id": "us_14",
@@ -4953,11 +4913,10 @@
   },
   "rukodelkar": {
     "id": "rukodelkar",
+    "url": "rukodelkar",
     "name": "Rukodělkař",
     "category": "Umělecké",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli rádi vyrábět různé výrobky z různých druhů materiálů. Měli by být tvořiví. Měli by umět vytvořit tradiční výrobky a také se zajímat o současné rukodělné trendy.",
-    "icon": "data/nasivky/rukodelkar.png",
-    "methodology_url": "https://odborky.skauting.cz/rukodelkar/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -5010,7 +4969,7 @@
         },
         {
           "id": "us_5",
-          "title": "5. Výrobky z tvrdnoucích materiálů. Vyrobím alespoň tři technicky odlišné výrobky z tvrdnoucích materiálů (hlína, sádra, modurit, ﬁ ma, …) za použití rozdílných technik. Výrobky představím družině a v případě zájmu společně vyrobíme něco podobného."
+          "title": "5. Výrobky z tvrdnoucích materiálů. Vyrobím alespoň tři technicky odlišné výrobky z tvrdnoucích materiálů (hlína, sádra, modurit, fima, …) za použití rozdílných technik. Výrobky představím družině a v případě zájmu společně vyrobíme něco podobného."
         },
         {
           "id": "us_6",
@@ -5034,7 +4993,7 @@
         },
         {
           "id": "us_11",
-          "title": "11. Kde se berou populární rukodělné nápady? Zjistím, kde vznikly alespoň tři nápady (např. náramky z gumiček, pletení z bužírek, ﬁ mo, náramky přátelství, …), u jaké v ěkové kategorie a proč jsou tolik úspěšné. Vyzkouším vytvořit alespoň tři výrobky, které mě zaujaly."
+          "title": "11. Kde se berou populární rukodělné nápady? Zjistím, kde vznikly alespoň tři nápady (např. náramky z gumiček, pletení z bužírek, fimo, náramky přátelství, …), u jaké v ěkové kategorie a proč jsou tolik úspěšné. Vyzkouším vytvořit alespoň tři výrobky, které mě zaujaly."
         },
         {
           "id": "us_12",
@@ -5057,11 +5016,10 @@
   },
   "sberatel": {
     "id": "sberatel",
+    "url": "sberatel",
     "name": "Sběratel",
     "category": "Humanitní",
     "description": "Ti, kteří by chtěli získat tuto odborku, by se měli zajímat o sběratelství (nemusí to být o stále stejný obor), vlastnit sbírku libovolných předmětů a prokázat, že ji mají uspořádanou, řádně o ni pečují, rozšiřují ji a dle možností i zpřístupňují druhým.",
-    "icon": "data/nasivky/sberatel.png",
-    "methodology_url": "https://odborky.skauting.cz/sberatel/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 3,
@@ -5189,11 +5147,10 @@
   },
   "spisovatel": {
     "id": "spisovatel",
+    "url": "spisovatel",
     "name": "Spisovatel",
     "category": "Umělecké",
     "description": "Ti, kteří by chtěli získat odborku, by měli ovládat český jazyk, tvořivě a rádi pracovat s textem. Text by měli umět podrobovat kritické analýze.",
-    "icon": "data/nasivky/spisovatel.png",
-    "methodology_url": "https://odborky.skauting.cz/spisovatel/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 3,
@@ -5216,7 +5173,7 @@
         },
         {
           "id": "dt_b",
-          "title": "B. Tvůrčí práce s textem. Připravím pro oddíl/družinu program, který bude zaměřený na tvůrčí práci s textem. Součástí programu bude i reﬂ exe výtvorů, které při programu vzniknou."
+          "title": "B. Tvůrčí práce s textem. Připravím pro oddíl/družinu program, který bude zaměřený na tvůrčí práci s textem. Součástí programu bude i reflexe výtvorů, které při programu vzniknou."
         },
         {
           "id": "dt_c",
@@ -5242,7 +5199,7 @@
         },
         {
           "id": "us_3",
-          "title": "3. Korektury. Podílím se na korekturách oddílového/střediskového/skautského časopisu, webu, výroční zprávy či jiných dokumentů, kde je třeba korektury pravopisu, typograﬁ e i stylistiky."
+          "title": "3. Korektury. Podílím se na korekturách oddílového/střediskového/skautského časopisu, webu, výroční zprávy či jiných dokumentů, kde je třeba korektury pravopisu, typografie i stylistiky."
         },
         {
           "id": "us_4",
@@ -5282,7 +5239,7 @@
         },
         {
           "id": "us_13",
-          "title": "13. Typograﬁ e. Znám základy typograﬁ e, používám různé druhy a typy písma. Při práci s PC je používám tak, aby to bylo v souladu s pravidly pro psaní textů."
+          "title": "13. Typografie. Znám základy typografie, používám různé druhy a typy písma. Při práci s PC je používám tak, aby to bylo v souladu s pravidly pro psaní textů."
         },
         {
           "id": "us_14",
@@ -5297,11 +5254,10 @@
   },
   "sportovec": {
     "id": "sportovec",
+    "url": "sportovec",
     "name": "Sportovec",
     "category": "Sportovní",
     "description": "Odborka je pro všechny, kteří rádi sportují, umějí ukázat silnou vůli, ochotu se rozvíjet, nevzdávat se a hrát fair play. Ti, kteří by chtěli získat tuto odborku, by si měli vybrat, pro který sport („můj sport“) odborku chtějí plnit.",
-    "icon": "data/nasivky/sportovec.png",
-    "methodology_url": "https://odborky.skauting.cz/sportovec/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -5332,7 +5288,7 @@
         },
         {
           "id": "dt_d",
-          "title": "D. Můj sport. Připravím pro svůj oddíl akci, kde si všichni budou moct vyzkoušet přiměřenou formou „můj sport“. Představím oddílu pravidla „mého sportu“ včetně konﬂ iktních situací, které mohou nastat. Vysvětlím pravidla fair play hry."
+          "title": "D. Můj sport. Připravím pro svůj oddíl akci, kde si všichni budou moct vyzkoušet přiměřenou formou „můj sport“. Představím oddílu pravidla „mého sportu“ včetně konfliktních situací, které mohou nastat. Vysvětlím pravidla fair play hry."
         },
         {
           "id": "dt_e",
@@ -5405,11 +5361,10 @@
   },
   "strazceprirody": {
     "id": "strazceprirody",
+    "url": "strazce-prirody",
     "name": "Strážce Přírody",
     "category": "Přírodovědné",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli mít zájem podílet se na ochraně přírody, chápat význam ochrany přírody a mít k tomu potřebné znalosti. Měli by znát chráněná území a chráněné druhy vybraného regionu (velikost a hranice si volí podle svého zájmu a možností), vědět, jak a proč se o ně pečuje a proč jsou chráněny. Zároveň by se měli vyznat v základních předpisech souvisejících s ochranou přírody a vědět, na koho se v případě potřeby obrátit.",
-    "icon": "data/nasivky/strazceprirody.png",
-    "methodology_url": "https://odborky.skauting.cz/strazceprirody/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -5458,7 +5413,7 @@
         },
         {
           "id": "us_2",
-          "title": "2. Účast na odborné exkurzi. Zúčastním se exkurze do zvláště chráněného území vedené někým, kdo daný region dobře zná. Během exkurze si udělám poznámky (například mohu udělat soubor fotograﬁ í s popisky), které potom představím družině, oddílu apod. Mohu se také dohodnout se strážcem/strážkyní přírody nebo jinou odpovědnou osobou v daném regionu a vyrazit s ním/ní alespoň na část dne do terénu."
+          "title": "2. Účast na odborné exkurzi. Zúčastním se exkurze do zvláště chráněného území vedené někým, kdo daný region dobře zná. Během exkurze si udělám poznámky (například mohu udělat soubor fotografií s popisky), které potom představím družině, oddílu apod. Mohu se také dohodnout se strážcem/strážkyní přírody nebo jinou odpovědnou osobou v daném regionu a vyrazit s ním/ní alespoň na část dne do terénu."
         },
         {
           "id": "us_3",
@@ -5505,11 +5460,10 @@
   },
   "tabornik": {
     "id": "tabornik",
+    "url": "tabornik",
     "name": "Tabornik",
     "category": "Tábornicko-cestovatelské",
     "description": "Ti, kteří usilují o tuto odborku, by měli být schopni pomoci při zajištění, stavbě a fungování tábora. Měli by také rámcově znát všechna důležitá pravidla pro zajištění tábora a být na táboře oporou vedení.",
-    "icon": "data/nasivky/tabornik.png",
-    "methodology_url": "https://odborky.skauting.cz/tabornik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -5621,11 +5575,10 @@
   },
   "tanecnik": {
     "id": "tanecnik",
+    "url": "tanecnik",
     "name": "Tanečník",
     "category": "Umělecké",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli mít pohybové a rytmické nadání a aktivně ho rozvíjet. Měli by mít rádi pohyb a hudbu, mít přehled o tanečních stylech, vnímat tanec jako společenský prostředek a umět se podle toho chovat. Měli by umět zapojit tanec při oddílové činnosti a dovést jej předávat dál (např. při tvorbě rozcviček, pohybových her apod.).",
-    "icon": "data/nasivky/tanecnik.png",
-    "methodology_url": "https://odborky.skauting.cz/tanecnik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -5652,7 +5605,7 @@
         },
         {
           "id": "dt_c",
-          "title": "C. Víc než taneční. Povedu správně partnerku ve standardu nebo se nechám vést partnerem a naučíme se dohromady alespoň 5 ﬁ gur do „latiny“ a „standardu“ min. ve dvou tancích."
+          "title": "C. Víc než taneční. Povedu správně partnerku ve standardu nebo se nechám vést partnerem a naučíme se dohromady alespoň 5 figur do „latiny“ a „standardu“ min. ve dvou tancích."
         },
         {
           "id": "dt_d",
@@ -5660,7 +5613,7 @@
         },
         {
           "id": "dt_e",
-          "title": "E. Učitel/ka tance. Na vhodně zvolenou hudbu naučím skupinu společnou taneční choreograﬁ i a při vhodné příležitosti ji předvedeme."
+          "title": "E. Učitel/ka tance. Na vhodně zvolenou hudbu naučím skupinu společnou taneční choreografii a při vhodné příležitosti ji předvedeme."
         },
         {
           "id": "dt_f",
@@ -5686,7 +5639,7 @@
         },
         {
           "id": "us_5",
-          "title": "5. Vystoupení. Nacvičím a posléze vystoupím ve skupině nebo individuálně s libovolnou choreograﬁ í."
+          "title": "5. Vystoupení. Nacvičím a posléze vystoupím ve skupině nebo individuálně s libovolnou choreografií."
         },
         {
           "id": "us_6",
@@ -5698,7 +5651,7 @@
         },
         {
           "id": "us_8",
-          "title": "8. Znám ﬁ gury. Naučím partnera/partnerku 5 ﬁ gur ve „standardu“ a 5 ﬁ gur do „latiny“. Předvedeme patronovi nebo patronce, družině, oddílu při vhodné příležitosti. Uvedený počet ﬁ gur musí být vždy minimálně ve dvou různých tancích."
+          "title": "8. Znám figury. Naučím partnera/partnerku 5 figur ve „standardu“ a 5 figur do „latiny“. Předvedeme patronovi nebo patronce, družině, oddílu při vhodné příležitosti. Uvedený počet figur musí být vždy minimálně ve dvou různých tancích."
         },
         {
           "id": "us_9",
@@ -5721,11 +5674,10 @@
   },
   "trosecnik": {
     "id": "trosecnik",
+    "url": "trosecnik",
     "name": "Trosečník",
     "category": "Tábornicko-cestovatelské",
     "description": "Ti, kteří by chtěli získat tuto odborku, by si měli v přírodě vystačit s naprostým minimem věcí. Měli by si umět zajistit základní lidské potřeby – teplo, sucho, jídlo, pití – s použitím toho, co najdou v přírodě.",
-    "icon": "data/nasivky/trosecnik.png",
-    "methodology_url": "https://odborky.skauting.cz/trosecnik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -5774,7 +5726,7 @@
         },
         {
           "id": "us_2",
-          "title": "2. Čistá voda. Oddílu představím způsoby uchovávání vody vzhledem k její trvanlivosti a způsoby její úpravy v případě přírodních zdrojů (ﬁ ltrování, čištění, teplota apod.)."
+          "title": "2. Čistá voda. Oddílu představím způsoby uchovávání vody vzhledem k její trvanlivosti a způsoby její úpravy v případě přírodních zdrojů (filtrování, čištění, teplota apod.)."
         },
         {
           "id": "us_3",
@@ -5814,7 +5766,7 @@
         },
         {
           "id": "us_12",
-          "title": "12. Trosečnická literatura, divadlo a ﬁ lm. Přečtu si alespoň dvě knihy, ve kterých vystupují trosečníci (jednu knihu mohu nahradit divadelní hrou nebo ﬁ lmem). Zajímavé myšlenky řeknu družině."
+          "title": "12. Trosečnická literatura, divadlo a film. Přečtu si alespoň dvě knihy, ve kterých vystupují trosečníci (jednu knihu mohu nahradit divadelní hrou nebo filmem). Zajímavé myšlenky řeknu družině."
         },
         {
           "id": "us_13",
@@ -5833,11 +5785,10 @@
   },
   "turistickypruvodce": {
     "id": "turistickypruvodce",
+    "url": "turisticky-pruvodce",
     "name": "Turistický Průvodce",
     "category": "Tábornicko-cestovatelské",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli umět naplánovat výpravy s oddílem a orientovat se v zajímavostech navštívené oblasti. M ěli by dokázat naplánovat trasu tak, aby byla nejen dostatečně fyzicky náročná, ale i naučná, zábavná a zajímavá. Měli by umět prezentovat oddílu zajímavosti navštěvované oblasti.",
-    "icon": "data/nasivky/turistickypruvodce.png",
-    "methodology_url": "https://odborky.skauting.cz/turistickypruvodce/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -5876,7 +5827,7 @@
         },
         {
           "id": "dt_f",
-          "title": "F. Vyprávění. Připravím pro oddíl vyprávění o vzdálenějším městě (ideálně zahraničním). Seznámím oddíl s památkami města, s vývojem města a s dochovanými stavbami dokládajícími tento vývoj až po současnost. Prezentaci vhodně doplním ukázkou fotogra- ﬁ í nebo videí z místa."
+          "title": "F. Vyprávění. Připravím pro oddíl vyprávění o vzdálenějším městě (ideálně zahraničním). Seznámím oddíl s památkami města, s vývojem města a s dochovanými stavbami dokládajícími tento vývoj až po současnost. Prezentaci vhodně doplním ukázkou fotogra- fií nebo videí z místa."
         },
         {
           "id": "dt_g",
@@ -5953,11 +5904,10 @@
   },
   "umelecprirody": {
     "id": "umelecprirody",
+    "url": "umelec-prirody",
     "name": "Umělec Přírody",
     "category": "Umělecké",
-    "description": "Ti, kteří by chtěli získat tuto odborku, by měli být schopni vnímat krásu přírody, umět tuto krásu zachytit, reﬂ ektovat a zprostředkovat ostatním. Měli by také dokázat esteticky propojit lidské umění a přírodu a umět připravit a uskutečnil kvalitní programy s přírodní tématikou.",
-    "icon": "data/nasivky/umelecprirody.png",
-    "methodology_url": "https://odborky.skauting.cz/umelecprirody/",
+    "description": "Ti, kteří by chtěli získat tuto odborku, by měli být schopni vnímat krásu přírody, umět tuto krásu zachytit, reflektovat a zprostředkovat ostatním. Měli by také dokázat esteticky propojit lidské umění a přírodu a umět připravit a uskutečnil kvalitní programy s přírodní tématikou.",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -5976,7 +5926,7 @@
       "dokaz_to": [
         {
           "id": "dt_a",
-          "title": "A. Pozorování přírody. Při vý pravě/ /výletu do přírody pozoruji okolí. Pozorování zaznamenám (např. formou zápisků, herbáře, fotograﬁ í, sbírky, kresby, …). Nezapomenu si zapsat datum a místo svého pozorování. Zkusím si o místě zjistit další informace (internet, literatura, vyprávění), které dokážu dát do kontextu k mému pozorování."
+          "title": "A. Pozorování přírody. Při vý pravě/ /výletu do přírody pozoruji okolí. Pozorování zaznamenám (např. formou zápisků, herbáře, fotografií, sbírky, kresby, …). Nezapomenu si zapsat datum a místo svého pozorování. Zkusím si o místě zjistit další informace (internet, literatura, vyprávění), které dokážu dát do kontextu k mému pozorování."
         },
         {
           "id": "dt_b",
@@ -5984,7 +5934,7 @@
         },
         {
           "id": "dt_c",
-          "title": "C. Propojení přírody a umění. Navštívím tři místa, kde se nacházejí umělecká díla v krajině (ať už prehistorická, historická nebo současná). Z každého z nich nafotím několik fotograﬁ í. Uspořádám malou výstavu nebo vytvořím kalendář."
+          "title": "C. Propojení přírody a umění. Navštívím tři místa, kde se nacházejí umělecká díla v krajině (ať už prehistorická, historická nebo současná). Z každého z nich nafotím několik fotografií. Uspořádám malou výstavu nebo vytvořím kalendář."
         },
         {
           "id": "dt_d",
@@ -6046,7 +5996,7 @@
         },
         {
           "id": "us_13",
-          "title": "13. Proměny. Vyberu si kousek přírody, který zaznamenávám v různých ročních obdobích (nebo za různého počasí). Typ záznamu je na mně (fotograﬁ e, kresba, popis, báseň, …). Jednotlivé části porovnám a vystavím si je (doma, v klubovně)."
+          "title": "13. Proměny. Vyberu si kousek přírody, který zaznamenávám v různých ročních obdobích (nebo za různého počasí). Typ záznamu je na mně (fotografie, kresba, popis, báseň, …). Jednotlivé části porovnám a vystavím si je (doma, v klubovně)."
         },
         {
           "id": "us_14",
@@ -6077,11 +6027,10 @@
   },
   "uzlar": {
     "id": "uzlar",
+    "url": "uzlar",
     "name": "Uzlař",
     "category": "Život v oddíle",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli ovládat uzlování a vyrábět z provázků, znát různé druhy provazů a provázků, trénovat chůzi na slackline. Neměla by jim být cizí práce s lanem, m ěli by umět postavit základní lanové překážky a dodržovat bezpe čnost při všech těchto aktivitách.",
-    "icon": "data/nasivky/uzlar.png",
-    "methodology_url": "https://odborky.skauting.cz/uzlar/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -6186,7 +6135,7 @@
         },
         {
           "id": "us_14",
-          "title": "14. Triky s lasem. Předvedu minimálně dvě z těchto ﬁ gur: štít, li ft , naskočení, vyskočení, točení okolo."
+          "title": "14. Triky s lasem. Předvedu minimálně dvě z těchto figur: štít, li ft , naskočení, vyskočení, točení okolo."
         },
         {
           "id": "us_15",
@@ -6217,11 +6166,10 @@
   },
   "vodak": {
     "id": "vodak",
+    "url": "vodak",
     "name": "Vodák",
     "category": "Vodácké",
     "description": "Ti, kteří usilují o tuto odborku, by měli umět ovládat loď na tekoucí vodě a prokázat znalosti zásad bezpečné plavby a organizace vodácké akce.",
-    "icon": "data/nasivky/vodak.png",
-    "methodology_url": "https://odborky.skauting.cz/vodak/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 3,
@@ -6357,11 +6305,10 @@
   },
   "vytvarnik": {
     "id": "vytvarnik",
+    "url": "vytvarnik",
     "name": "Výtvarník",
     "category": "Umělecké",
     "description": "Ti, kteří by chtěli získat tuto odborku, měli by se ve svém volném čase rádi věnovat vytváření vizuálního umění a pomocí svých děl prokázat své dovednosti. Měli by také umět přenést část svého umění do programu oddílu a nadchnout pro ně ostatní.",
-    "icon": "data/nasivky/vytvarnik.png",
-    "methodology_url": "https://odborky.skauting.cz/vytvarnik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 3,
@@ -6380,7 +6327,7 @@
       "dokaz_to": [
         {
           "id": "dt_a",
-          "title": "A. Kresba. Nakreslím min. pět různých obrázků na různě velké formáty papíru, v nichž využiji různé techniky (perokresba, kresba dřívkem, kresba štětcem, kresba ﬁ xem, pastelkami, kresba tužkou, pastelem, hrudkou, uhlem, …). Na záv ěr vysvětlím, k čemu se víc hodí která technika."
+          "title": "A. Kresba. Nakreslím min. pět různých obrázků na různě velké formáty papíru, v nichž využiji různé techniky (perokresba, kresba dřívkem, kresba štětcem, kresba fixem, pastelkami, kresba tužkou, pastelem, hrudkou, uhlem, …). Na záv ěr vysvětlím, k čemu se víc hodí která technika."
         },
         {
           "id": "dt_b",
@@ -6388,7 +6335,7 @@
         },
         {
           "id": "dt_c",
-          "title": "C. Graﬁ ka. Vytvořím alespoň čtyři díla, každé jinou technikou (xeroxová graﬁ ka, sítotisk, monotyp, linoryt, sádroryt, tisk z koláže, ze šablon, odkrývací techniky, rytá kresba, gumotisk, papíroryt, …). Vyberu si jednu gra ﬁ ku a tu natisknu např. na balicí papír, případně dopisní papír a obálky, které budu používat."
+          "title": "C. Grafika. Vytvořím alespoň čtyři díla, každé jinou technikou (xeroxová grafika, sítotisk, monotyp, linoryt, sádroryt, tisk z koláže, ze šablon, odkrývací techniky, rytá kresba, gumotisk, papíroryt, …). Vyberu si jednu gra fiku a tu natisknu např. na balicí papír, případně dopisní papír a obálky, které budu používat."
         },
         {
           "id": "dt_d",
@@ -6474,7 +6421,7 @@
         },
         {
           "id": "us_17",
-          "title": "17. Výtvarný kurz. Zúčastním se nějakého výtvarného kurzu (např. kurz ﬁ gurální kresby, kurz krajinomalby…)."
+          "title": "17. Výtvarný kurz. Zúčastním se nějakého výtvarného kurzu (např. kurz figurální kresby, kurz krajinomalby…)."
         },
         {
           "id": "us_18",
@@ -6493,11 +6440,10 @@
   },
   "zdravotnik": {
     "id": "zdravotnik",
+    "url": "zdravotnik",
     "name": "Zdravotník",
     "category": "Služba bližním",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli být schopni podat odbornou první pomoc přiměřeně svému věku, být schopni pomáhat zdravotníkovi či zdravotnici (příznaky, hygiena, samotná léčba) a umět tím být medicínsky užiteční svému okolí. Také by se měli zajímat o psychickou bezpečnost a zdraví svých kamarádů a kamarádek.",
-    "icon": "data/nasivky/zdravotnik.png",
-    "methodology_url": "https://odborky.skauting.cz/zdravotnik/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 3,
@@ -6536,7 +6482,7 @@
         },
         {
           "id": "dt_f",
-          "title": "F. Resuscitace. Předvedu na simulační ﬁ guríně KPR (kardiopulmonární resuscitaci)."
+          "title": "F. Resuscitace. Předvedu na simulační figuríně KPR (kardiopulmonární resuscitaci)."
         },
         {
           "id": "dt_g",
@@ -6558,7 +6504,7 @@
         },
         {
           "id": "us_3",
-          "title": "3. Znám lidské tělo. Zpracuji formou scénky, komiksu nebo krátkého ﬁ lmu činnost orgánových soustav v lidském těle – oběhové, trávicí, pohlavní, dýchací, vylučovací, nervové."
+          "title": "3. Znám lidské tělo. Zpracuji formou scénky, komiksu nebo krátkého filmu činnost orgánových soustav v lidském těle – oběhové, trávicí, pohlavní, dýchací, vylučovací, nervové."
         },
         {
           "id": "us_4",
@@ -6633,11 +6579,10 @@
   },
   "zachranar": {
     "id": "zachranar",
+    "url": "zachranar",
     "name": "Záchranář",
     "category": "Služba bližním",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli umět jednat v různých krizových situacích, znát zásady bezpečného pohybu v jednotlivých prostředích, umět své znalosti a zkušenosti předat v oddíle.",
-    "icon": "data/nasivky/zachranar.png",
-    "methodology_url": "https://odborky.skauting.cz/zachranar/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -6676,7 +6621,7 @@
         },
         {
           "id": "dt_f",
-          "title": "F. Nepřímá masáž srdce ( resuscitace). Vytvořím krátký článek (na nástěnku, do oddílového časopisu, …), ve kterém popíšu: kdy musím zahájit resuscitaci, průběh resuscitace, rozdíly při resuscitaci kojenců, dětí i dospělých. Předvedu resuscitaci na ﬁ guríně."
+          "title": "F. Nepřímá masáž srdce ( resuscitace). Vytvořím krátký článek (na nástěnku, do oddílového časopisu, …), ve kterém popíšu: kdy musím zahájit resuscitaci, průběh resuscitace, rozdíly při resuscitaci kojenců, dětí i dospělých. Předvedu resuscitaci na figuríně."
         },
         {
           "id": "dt_g",
@@ -6761,11 +6706,10 @@
   },
   "zalesak": {
     "id": "zalesak",
+    "url": "zalesak",
     "name": "Zálesák",
     "category": "Tábornicko-cestovatelské",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli být rádi v přírodě, umět v ní žít a souznít s ní. Měli by si umět uvařit chutná jídla na různých typech ohnišť, postavit si různorodé funkční přístřešky, při cestě se neztratit a prakticky využít znalosti o přírodě. V neposlední řadě by měli prokázat základní manuální zručnost.",
-    "icon": "data/nasivky/zalesak.png",
-    "methodology_url": "https://odborky.skauting.cz/zalesak/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -6889,11 +6833,10 @@
   },
   "ctenar": {
     "id": "ctenar",
+    "url": "ctenar",
     "name": "Čtenář",
     "category": "Humanitní",
     "description": "Ti, kteří by chtěli získat tuto odborku, by měli aktivně číst a uvědomovat si důležitost četby pro svůj běžný i skautský život. Dále by se měli vyznat v různých žánrech domácí i světové literatury, měli by tuto literaturu představit ve svém oddíle, využívat ji ve svém programu a znát i literaturu skautskou. (3) (7) (9) ČTENÁŘ/ČTENÁŘKA",
-    "icon": "data/nasivky/ctenar.png",
-    "methodology_url": "https://odborky.skauting.cz/ctenar/",
     "requirements": {
       "mladsi_skauti": {
         "dokaz_to": 2,
@@ -6966,7 +6909,7 @@
         },
         {
           "id": "us_9",
-          "title": "9. Adaptace. Podívám se na divadelní představení či ﬁ lm, který je adaptací knihy, kterou jsem přečetl/a. S patronem nebo patronkou si promluvím o tom, jaké rozdíly jsou mezi jednotlivými adaptacemi."
+          "title": "9. Adaptace. Podívám se na divadelní představení či film, který je adaptací knihy, kterou jsem přečetl/a. S patronem nebo patronkou si promluvím o tom, jaké rozdíly jsou mezi jednotlivými adaptacemi."
         },
         {
           "id": "us_10",
