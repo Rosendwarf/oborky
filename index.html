@@ -3,126 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skautské odborky - Tracker</title>
-    <link rel="stylesheet" href="style.css?v=7">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Přihlášení - Skautské odborky</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background-color: var(--bg-page); }
+        .auth-overlay { position: static; background: transparent; backdrop-filter: none; width: 100%; padding: 20px; }
+    </style>
 </head>
 <body>
-
-    <!-- Horní lišta -->
-    <header class="navbar">
-        <div class="container nav-content">
-            <div class="logo">
+    <div class="auth-overlay">
+        <div class="auth-card" style="margin: 0 auto;">
+            <div class="logo" style="justify-content: center; margin-bottom: 20px;">
                 <span class="logo-icon">⚜️</span>
                 <h1>Skautské odborky</h1>
             </div>
-            <div class="user-panel">
-                <!-- Přepínač Legacy režimu -->
-                <div class="legacy-switch">
-                    <label class="toggle-label" title="Přepnout mezi aktivními odborkami a odborkami ve výslužbě">
-                        <input type="checkbox" id="legacy-toggle"> 
-                        <span class="legacy-toggle-text">🏛️ Legacy (Výslužba)</span>
-                    </label>
+
+            <!-- Přihlašovací formulář -->
+            <form id="login-form" class="auth-form">
+                <h2>Přihlášení</h2>
+                <div class="form-group">
+                    <label>Přezdívka</label>
+                    <input type="text" id="login-prezdivka" required placeholder="Zadej svoji přezdívku">
                 </div>
-                <div class="age-selector">
-                    <label for="age-group-select">Kategorie:</label>
-                    <select id="age-group-select">
+                <div class="form-group">
+                    <label>Heslo</label>
+                    <input type="password" id="login-password" required placeholder="••••••••">
+                </div>
+                <div class="auth-error" id="login-error"></div>
+                <button type="submit" class="auth-btn">Přihlásit se</button>
+                <p class="auth-switch">Nemáš účet? <a href="#" id="to-register">Zaregistruj se</a></p>
+            </form>
+
+            <!-- Registrační formulář -->
+            <form id="register-form" class="auth-form" style="display: none;">
+                <h2>Registrace</h2>
+                <div class="form-group">
+                    <label>Přezdívka</label>
+                    <input type="text" id="reg-name" required placeholder="Přezdívka">
+                </div>
+                <div class="form-group">
+                    <label>Heslo</label>
+                    <input type="password" id="reg-password" required placeholder="••••••••">
+                </div>
+                <div class="form-group">
+                    <label>Věková kategorie</label>
+                    <select id="reg-category">
                         <option value="mladsi_skauti">Mladší skauti / skautky</option>
-                        <option value="starsi_skauti">Starší skauti / skautky</option>
+                        <option value="starsi_skauti" selected>Starší skauti / skautky</option>
                         <option value="roveri">Roveři a rangers</option>
                     </select>
                 </div>
-                <div class="user-greeting">Ahoj, <strong id="username-display">...</strong></div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hlavní obsah a filtry -->
-    <main class="container">
-        <section class="controls-section">
-            <div class="search-box">
-                <input type="text" id="search-input" placeholder="Hledat odborku podle názvu...">
-            </div>
-
-            <!-- Filtr podle stavu -->
-            <div class="filter-tabs" id="status-filters">
-                <button class="tab-btn active" data-status="all">Všechny</button>
-                <button class="tab-btn" data-status="chci_plnit">⭐ Seznam přání</button>
-                <button class="tab-btn" data-status="plnim">⏳ Právě plním</button>
-                <button class="tab-btn" data-status="splneno">✅ Hotové</button>
-            </div>
-
-            <!-- Filtr podle kategorie -->
-            <div class="category-filters" id="category-filters">
-                <!-- Generováno JS -->
-            </div>
-        </section>
-
-        <!-- Mřížka odborek -->
-        <section class="badges-grid" id="badges-grid">
-            <div class="loading">Načítám data z databáze a katalogu...</div>
-        </section>
-    </main>
-
-    <!-- Modální okno detailu odborky -->
-    <div class="modal-overlay" id="badge-modal">
-        <div class="modal-card">
-            <button class="modal-close" id="modal-close-btn">&times;</button>
-            
-            <div class="modal-header">
-                <div class="modal-badge-meta">
-                    <img id="modal-badge-icon" src="" alt="" class="modal-badge-icon" style="display: none;">
-                    <div>
-                        <div class="modal-meta-top" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 2px;">
-                            <span class="category-pill" id="modal-badge-category"></span>
-                            <a id="modal-methodology-link" href="#" target="_blank" class="modal-external-link" title="Zobrazit oficiální metodiku na odborky.skauting.cz">Oficiální web ↗</a>
-                            <a id="modal-junshop-link" href="#" target="_blank" class="modal-external-link" title="Koupit nášivku na Junshop.cz">Junshop 🛍️</a>
-                        </div>
-                        <h2 id="modal-badge-title">Název odborky</h2>
-                    </div>
-                </div>
-                <div class="modal-status-badge" id="modal-status-container">
-                    <!-- Dynamický stav generovaný JS -->
-                </div>
-            </div>
-
-            <p class="modal-description" id="modal-badge-desc"></p>
-
-            <div class="modal-progress-summary">
-                <div class="progress-box">
-                    <span>Dokaž to: <strong id="dt-progress-text">0 / 0</strong></span>
-                    <div class="progress-bar"><div class="progress-fill" id="dt-progress-bar"></div></div>
-                </div>
-                <div class="progress-box">
-                    <span>Ukaž se: <strong id="us-progress-text">0 / 0</strong></span>
-                    <div class="progress-bar"><div class="progress-fill" id="us-progress-bar"></div></div>
-                </div>
-            </div>
-
-            <div class="modal-tasks-container">
-                <!-- Dokaž to -->
-                <div class="task-section">
-                    <div class="task-section-header">
-                        <h3>DOKAŽ TO <span>(hlavní podmínky)</span></h3>
-                        <span class="req-label" id="dt-req-label"></span>
-                    </div>
-                    <ul class="task-list" id="dt-task-list"></ul>
-                </div>
-
-                <!-- Ukaž se -->
-                <div class="task-section">
-                    <div class="task-section-header">
-                        <h3>UKAŽ SE <span>(doplňující podmínky)</span></h3>
-                        <span class="req-label" id="us-req-label"></span>
-                    </div>
-                    <ul class="task-list" id="us-task-list"></ul>
-                </div>
-            </div>
+                <div class="auth-error" id="reg-error"></div>
+                <button type="submit" class="auth-btn">Založit účet</button>
+                <p class="auth-switch">Už máš účet? <a href="#" id="to-login">Přihlas se</a></p>
+            </form>
         </div>
     </div>
 
-    <script src="app.js?v=7"></script>
+    <script src="auth.js"></script>
 </body>
 </html>

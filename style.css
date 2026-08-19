@@ -42,7 +42,114 @@ body {
     padding: 0 20px;
 }
 
-/* Navbar */
+/* =========================================
+   ZÁKLADNÍ FORMULÁŘOVÉ PRVKY
+========================================= */
+select, input[type="text"], input[type="password"] {
+    font-family: inherit;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--text-main);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+select:focus, input[type="text"]:focus, input[type="password"]:focus {
+    border-color: var(--primary);
+}
+
+/* =========================================
+   PŘIHLAŠOVÁNÍ & REGISTRACE (auth)
+========================================= */
+.auth-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.auth-card {
+    background: #ffffff;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 420px;
+    padding: 32px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.auth-form h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text-main);
+}
+
+.auth-btn {
+    width: 100%;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+}
+
+.auth-btn:hover {
+    background: var(--primary-hover);
+}
+
+.auth-error {
+    color: #dc2626;
+    font-size: 13px;
+    margin-bottom: 12px;
+    text-align: center;
+    min-height: 18px;
+}
+
+.auth-switch {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 16px;
+}
+
+.auth-switch a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* =========================================
+   NAVIGACE & HORNÍ LIŠTA
+========================================= */
 .navbar {
     background-color: var(--bg-card);
     border-bottom: 1px solid var(--border);
@@ -122,29 +229,42 @@ body.legacy-mode-active .navbar {
     background-color: #fffbeb;
 }
 
-.age-selector {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-select, input[type="text"] {
-    font-family: inherit;
-    padding: 8px 12px;
+.settings-btn {
+    background: #f1f5f9;
     border: 1px solid var(--border);
+    color: #475569;
+    padding: 6px 12px;
     border-radius: 8px;
-    background: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.settings-btn:hover {
+    background: #e2e8f0;
     color: var(--text-main);
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.2s;
 }
 
-select:focus, input[type="text"]:focus {
-    border-color: var(--primary);
+.logout-btn {
+    background: #fee2e2;
+    border: 1px solid #fca5a5;
+    color: #991b1b;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
-/* Ovládací sekce */
+.logout-btn:hover {
+    background: #fecaca;
+}
+
+/* =========================================
+   FILTRY A OVLÁDÁNÍ
+========================================= */
 .controls-section {
     padding: 24px 0 16px;
     display: flex;
@@ -224,7 +344,9 @@ select:focus, input[type="text"]:focus {
     font-weight: 600;
 }
 
-/* Grid odborek */
+/* =========================================
+   MŘÍŽKA ODBOREK (Grid)
+========================================= */
 .badges-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -372,7 +494,9 @@ select:focus, input[type="text"]:focus {
     transition: width 0.3s;
 }
 
-/* Modální okno */
+/* =========================================
+   MODÁLNÍ OKNA (Detail a Nastavení)
+========================================= */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -456,7 +580,6 @@ select:focus, input[type="text"]:focus {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Externí odkazy v hlavičce modalu */
 .modal-external-link {
     font-size: 11px;
     font-weight: 600;
@@ -479,7 +602,7 @@ select:focus, input[type="text"]:focus {
     font-size: 24px;
     font-weight: 800;
     margin-top: 4px;
-    color: #0f172a;
+    color: var(--text-main);
 }
 
 .modal-status-badge {
@@ -490,7 +613,7 @@ select:focus, input[type="text"]:focus {
 
 .modal-description {
     font-size: 14px;
-    color: #475569;
+    color: var(--text-main);
     background: rgba(255, 255, 255, 0.7);
     border: 1px solid rgba(0, 0, 0, 0.05);
     padding: 14px 18px;
@@ -511,6 +634,9 @@ select:focus, input[type="text"]:focus {
     margin-bottom: 28px;
 }
 
+/* =========================================
+   ÚKOLY V MODALU (Task list)
+========================================= */
 .task-section {
     margin-bottom: 28px;
 }
@@ -610,13 +736,13 @@ select:focus, input[type="text"]:focus {
 .task-title {
     font-size: 14px;
     font-weight: 700;
-    color: #1e293b;
+    color: var(--text-main);
     cursor: pointer;
 }
 
 .task-body {
     font-size: 13px;
-    color: #475569;
+    color: var(--text-muted);
     line-height: 1.5;
     margin-top: 2px;
     cursor: pointer;
@@ -633,7 +759,6 @@ select:focus, input[type="text"]:focus {
     color: var(--text-muted);
 }
 
-/* Styly pro plánování jednotlivých úkolů (hvězdičky) */
 .task-actions {
     display: flex;
     align-items: center;
@@ -676,4 +801,127 @@ select:focus, input[type="text"]:focus {
     padding: 40px;
     text-align: center;
     color: var(--text-muted);
+}
+
+/* =========================================
+   TMAVÝ REŽIM (Dark Mode)
+========================================= */
+body.dark-mode {
+    --bg-page: #0f172a;
+    --bg-card: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: #334155;
+    
+    background-color: var(--bg-page);
+    color: var(--text-main);
+}
+
+body.dark-mode .auth-card,
+body.dark-mode .modal-card,
+body.dark-mode .badge-card,
+body.dark-mode .navbar,
+body.dark-mode .task-item,
+body.dark-mode select,
+body.dark-mode input[type="text"],
+body.dark-mode input[type="password"] {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    border-color: var(--border);
+}
+
+/* Ponechání barevných horních linek na kartách a modalech v dark módu */
+body.dark-mode .badge-card,
+body.dark-mode .modal-card {
+    border-top-color: var(--badge-theme-color, var(--primary));
+}
+
+body.dark-mode .navbar {
+    background-color: #0f172a;
+}
+
+body.dark-mode .badge-card.is-legacy {
+    background-color: #1a2234;
+}
+
+body.dark-mode .tab-btn,
+body.dark-mode .cat-btn,
+body.dark-mode .settings-btn,
+body.dark-mode .legacy-switch,
+body.dark-mode .task-plan-btn {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    border-color: var(--border);
+}
+
+body.dark-mode .tab-btn.active {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+body.dark-mode .tab-btn:hover,
+body.dark-mode .cat-btn:hover,
+body.dark-mode .settings-btn:hover,
+body.dark-mode .legacy-switch:hover {
+    background-color: #334155;
+}
+
+body.dark-mode .toggle-label {
+    color: var(--text-main);
+}
+
+body.dark-mode .modal-description {
+    background: rgba(0, 0, 0, 0.2);
+    color: #cbd5e1;
+    border-color: var(--border);
+}
+
+body.dark-mode .modal-progress-summary {
+    background: #1e293b;
+    border-color: var(--border);
+}
+
+body.dark-mode .modal-close {
+    background: var(--bg-card);
+    border-color: var(--border);
+}
+
+body.dark-mode .modal-close:hover {
+    background: var(--border);
+}
+
+body.dark-mode .req-label {
+    background: var(--bg-card);
+    border-color: var(--border);
+}
+
+body.dark-mode .task-item.completed {
+    background: #0f172a;
+    opacity: 0.6;
+}
+
+body.dark-mode .task-item.planned {
+    background: #27272a;
+    border-left-color: #d97706;
+}
+
+body.dark-mode .task-plan-btn.active {
+    background: #451a03;
+    border-color: #d97706;
+    color: #fbbf24;
+}
+
+body.dark-mode .modal-badge-meta h2 {
+    color: var(--text-main);
+}
+
+body.dark-mode .progress-bar {
+    background: #334155;
+}
+
+body.dark-mode select:focus, 
+body.dark-mode input[type="text"]:focus, 
+body.dark-mode input[type="password"]:focus {
+    border-color: var(--primary);
 }
