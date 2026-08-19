@@ -1,18 +1,20 @@
-/**
- * Frontend logika pro Skautské odborky Tracker (využití url šablony a id pro nášivky)
- */
+// Aplikování dark mode co nejdříve (zabrání probliknutí bílé barvy při načítání)
+if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+}
 
+// Přidány tmavé odstíny (darkBg) pro každou kategorii
 const CATEGORY_COLORS = {
-    'Umělecké': { color: '#d94e34', bg: '#fbeee9' },
-    'Technické': { color: '#7a3026', bg: '#f4eae9' },
-    'Tábornicko-cestovatelské': { color: '#2d7a5b', bg: '#e9f4ef' },
-    'Humanitní': { color: '#6b528e', bg: '#f1edf6' },
-    'Přírodovědné': { color: '#489a6b', bg: '#ecf7f0' },
-    'Služba bližním': { color: '#c83232', bg: '#faeaea' },
-    'Vodácké': { color: '#1d9dc7', bg: '#e7f6fb' },
-    'Sportovní': { color: '#2b5997', bg: '#eaeff7' },
-    'Život v oddíle': { color: '#d93d59', bg: '#fbecee' },
-    'Duchovní': { color: '#c99a3e', bg: '#faf5ea' }
+    'Umělecké': { color: '#d94e34', bg: '#fbeee9', darkBg: '#1c1514' },
+    'Technické': { color: '#7a3026', bg: '#f4eae9', darkBg: '#171312' },
+    'Tábornicko-cestovatelské': { color: '#2d7a5b', bg: '#e9f4ef', darkBg: '#111815' },
+    'Humanitní': { color: '#6b528e', bg: '#f1edf6', darkBg: '#16141a' },
+    'Přírodovědné': { color: '#489a6b', bg: '#ecf7f0', darkBg: '#131915' },
+    'Služba bližním': { color: '#c83232', bg: '#faeaea', darkBg: '#1a1212' },
+    'Vodácké': { color: '#1d9dc7', bg: '#e7f6fb', darkBg: '#11181c' },
+    'Sportovní': { color: '#2b5997', bg: '#eaeff7', darkBg: '#12161c' },
+    'Život v oddíle': { color: '#d93d59', bg: '#fbecee', darkBg: '#1c1315' },
+    'Duchovní': { color: '#c99a3e', bg: '#faf5ea', darkBg: '#1a1712' }
 };
 
 let state = {
@@ -22,11 +24,7 @@ let state = {
     ukolyStavy: {}, 
     badges: {},
     isLegacyMode: false,
-    filters: {
-        search: '',
-        status: 'all',
-        category: 'all'
-    },
+    filters: { search: '', status: 'all', category: 'all' },
     activeBadgeId: null
 };
 
@@ -34,7 +32,16 @@ async function initApp() {
     const grid = document.getElementById('badges-grid');
 
     try {
-        const apiRes = await fetch('api.php');
+        const apiRes = await fetch('api.php', {
+            method: 'GET',
+            credentials: 'include' 
+        });
+        
+        if (apiRes.status === 401) {
+            window.location.href = 'index.html';
+            return;
+        }
+
         if (!apiRes.ok) throw new Error(`api.php vrátilo kód ${apiRes.status}`);
         const apiData = await apiRes.json();
 
@@ -53,6 +60,15 @@ async function initApp() {
         setupHeader();
         setupLegacyToggle();
         setupEventListeners();
+        setupSettings();
+        
+        const logoutBtn = document.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', async () => {
+                await postApi({ akce: 'odhlasit' });
+                window.location.href = 'index.html';
+            });
+        }
         
         await loadBadgesCatalog(false);
 
@@ -72,33 +88,27 @@ async function initApp() {
 async function loadBadgesCatalog(isLegacy) {
     state.isLegacyMode = isLegacy;
     const jsonFile = isLegacy ? 'data/badges_legacy.json' : 'data/badges.json';
-
     const grid = document.getElementById('badges-grid');
     if (grid) grid.innerHTML = `<div class="loading">Načítám katalog odborek (${isLegacy ? 'Legacy' : 'Aktivní'})...</div>`;
 
     try {
         const res = await fetch(jsonFile);
-        if (!res.ok) throw new Error(`Nepodařilo se načíst ${jsonFile} (kód ${res.status})`);
+        if (!res.ok) throw new Error(`Nepodařilo se načíst ${jsonFile}`);
         state.badges = await res.json();
-
         state.filters.category = 'all';
 
         setupCategoryFilters();
         renderBadgesGrid();
         closeModal();
-
     } catch (err) {
-        console.error("Chyba při načítání katalogu odborek:", err);
-        if (grid) {
-            grid.innerHTML = `<div class="loading" style="color: #b91c1c;">Nepodařilo se načíst soubor ${jsonFile}. Ujisti se, že existuje.</div>`;
-        }
+        console.error("Chyba při načítání:", err);
+        if (grid) grid.innerHTML = `<div class="loading" style="color: #b91c1c;">Nepodařilo se načíst soubor ${jsonFile}.</div>`;
     }
 }
 
 function setupLegacyToggle() {
     const toggle = document.getElementById('legacy-toggle');
     if (!toggle) return;
-
     toggle.addEventListener('change', async (e) => {
         const legacyActive = e.target.checked;
         if (legacyActive) {
@@ -115,7 +125,7 @@ function setupHeader() {
     const nameEl = document.getElementById('username-display');
     if (nameEl) nameEl.textContent = state.user.prezdivka;
 
-    const ageSelect = document.getElementById('age-group-select');
+    const ageSelect = document.getElementById('settings-age-group');
     if (ageSelect) {
         ageSelect.value = state.user.vekova_kategorie;
         ageSelect.addEventListener('change', async (e) => {
@@ -127,6 +137,88 @@ function setupHeader() {
             }
             renderBadgesGrid();
             if (state.activeBadgeId) openBadgeModal(state.activeBadgeId);
+        });
+    }
+}
+
+function setupSettings() {
+    const settingsBtn = document.getElementById('settings-btn');
+    const settingsModal = document.getElementById('settings-modal');
+    const closeBtn = document.getElementById('settings-close-btn');
+    const pwdForm = document.getElementById('change-password-form');
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const togglePwdBtn = document.getElementById('toggle-password-btn');
+    const pwdSection = document.getElementById('password-section');
+    const toggleIcon = document.getElementById('toggle-password-icon');
+
+    if (settingsBtn) settingsBtn.addEventListener('click', () => settingsModal.classList.add('open'));
+    if (closeBtn) closeBtn.addEventListener('click', () => settingsModal.classList.remove('open'));
+    if (settingsModal) {
+        settingsModal.addEventListener('click', (e) => {
+            if (e.target.id === 'settings-modal') settingsModal.classList.remove('open');
+        });
+    }
+
+    // Rozbalování formuláře hesla
+    if (togglePwdBtn && pwdSection) {
+        togglePwdBtn.addEventListener('click', () => {
+            if (pwdSection.style.display === 'none') {
+                pwdSection.style.display = 'block';
+                toggleIcon.textContent = '▲';
+            } else {
+                pwdSection.style.display = 'none';
+                toggleIcon.textContent = '▼';
+            }
+        });
+    }
+
+    // Inicializace Dark Mode tlačítka a dynamická úprava barev pozadí
+    if (darkModeToggle) {
+        darkModeToggle.checked = document.body.classList.contains('dark-mode');
+        
+        darkModeToggle.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'true');
+                if (!state.isLegacyMode && state.filters.category !== 'all' && CATEGORY_COLORS[state.filters.category]) {
+                    document.body.style.backgroundColor = CATEGORY_COLORS[state.filters.category].darkBg;
+                }
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'false');
+                if (!state.isLegacyMode && state.filters.category !== 'all' && CATEGORY_COLORS[state.filters.category]) {
+                    document.body.style.backgroundColor = CATEGORY_COLORS[state.filters.category].bg;
+                }
+            }
+        });
+    }
+
+    if (pwdForm) {
+        pwdForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const stare_heslo = document.getElementById('old-password').value;
+            const nove_heslo = document.getElementById('new-password').value;
+            const errEl = document.getElementById('pwd-error');
+            const succEl = document.getElementById('pwd-success');
+            
+            errEl.textContent = '';
+            succEl.textContent = '';
+
+            const res = await postApi({ akce: 'zmenit_heslo', stare_heslo, nove_heslo });
+            
+            if (res && res.uspech) {
+                succEl.textContent = 'Heslo bylo úspěšně změněno!';
+                pwdForm.reset();
+                
+                // Po 3 sekundách skryjeme hlášku a zavřeme formulář
+                setTimeout(() => { 
+                    succEl.textContent = ''; 
+                    pwdSection.style.display = 'none';
+                    toggleIcon.textContent = '▼';
+                }, 3000);
+            } else {
+                errEl.textContent = res?.chyba || 'Došlo k chybě při změně hesla.';
+            }
         });
     }
 }
@@ -152,15 +244,18 @@ function setupCategoryFilters() {
             document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             state.filters.category = cat;
-
+            
+            // Změna pozadí (podle toho, zda je zapnutý tmavý režim)
             if (!state.isLegacyMode) {
                 if (cat !== 'all' && CATEGORY_COLORS[cat]) {
-                    document.body.style.backgroundColor = CATEGORY_COLORS[cat].bg;
+                    const isDark = document.body.classList.contains('dark-mode');
+                    document.body.style.backgroundColor = isDark ? CATEGORY_COLORS[cat].darkBg : CATEGORY_COLORS[cat].bg;
                 } else {
                     document.body.style.backgroundColor = '';
                 }
+            } else {
+                document.body.style.backgroundColor = '';
             }
-
             renderBadgesGrid();
         });
         container.appendChild(btn);
@@ -203,29 +298,19 @@ function calculateBadgeProgress(badgeId) {
     const ageGroup = state.user?.vekova_kategorie || 'starsi_skauti';
     const req = badge?.requirements?.[ageGroup] || { dokaz_to: 0, ukaz_se: 0 };
 
-    let dtCount = 0;
-    let dtPlanned = 0;
-    let usCount = 0;
-    let usPlanned = 0;
+    let dtCount = 0; let dtPlanned = 0;
+    let usCount = 0; let usPlanned = 0;
 
     (badge?.tasks?.dokaz_to || []).forEach(t => {
         const status = state.ukolyStavy[`${badgeId}:${t.id}`];
-        if (status === 'splneno') {
-            dtCount++;
-            dtPlanned++;
-        } else if (status === 'chci_plnit') {
-            dtPlanned++;
-        }
+        if (status === 'splneno') { dtCount++; dtPlanned++; }
+        else if (status === 'chci_plnit') { dtPlanned++; }
     });
 
     (badge?.tasks?.ukaz_se || []).forEach(t => {
         const status = state.ukolyStavy[`${badgeId}:${t.id}`];
-        if (status === 'splneno') {
-            usCount++;
-            usPlanned++;
-        } else if (status === 'chci_plnit') {
-            usPlanned++;
-        }
+        if (status === 'splneno') { usCount++; usPlanned++; }
+        else if (status === 'chci_plnit') { usPlanned++; }
     });
 
     const dtReq = req.dokaz_to;
@@ -237,55 +322,34 @@ function calculateBadgeProgress(badgeId) {
     const totalDone = Math.min(dtCount, dtReq) + Math.min(usCount, usReq);
     const percent = totalReq > 0 ? Math.round((totalDone / totalReq) * 100) : 0;
 
-    return { 
-        dtCount, dtPlanned, dtReq, 
-        usCount, usPlanned, usReq, 
-        percent, isComplete, hasAnyTask 
-    };
+    return { dtCount, dtPlanned, dtReq, usCount, usPlanned, usReq, percent, isComplete, hasAnyTask };
 }
 
 async function evaluateAndSyncBadgeStatus(badgeId, syncToServer = true) {
     const progress = calculateBadgeProgress(badgeId);
     let targetStatus = null;
 
-    if (progress.isComplete) {
-        targetStatus = 'splneno';
-    } else if (progress.hasAnyTask) {
-        targetStatus = 'plnim';
-    } else if (state.wishlistBadges.has(badgeId)) {
-        targetStatus = 'chci_plnit';
-    }
+    if (progress.isComplete) targetStatus = 'splneno';
+    else if (progress.hasAnyTask) targetStatus = 'plnim';
+    else if (state.wishlistBadges.has(badgeId)) targetStatus = 'chci_plnit';
 
     const currentStatus = state.stavyOdborek[badgeId] || null;
 
     if (targetStatus !== currentStatus) {
-        if (targetStatus) {
-            state.stavyOdborek[badgeId] = targetStatus;
-        } else {
-            delete state.stavyOdborek[badgeId];
-        }
+        if (targetStatus) state.stavyOdborek[badgeId] = targetStatus;
+        else delete state.stavyOdborek[badgeId];
 
         if (syncToServer) {
-            await postApi({
-                akce: 'nastavit_stav_odborky',
-                odborka_id: badgeId,
-                stav: targetStatus
-            });
+            await postApi({ akce: 'nastavit_stav_odborky', odborka_id: badgeId, stav: targetStatus });
         }
     }
 }
 
 async function toggleWishlist(badgeId, e) {
     if (e) e.stopPropagation();
-
-    const isCurrentlyWishlisted = state.wishlistBadges.has(badgeId);
-
-    if (isCurrentlyWishlisted) {
-        state.wishlistBadges.delete(badgeId);
-    } else {
-        state.wishlistBadges.add(badgeId);
-    }
-
+    if (state.wishlistBadges.has(badgeId)) state.wishlistBadges.delete(badgeId);
+    else state.wishlistBadges.add(badgeId);
+    
     await evaluateAndSyncBadgeStatus(badgeId, true);
     renderBadgesGrid();
     if (state.activeBadgeId === badgeId) updateModalHeaderStatus(badgeId);
@@ -297,20 +361,13 @@ function renderBadgesGrid() {
     container.innerHTML = '';
 
     const filtered = Object.values(state.badges).filter(b => {
-        if (state.filters.search) {
-            const badgeName = (b.name || '').toLowerCase();
-            if (!badgeName.includes(state.filters.search)) return false;
-        }
-
+        if (state.filters.search && !((b.name || '').toLowerCase().includes(state.filters.search))) return false;
         if (state.filters.category !== 'all' && b.category !== state.filters.category) return false;
-        
         if (state.filters.status !== 'all') {
             const currentStatus = state.stavyOdborek[b.id];
             if (state.filters.status === 'chci_plnit') {
                 if (!state.wishlistBadges.has(b.id)) return false;
-            } else if (currentStatus !== state.filters.status) {
-                return false;
-            }
+            } else if (currentStatus !== state.filters.status) return false;
         }
         return true;
     });
@@ -324,9 +381,7 @@ function renderBadgesGrid() {
         const progress = calculateBadgeProgress(b.id);
         const userStatus = state.stavyOdborek[b.id];
         const isWishlisted = state.wishlistBadges.has(b.id);
-        const theme = CATEGORY_COLORS[b.category] || { color: '#2d6a4f', bg: '#d8f3dc' };
-        
-        // Cesta k nášivce generovaná z ID
+        const theme = CATEGORY_COLORS[b.category] || { color: '#2d6a4f', bg: '#d8f3dc', darkBg: '#111815' };
         const iconPath = `data/nasivky/${b.id}.png`;
 
         const card = document.createElement('div');
@@ -340,9 +395,7 @@ function renderBadgesGrid() {
                     <span class="category-pill">${b.category} ${state.isLegacyMode ? ' (Výslužba)' : ''}</span>
                     <div class="card-top-right">
                         ${userStatus && userStatus !== 'chci_plnit' ? `<span class="status-badge status-${userStatus}">${getStatusName(userStatus)}</span>` : ''}
-                        <button class="star-btn ${isWishlisted ? 'active' : ''}" title="${isWishlisted ? 'Odebrat ze seznamu přání' : 'Přidat do seznamu přání'}">
-                            ${isWishlisted ? '★' : '☆'}
-                        </button>
+                        <button class="star-btn ${isWishlisted ? 'active' : ''}" title="Seznam přání">${isWishlisted ? '★' : '☆'}</button>
                     </div>
                 </div>
                 <div class="card-header-main">
@@ -355,15 +408,11 @@ function renderBadgesGrid() {
             </div>
             <div class="progress-box">
                 <span><span>Postup:</span> <strong>${progress.percent}%</strong></span>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: ${progress.percent}%;"></div>
-                </div>
+                <div class="progress-bar"><div class="progress-fill" style="width: ${progress.percent}%;"></div></div>
             </div>
         `;
-
         card.querySelector('.star-btn').addEventListener('click', (e) => toggleWishlist(b.id, e));
         card.addEventListener('click', () => openBadgeModal(b.id));
-
         container.appendChild(card);
     });
 }
@@ -371,8 +420,8 @@ function renderBadgesGrid() {
 function openBadgeModal(badgeId) {
     state.activeBadgeId = badgeId;
     const badge = state.badges[badgeId];
-    const modal = document.getElementById('badge-modal');
     const theme = CATEGORY_COLORS[badge.category] || { color: '#2d6a4f', bg: '#d8f3dc' };
+    const modal = document.getElementById('badge-modal');
 
     modal.style.setProperty('--badge-theme-color', state.isLegacyMode ? '#b45309' : theme.color);
     modal.style.setProperty('--badge-theme-bg', state.isLegacyMode ? '#fef3c7' : theme.bg);
@@ -381,13 +430,8 @@ function openBadgeModal(badgeId) {
     modalIcon.src = `data/nasivky/${badge.id}.png`;
     modalIcon.style.display = 'block';
 
-    // Generování URL z uložené url šablony
-    const methodologyLink = document.getElementById('modal-methodology-link');
-    methodologyLink.href = `https://odborky.skauting.cz/odborka/${badge.url}/`;
-
-    const junshopLink = document.getElementById('modal-junshop-link');
-    junshopLink.href = `https://www.junshop.cz/odborka-${badge.url}`;
-
+    document.getElementById('modal-methodology-link').href = `https://odborky.skauting.cz/odborka/${badge.url}/`;
+    document.getElementById('modal-junshop-link').href = `https://www.junshop.cz/odborka-${badge.url}`;
     document.getElementById('modal-badge-category').textContent = badge.category + (state.isLegacyMode ? ' (Ve výslužbě)' : '');
     document.getElementById('modal-badge-title').textContent = badge.name;
     document.getElementById('modal-badge-desc').textContent = badge.description;
@@ -395,7 +439,6 @@ function openBadgeModal(badgeId) {
     updateModalHeaderStatus(badgeId);
     renderModalTasks(badge);
     updateModalProgress(badgeId);
-
     modal.classList.add('open');
 }
 
@@ -406,20 +449,15 @@ function updateModalHeaderStatus(badgeId) {
 
     container.innerHTML = `
         ${userStatus && userStatus !== 'chci_plnit' ? `<span class="status-badge status-${userStatus}">${getStatusName(userStatus)}</span>` : ''}
-        <button class="star-btn ${isWishlisted ? 'active' : ''}" id="modal-star-btn" style="font-size: 24px;" title="${isWishlisted ? 'Odebrat ze seznamu přání' : 'Přidat do seznamu přání'}">
-            ${isWishlisted ? '★' : '☆'}
-        </button>
+        <button class="star-btn ${isWishlisted ? 'active' : ''}" id="modal-star-btn" style="font-size: 24px;">${isWishlisted ? '★' : '☆'}</button>
     `;
-
     document.getElementById('modal-star-btn').addEventListener('click', (e) => toggleWishlist(badgeId, e));
 }
 
 function renderModalTasks(badge) {
     const dtList = document.getElementById('dt-task-list');
     const usList = document.getElementById('us-task-list');
-
-    dtList.innerHTML = '';
-    usList.innerHTML = '';
+    dtList.innerHTML = ''; usList.innerHTML = '';
 
     const renderList = (tasks, container, isDokazTo) => {
         (tasks || []).forEach((task, idx) => {
@@ -438,10 +476,7 @@ function renderModalTasks(badge) {
             }
 
             let cleanTitle = task.title.replace(/^[A-Z0-9]{1,2}[\.\)]\s*/, '').trim();
-            
-            let titlePart = "";
-            let bodyPart = "";
-
+            let titlePart = "", bodyPart = "";
             const firstSentenceMatch = cleanTitle.match(/^(.+?[\.!?])(\s+[\s\S]*)$/);
             
             if (firstSentenceMatch && firstSentenceMatch[1].length < 60) {
@@ -454,14 +489,13 @@ function renderModalTasks(badge) {
                     bodyPart = words.slice(4).join(' ');
                 } else {
                     titlePart = cleanTitle;
-                    bodyPart = '';
                 }
             }
 
             const li = document.createElement('li');
             li.className = `task-item ${isChecked ? 'completed' : ''} ${isPlanned ? 'planned' : ''}`;
             li.innerHTML = `
-                <input type="checkbox" id="chk_${task.id}" ${isChecked ? 'checked' : ''} title="Označit jako splněné">
+                <input type="checkbox" id="chk_${task.id}" ${isChecked ? 'checked' : ''}>
                 <div class="task-content">
                     <div class="task-header">
                         <span class="task-badge-tag">${tagSymbol}</span>
@@ -470,9 +504,7 @@ function renderModalTasks(badge) {
                     ${bodyPart ? `<label class="task-body" for="chk_${task.id}">${bodyPart}</label>` : ''}
                 </div>
                 <div class="task-actions">
-                    <button class="task-plan-btn ${isPlanned ? 'active' : ''}" title="${isPlanned ? 'Odebrat z plánu plnění' : 'Chci plnit (přidat do plánu)'}">
-                        ⭐
-                    </button>
+                    <button class="task-plan-btn ${isPlanned ? 'active' : ''}">⭐</button>
                 </div>
             `;
 
@@ -482,27 +514,16 @@ function renderModalTasks(badge) {
 
                 if (checked) {
                     state.ukolyStavy[key] = 'splneno';
-                    li.classList.add('completed');
-                    li.classList.remove('planned');
+                    li.classList.add('completed'); li.classList.remove('planned');
                 } else {
                     delete state.ukolyStavy[key];
                     li.classList.remove('completed');
                 }
+                li.querySelector('.task-plan-btn').classList.remove('active');
 
-                const planBtn = li.querySelector('.task-plan-btn');
-                planBtn.classList.remove('active');
-
-                await postApi({
-                    akce: 'prepnout_ukol',
-                    odborka_id: badge.id,
-                    ukol_id: task.id,
-                    stav: newStatus
-                });
-
+                await postApi({ akce: 'prepnout_ukol', odborka_id: badge.id, ukol_id: task.id, stav: newStatus });
                 await evaluateAndSyncBadgeStatus(badge.id, true);
-                updateModalProgress(badge.id);
-                updateModalHeaderStatus(badge.id);
-                renderBadgesGrid();
+                updateModalProgress(badge.id); updateModalHeaderStatus(badge.id); renderBadgesGrid();
             });
 
             li.querySelector('.task-plan-btn').addEventListener('click', async () => {
@@ -510,35 +531,21 @@ function renderModalTasks(badge) {
                 const newStatus = currentlyPlanned ? null : 'chci_plnit';
 
                 if (currentlyPlanned) {
-                    delete state.ukolyStavy[key];
-                    li.classList.remove('planned');
+                    delete state.ukolyStavy[key]; li.classList.remove('planned');
                 } else {
                     state.ukolyStavy[key] = 'chci_plnit';
-                    li.classList.add('planned');
+                    li.classList.add('planned'); li.classList.remove('completed');
                     li.querySelector('input').checked = false;
-                    li.classList.remove('completed');
                 }
+                li.querySelector('.task-plan-btn').classList.toggle('active', !currentlyPlanned);
 
-                const planBtn = li.querySelector('.task-plan-btn');
-                planBtn.classList.toggle('active', !currentlyPlanned);
-
-                await postApi({
-                    akce: 'prepnout_ukol',
-                    odborka_id: badge.id,
-                    ukol_id: task.id,
-                    stav: newStatus
-                });
-
+                await postApi({ akce: 'prepnout_ukol', odborka_id: badge.id, ukol_id: task.id, stav: newStatus });
                 await evaluateAndSyncBadgeStatus(badge.id, true);
-                updateModalProgress(badge.id);
-                updateModalHeaderStatus(badge.id);
-                renderBadgesGrid();
+                updateModalProgress(badge.id); updateModalHeaderStatus(badge.id); renderBadgesGrid();
             });
-
             container.appendChild(li);
         });
     };
-
     renderList(badge.tasks?.dokaz_to, dtList, true);
     renderList(badge.tasks?.ukaz_se, usList, false);
 }
@@ -549,21 +556,16 @@ function updateModalProgress(badgeId) {
     const ageGroup = state.user?.vekova_kategorie || 'starsi_skauti';
     const req = badge?.requirements?.[ageGroup] || { dokaz_to: 0, ukaz_se: 0 };
 
-    const dtReq = req.dokaz_to > 0 ? req.dokaz_to : 1;
-    const usReq = req.ukaz_se > 0 ? req.ukaz_se : 1;
-
     document.getElementById('dt-progress-text').textContent = `${progress.dtCount} (plán: ${progress.dtPlanned}) / ${req.dokaz_to}`;
-    updateDualProgressBar('dt', progress.dtCount, progress.dtPlanned, dtReq);
+    updateDualProgressBar('dt', progress.dtCount, progress.dtPlanned, req.dokaz_to > 0 ? req.dokaz_to : 1);
 
     document.getElementById('us-progress-text').textContent = `${progress.usCount} (plán: ${progress.usPlanned}) / ${req.ukaz_se}`;
-    updateDualProgressBar('us', progress.usCount, progress.usPlanned, usReq);
+    updateDualProgressBar('us', progress.usCount, progress.usPlanned, req.ukaz_se > 0 ? req.ukaz_se : 1);
 }
 
-function updateDualProgressBar(type, count, planned, targetReq) {
-    const targetSafe = targetReq > 0 ? targetReq : 1;
+function updateDualProgressBar(type, count, planned, targetSafe) {
     const plannedPercent = Math.min(100, Math.round((planned / targetSafe) * 100));
     const donePercent = Math.min(100, Math.round((count / targetSafe) * 100));
-
     let barContainer = document.getElementById(`${type}-progress-bar-container`);
     
     if (!barContainer) {
@@ -575,7 +577,6 @@ function updateDualProgressBar(type, count, planned, targetReq) {
             </div>
         `;
     }
-
     document.getElementById(`${type}-planned-fill`).style.width = `${plannedPercent}%`;
     document.getElementById(`${type}-done-fill`).style.width = `${donePercent}%`;
 }
@@ -590,6 +591,7 @@ async function postApi(data) {
         const res = await fetch('api.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
+            credentials: 'include', 
             body: JSON.stringify(data)
         });
         return await res.json();
@@ -599,7 +601,6 @@ async function postApi(data) {
 }
 
 function getStatusName(status) {
-    status = status || '';
     switch (status) {
         case 'chci_plnit': return '⭐ Wishlist';
         case 'plnim': return '⏳ Plním';
@@ -608,8 +609,5 @@ function getStatusName(status) {
     }
 }
 
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initApp);
-} else {
-    initApp();
-}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initApp);
+else initApp();
