@@ -25,6 +25,8 @@
                         <span class="legacy-toggle-text">🏛️ Legacy (Výslužba)</span>
                     </label>
                 </div>
+                <!-- Přidané tlačítko pro rychlý přechod do skupiny -->
+                <button id="header-group-btn" class="settings-btn" style="display: none; background: var(--primary); color: white; border: none;">🏕️ Moje skupina</button>
                 <button id="settings-btn" class="settings-btn" title="Nastavení profilu">⚙️ Nastavení</button>
                 <div class="user-greeting">Ahoj, <strong id="username-display">...</strong></div>
                 <button id="logout-btn" class="logout-btn" title="Odhlásit se">Odhlásit</button>
@@ -140,6 +142,29 @@
                 <label class="toggle-label">
                     <input type="checkbox" id="dark-mode-toggle" style="width: 18px; height: 18px; cursor: pointer;">
                 </label>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: 24px 0;">
+
+            <!-- Sekce: Moje Skupina -->
+            <div style="margin-bottom: 24px;">
+                <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Moje skupina</h3>
+                
+                <!-- Tento blok se zobrazí, pokud uživatel JE ve skupině -->
+                <div id="user-group-info" style="display: none; padding: 16px; background: rgba(45, 106, 79, 0.1); border: 1px solid var(--primary); border-radius: 8px; text-align: center;">
+                    <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">Jsi členem skupiny:</p>
+                    <strong id="user-group-name" style="display: block; font-size: 18px; color: var(--primary);">Název skupiny</strong>
+                </div>
+
+                <!-- Tento blok se zobrazí, pokud uživatel NENÍ ve skupině -->
+                <div id="join-group-form" style="display: none;">
+                    <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Zadej pozvací kód od svého vedoucího.</p>
+                    <div style="display: flex; gap: 8px;">
+                        <input type="text" id="invite-code-input" placeholder="Zadej kód (např. ABC123)" style="flex-grow: 1; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; text-transform: uppercase;">
+                        <button id="join-group-btn" class="settings-btn" style="background: var(--primary); color: white; border: none;">Přidat se</button>
+                    </div>
+                    <div id="group-error" style="color: #dc2626; font-size: 13px; margin-top: 8px;"></div>
+                </div>
             </div>
 
             <hr style="border: 0; border-top: 1px solid var(--border); margin: 24px 0;">
