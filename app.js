@@ -19,7 +19,6 @@ const CATEGORY_COLORS = {
 
 let state = {
     user: null,
-    skupina: null, // Info o skupině z DB
     stavyOdborek: {},
     wishlistBadges: new Set(),
     ukolyStavy: {}, 
@@ -47,7 +46,6 @@ async function initApp() {
         const apiData = await apiRes.json();
 
         state.user = apiData.uzivatel;
-        state.skupina = apiData.skupina; // Uložení dat o skupině
         state.stavyOdborek = apiData.stavy_odborek || {};
 
         state.wishlistBadges = new Set(
@@ -127,15 +125,6 @@ function setupHeader() {
     const nameEl = document.getElementById('username-display');
     if (nameEl) nameEl.textContent = state.user.prezdivka;
 
-    // Pokud je uživatel ve skupině, zobrazíme tlačítko v hlavičce
-    const headerGroupBtn = document.getElementById('header-group-btn');
-    if (headerGroupBtn && state.skupina && state.skupina.nazev) {
-        headerGroupBtn.style.display = 'block';
-        headerGroupBtn.addEventListener('click', () => {
-            window.location.href = 'skupina.html';
-        });
-    }
-
     const ageSelect = document.getElementById('settings-age-group');
     if (ageSelect) {
         ageSelect.value = state.user.vekova_kategorie;
@@ -162,60 +151,11 @@ function setupSettings() {
     const pwdSection = document.getElementById('password-section');
     const toggleIcon = document.getElementById('toggle-password-icon');
 
-    // Elementy pro skupinu
-    const userGroupInfo = document.getElementById('user-group-info');
-    const userGroupName = document.getElementById('user-group-name');
-    const joinGroupForm = document.getElementById('join-group-form');
-    const joinGroupBtn = document.getElementById('join-group-btn');
-    const inviteCodeInput = document.getElementById('invite-code-input');
-    const groupError = document.getElementById('group-error');
-
-    // Otevírání modalu
-    if (settingsBtn) {
-        settingsBtn.addEventListener('click', () => {
-            settingsModal.classList.add('open');
-            // Reset formulářů a hlášek při každém otevření
-            if (groupError) groupError.textContent = '';
-            if (inviteCodeInput) inviteCodeInput.value = '';
-            
-            // Logika zobrazení skupiny
-            if (state.skupina && state.skupina.nazev) {
-                userGroupInfo.style.display = 'block';
-                joinGroupForm.style.display = 'none';
-                userGroupName.textContent = state.skupina.nazev;
-            } else {
-                userGroupInfo.style.display = 'none';
-                joinGroupForm.style.display = 'block';
-            }
-        });
-    }
-
+    if (settingsBtn) settingsBtn.addEventListener('click', () => settingsModal.classList.add('open'));
     if (closeBtn) closeBtn.addEventListener('click', () => settingsModal.classList.remove('open'));
     if (settingsModal) {
         settingsModal.addEventListener('click', (e) => {
             if (e.target.id === 'settings-modal') settingsModal.classList.remove('open');
-        });
-    }
-
-    // Odeslání pozvacího kódu
-    if (joinGroupBtn) {
-        joinGroupBtn.addEventListener('click', async () => {
-            const kod = inviteCodeInput.value.trim().toUpperCase();
-            if (!kod) {
-                groupError.textContent = 'Zadej prosím platný kód.';
-                return;
-            }
-
-            const res = await postApi({ akce: 'pripojit_skupinu', kod: kod });
-            if (res && res.uspech) {
-                // Skupina se úspěšně připojila, přesměrujeme rovnou na stránku skupiny
-                groupError.style.color = '#15803d';
-                groupError.textContent = 'Úspěšně připojeno! Přesměrovávám...';
-                setTimeout(() => window.location.href = 'skupina.html', 1000);
-            } else {
-                groupError.style.color = '#dc2626';
-                groupError.textContent = res?.chyba || 'Chyba při připojování ke skupině.';
-            }
         });
     }
 
@@ -232,7 +172,7 @@ function setupSettings() {
         });
     }
 
-    // Dark Mode
+    // Inicializace Dark Mode tlačítka a dynamická úprava barev pozadí
     if (darkModeToggle) {
         darkModeToggle.checked = document.body.classList.contains('dark-mode');
         
@@ -253,7 +193,6 @@ function setupSettings() {
         });
     }
 
-    // Změna hesla
     if (pwdForm) {
         pwdForm.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -270,6 +209,8 @@ function setupSettings() {
             if (res && res.uspech) {
                 succEl.textContent = 'Heslo bylo úspěšně změněno!';
                 pwdForm.reset();
+                
+                // Po 3 sekundách skryjeme hlášku a zavřeme formulář
                 setTimeout(() => { 
                     succEl.textContent = ''; 
                     pwdSection.style.display = 'none';
@@ -304,6 +245,7 @@ function setupCategoryFilters() {
             btn.classList.add('active');
             state.filters.category = cat;
             
+            // Změna pozadí (podle toho, zda je zapnutý tmavý režim)
             if (!state.isLegacyMode) {
                 if (cat !== 'all' && CATEGORY_COLORS[cat]) {
                     const isDark = document.body.classList.contains('dark-mode');
