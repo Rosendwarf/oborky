@@ -19,7 +19,8 @@ const CATEGORY_COLORS = {
 
 let state = {
     user: null,
-    stavyOdborek: {},
+    skupina: null,
+    stavyOdborek: {}, // Nyní obsahuje POUZE 'plnim' nebo 'splneno'
     wishlistBadges: new Set(),
     ukolyStavy: {}, 
     badges: {},
@@ -46,11 +47,10 @@ async function initApp() {
         const apiData = await apiRes.json();
 
         state.user = apiData.uzivatel;
+        state.skupina = apiData.skupina;
+        
         state.stavyOdborek = apiData.stavy_odborek || {};
-
-        state.wishlistBadges = new Set(
-            Object.keys(state.stavyOdborek).filter(id => state.stavyOdborek[id] === 'chci_plnit')
-        );
+        state.wishlistBadges = new Set(apiData.wishlist || []);
         
         state.ukolyStavy = {};
         (apiData.splnene_ukoly || []).forEach(u => {
@@ -61,14 +61,6 @@ async function initApp() {
         setupLegacyToggle();
         setupEventListeners();
         setupSettings();
-        
-        const logoutBtn = document.getElementById('logout-btn');
-        if (logoutBtn) {
-            logoutBtn.addEventListener('click', async () => {
-                await postApi({ akce: 'odhlasit' });
-                window.location.href = 'index.html';
-            });
-        }
         
         await loadBadgesCatalog(false);
 
@@ -125,6 +117,14 @@ function setupHeader() {
     const nameEl = document.getElementById('username-display');
     if (nameEl) nameEl.textContent = state.user.prezdivka;
 
+    const headerGroupBtn = document.getElementById('header-group-btn');
+    if (headerGroupBtn && state.skupina && state.skupina.nazev) {
+        headerGroupBtn.style.display = 'block';
+        headerGroupBtn.addEventListener('click', () => {
+            window.location.href = 'skupina.html';
+        });
+    }
+
     const ageSelect = document.getElementById('settings-age-group');
     if (ageSelect) {
         ageSelect.value = state.user.vekova_kategorie;
@@ -145,13 +145,34 @@ function setupSettings() {
     const settingsBtn = document.getElementById('settings-btn');
     const settingsModal = document.getElementById('settings-modal');
     const closeBtn = document.getElementById('settings-close-btn');
-    const pwdForm = document.getElementById('change-password-form');
     const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const togglePwdBtn = document.getElementById('toggle-password-btn');
-    const pwdSection = document.getElementById('password-section');
-    const toggleIcon = document.getElementById('toggle-password-icon');
 
-    if (settingsBtn) settingsBtn.addEventListener('click', () => settingsModal.classList.add('open'));
+    const userGroupInfo = document.getElementById('user-group-info');
+    const userGroupName = document.getElementById('user-group-name');
+    const joinGroupForm = document.getElementById('join-group-form');
+    const joinGroupBtn = document.getElementById('join-group-btn');
+    const inviteCodeInput = document.getElementById('invite-code-input');
+    const groupError = document.getElementById('group-error');
+    
+    const logoutBtnSettings = document.getElementById('logout-btn-settings');
+
+    if (settingsBtn) {
+        settingsBtn.addEventListener('click', () => {
+            settingsModal.classList.add('open');
+            if (groupError) groupError.textContent = '';
+            if (inviteCodeInput) inviteCodeInput.value = '';
+            
+            if (state.skupina && state.skupina.nazev) {
+                userGroupInfo.style.display = 'block';
+                joinGroupForm.style.display = 'none';
+                userGroupName.textContent = state.skupina.nazev;
+            } else {
+                userGroupInfo.style.display = 'none';
+                joinGroupForm.style.display = 'block';
+            }
+        });
+    }
+
     if (closeBtn) closeBtn.addEventListener('click', () => settingsModal.classList.remove('open'));
     if (settingsModal) {
         settingsModal.addEventListener('click', (e) => {
@@ -159,20 +180,26 @@ function setupSettings() {
         });
     }
 
-    // Rozbalování formuláře hesla
-    if (togglePwdBtn && pwdSection) {
-        togglePwdBtn.addEventListener('click', () => {
-            if (pwdSection.style.display === 'none') {
-                pwdSection.style.display = 'block';
-                toggleIcon.textContent = '▲';
+    if (joinGroupBtn) {
+        joinGroupBtn.addEventListener('click', async () => {
+            const kod = inviteCodeInput.value.trim().toUpperCase();
+            if (!kod) {
+                groupError.textContent = 'Zadej prosím platný kód.';
+                return;
+            }
+
+            const res = await postApi({ akce: 'pripojit_skupinu', kod: kod });
+            if (res && res.uspech) {
+                groupError.style.color = '#15803d';
+                groupError.textContent = 'Úspěšně připojeno! Přesměrovávám...';
+                setTimeout(() => window.location.href = 'skupina.html', 1000);
             } else {
-                pwdSection.style.display = 'none';
-                toggleIcon.textContent = '▼';
+                groupError.style.color = '#dc2626';
+                groupError.textContent = res?.chyba || 'Chyba při připojování ke skupině.';
             }
         });
     }
 
-    // Inicializace Dark Mode tlačítka a dynamická úprava barev pozadí
     if (darkModeToggle) {
         darkModeToggle.checked = document.body.classList.contains('dark-mode');
         
@@ -193,32 +220,10 @@ function setupSettings() {
         });
     }
 
-    if (pwdForm) {
-        pwdForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const stare_heslo = document.getElementById('old-password').value;
-            const nove_heslo = document.getElementById('new-password').value;
-            const errEl = document.getElementById('pwd-error');
-            const succEl = document.getElementById('pwd-success');
-            
-            errEl.textContent = '';
-            succEl.textContent = '';
-
-            const res = await postApi({ akce: 'zmenit_heslo', stare_heslo, nove_heslo });
-            
-            if (res && res.uspech) {
-                succEl.textContent = 'Heslo bylo úspěšně změněno!';
-                pwdForm.reset();
-                
-                // Po 3 sekundách skryjeme hlášku a zavřeme formulář
-                setTimeout(() => { 
-                    succEl.textContent = ''; 
-                    pwdSection.style.display = 'none';
-                    toggleIcon.textContent = '▼';
-                }, 3000);
-            } else {
-                errEl.textContent = res?.chyba || 'Došlo k chybě při změně hesla.';
-            }
+    if (logoutBtnSettings) {
+        logoutBtnSettings.addEventListener('click', async () => {
+            await postApi({ akce: 'odhlasit' });
+            window.location.href = 'index.html';
         });
     }
 }
@@ -245,7 +250,6 @@ function setupCategoryFilters() {
             btn.classList.add('active');
             state.filters.category = cat;
             
-            // Změna pozadí (podle toho, zda je zapnutý tmavý režim)
             if (!state.isLegacyMode) {
                 if (cat !== 'all' && CATEGORY_COLORS[cat]) {
                     const isDark = document.body.classList.contains('dark-mode');
@@ -331,7 +335,6 @@ async function evaluateAndSyncBadgeStatus(badgeId, syncToServer = true) {
 
     if (progress.isComplete) targetStatus = 'splneno';
     else if (progress.hasAnyTask) targetStatus = 'plnim';
-    else if (state.wishlistBadges.has(badgeId)) targetStatus = 'chci_plnit';
 
     const currentStatus = state.stavyOdborek[badgeId] || null;
 
@@ -345,14 +348,21 @@ async function evaluateAndSyncBadgeStatus(badgeId, syncToServer = true) {
     }
 }
 
+// ZMĚNĚNO: Hvězdička již neovlivňuje stav 'plnim'/'splneno', volá se vlastní akce
 async function toggleWishlist(badgeId, e) {
     if (e) e.stopPropagation();
-    if (state.wishlistBadges.has(badgeId)) state.wishlistBadges.delete(badgeId);
-    else state.wishlistBadges.add(badgeId);
+    const isWishlisted = state.wishlistBadges.has(badgeId);
     
-    await evaluateAndSyncBadgeStatus(badgeId, true);
+    if (isWishlisted) {
+        state.wishlistBadges.delete(badgeId);
+    } else {
+        state.wishlistBadges.add(badgeId);
+    }
+    
     renderBadgesGrid();
     if (state.activeBadgeId === badgeId) updateModalHeaderStatus(badgeId);
+
+    await postApi({ akce: 'prepnout_wishlist', odborka_id: badgeId, chci_plnit: !isWishlisted });
 }
 
 function renderBadgesGrid() {
@@ -363,11 +373,16 @@ function renderBadgesGrid() {
     const filtered = Object.values(state.badges).filter(b => {
         if (state.filters.search && !((b.name || '').toLowerCase().includes(state.filters.search))) return false;
         if (state.filters.category !== 'all' && b.category !== state.filters.category) return false;
+        
         if (state.filters.status !== 'all') {
+            const isWishlisted = state.wishlistBadges.has(b.id);
             const currentStatus = state.stavyOdborek[b.id];
+            
             if (state.filters.status === 'chci_plnit') {
-                if (!state.wishlistBadges.has(b.id)) return false;
-            } else if (currentStatus !== state.filters.status) return false;
+                if (!isWishlisted) return false;
+            } else if (currentStatus !== state.filters.status) {
+                return false;
+            }
         }
         return true;
     });
@@ -394,7 +409,7 @@ function renderBadgesGrid() {
                 <div class="card-top">
                     <span class="category-pill">${b.category} ${state.isLegacyMode ? ' (Výslužba)' : ''}</span>
                     <div class="card-top-right">
-                        ${userStatus && userStatus !== 'chci_plnit' ? `<span class="status-badge status-${userStatus}">${getStatusName(userStatus)}</span>` : ''}
+                        ${userStatus ? `<span class="status-badge status-${userStatus}">${getStatusName(userStatus)}</span>` : ''}
                         <button class="star-btn ${isWishlisted ? 'active' : ''}" title="Seznam přání">${isWishlisted ? '★' : '☆'}</button>
                     </div>
                 </div>
@@ -448,7 +463,7 @@ function updateModalHeaderStatus(badgeId) {
     const isWishlisted = state.wishlistBadges.has(badgeId);
 
     container.innerHTML = `
-        ${userStatus && userStatus !== 'chci_plnit' ? `<span class="status-badge status-${userStatus}">${getStatusName(userStatus)}</span>` : ''}
+        ${userStatus ? `<span class="status-badge status-${userStatus}">${getStatusName(userStatus)}</span>` : ''}
         <button class="star-btn ${isWishlisted ? 'active' : ''}" id="modal-star-btn" style="font-size: 24px;">${isWishlisted ? '★' : '☆'}</button>
     `;
     document.getElementById('modal-star-btn').addEventListener('click', (e) => toggleWishlist(badgeId, e));
@@ -602,7 +617,6 @@ async function postApi(data) {
 
 function getStatusName(status) {
     switch (status) {
-        case 'chci_plnit': return '⭐ Wishlist';
         case 'plnim': return '⏳ Plním';
         case 'splneno': return '✅ Splněno';
         default: return '';

@@ -15,8 +15,8 @@ try {
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
     ]);
 
-    $prezdivka = 'Vojta';
-    $heslo = 'heslo123';
+    $prezdivka = 'Joli';
+    $heslo = 'cus';
     $vekova_kategorie = 'starsi_skauti';
 
     // Zahashování hesla aktuálním PHP serverem
