@@ -23,14 +23,53 @@
     --cat-duchovni: #c99a3e;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+@font-face {
+    font-family: 'TheMix';
+    src: url('data/fonty/TheMixC5-4_SemiLight.otf') format('opentype');
+    font-weight: 400 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Nastavení pro celou stránku */
+@font-face {
+    font-family: 'TheMix';
+    src: url('data/fonty/TheMixC5-4_SemiLight.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'TheMix';
+    src: url('data/fonty/TheMixC5-7_Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Nadpis';
+    src: url('data/fonty/skaut-bold-webfont.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
 
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'TheMix', sans-serif;
     background-color: var(--bg-page);
     color: var(--text-main);
     line-height: 1.5;
     transition: background-color 0.35s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nadpis', sans-serif;
 }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
@@ -227,7 +266,12 @@ select:focus, input[type="text"]:focus, input[type="password"]:focus {
 .navbar { background-color: var(--bg-card); border-bottom: 1px solid var(--border); padding: 16px 0; position: sticky; top: 0; z-index: 100; }
 .nav-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
 .logo { display: flex; align-items: center; gap: 8px; }
-.logo-icon { font-size: 24px; }
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
 .logo h1 { font-size: 20px; font-weight: 700; color: var(--primary); }
 .user-panel { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
 
