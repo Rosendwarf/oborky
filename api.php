@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 // Konfigurace připojení k databázi
 $host    = '127.0.0.1';
-$port    = '6606';
+$port    = '3306';
 $db      = 'rosendov';
 $user    = 'rosendov';
 $pass    = 'Kr@ken-29.05.2003';
