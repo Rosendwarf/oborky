@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Změna hesla - Skautské odborky</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="flex justify-center items-center min-h-100vh m-0">
+    <div class="auth-overlay static-overlay w-100 p-20">
+        <div class="auth-card m-auto">
+            <div class="logo justify-center mb-20">
+                <span class="logo-icon">🔒</span>
+                <h1>Změna hesla</h1>
+            </div>
+
+            <form id="change-password-form" class="auth-form">
+                <div class="form-group">
+                    <label>Staré heslo</label>
+                    <input type="password" id="old-password" required placeholder="••••••••" class="w-100">
+                </div>
+                <div class="form-group">
+                    <label>Nové heslo</label>
+                    <input type="password" id="new-password" required placeholder="••••••••" class="w-100">
+                </div>
+                <div class="form-group">
+                    <label>Potvrzení nového hesla</label>
+                    <input type="password" id="new-password-confirm" required placeholder="••••••••" class="w-100">
+                </div>
+                
+                <div class="auth-error" id="pwd-error"></div>
+                <div class="text-success text-center font-13 mb-12 min-h-18" id="pwd-success"></div>
+                
+                <button type="submit" class="auth-btn">Uložit nové heslo</button>
+                
+                <div class="text-center mt-16">
+                    <a href="aplikace.html" class="font-14 text-muted font-600 no-underline">← Zpět do aplikace</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        document.getElementById('change-password-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const stare_heslo = document.getElementById('old-password').value;
+            const nove_heslo = document.getElementById('new-password').value;
+            const potvrzeni = document.getElementById('new-password-confirm').value;
+            
+            const errEl = document.getElementById('pwd-error');
+            const succEl = document.getElementById('pwd-success');
+            
+            errEl.textContent = '';
+            succEl.textContent = '';
+
+            if (nove_heslo !== potvrzeni) {
+                errEl.textContent = 'Nová hesla se neshodují!';
+                return;
+            }
+
+            try {
+                const res = await fetch('api.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include',
+                    body: JSON.stringify({ akce: 'zmenit_heslo', stare_heslo, nove_heslo })
+                });
+                const data = await res.json();
+                
+                if (data.uspech) {
+                    succEl.textContent = 'Heslo bylo úspěšně změněno! Přesměrovávám...';
+                    e.target.reset();
+                    setTimeout(() => {
+                        window.location.href = 'aplikace.html';
+                    }, 1500);
+                } else {
+                    errEl.textContent = data.chyba || 'Došlo k chybě při změně hesla.';
+                }
+            } catch (err) {
+                errEl.textContent = 'Chyba při komunikaci se serverem.';
+            }
+        });
+    </script>
+</body>
+</html>

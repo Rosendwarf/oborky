@@ -6,15 +6,11 @@
     <title>Přihlášení - Skautské odborky</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background-color: var(--bg-page); }
-        .auth-overlay { position: static; background: transparent; backdrop-filter: none; width: 100%; padding: 20px; }
-    </style>
 </head>
-<body>
-    <div class="auth-overlay">
-        <div class="auth-card" style="margin: 0 auto;">
-            <div class="logo" style="justify-content: center; margin-bottom: 20px;">
+<body class="flex justify-center items-center min-h-100vh m-0">
+    <div class="auth-overlay static-overlay w-100 p-20">
+        <div class="auth-card m-auto">
+            <div class="logo justify-center mb-20">
                 <span class="logo-icon">⚜️</span>
                 <h1>Skautské odborky</h1>
             </div>
@@ -24,11 +20,11 @@
                 <h2>Přihlášení</h2>
                 <div class="form-group">
                     <label>Přezdívka</label>
-                    <input type="text" id="login-prezdivka" required placeholder="Zadej svoji přezdívku">
+                    <input type="text" id="login-prezdivka" required placeholder="Zadej svoji přezdívku" class="w-100">
                 </div>
                 <div class="form-group">
                     <label>Heslo</label>
-                    <input type="password" id="login-password" required placeholder="••••••••">
+                    <input type="password" id="login-password" required placeholder="••••••••" class="w-100">
                 </div>
                 <div class="auth-error" id="login-error"></div>
                 <button type="submit" class="auth-btn">Přihlásit se</button>
@@ -36,19 +32,19 @@
             </form>
 
             <!-- Registrační formulář -->
-            <form id="register-form" class="auth-form" style="display: none;">
+            <form id="register-form" class="auth-form hidden">
                 <h2>Registrace</h2>
                 <div class="form-group">
                     <label>Přezdívka</label>
-                    <input type="text" id="reg-name" required placeholder="Přezdívka">
+                    <input type="text" id="reg-name" required placeholder="Přezdívka" class="w-100">
                 </div>
                 <div class="form-group">
                     <label>Heslo</label>
-                    <input type="password" id="reg-password" required placeholder="••••••••">
+                    <input type="password" id="reg-password" required placeholder="••••••••" class="w-100">
                 </div>
                 <div class="form-group">
                     <label>Věková kategorie</label>
-                    <select id="reg-category">
+                    <select id="reg-category" class="w-100">
                         <option value="mladsi_skauti">Mladší skauti / skautky</option>
                         <option value="starsi_skauti" selected>Starší skauti / skautky</option>
                         <option value="roveri">Roveři a rangers</option>

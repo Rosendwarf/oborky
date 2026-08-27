@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skautské odborky - Tracker</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Horní lišta -->
     <header class="navbar">
         <div class="container nav-content">
             <div class="logo">
@@ -25,21 +22,19 @@
                         <span class="legacy-toggle-text">🏛️ Legacy (Výslužba)</span>
                     </label>
                 </div>
+                <button id="header-group-btn" class="settings-btn settings-btn-primary hidden">🏕️ Moje skupina</button>
                 <button id="settings-btn" class="settings-btn" title="Nastavení profilu">⚙️ Nastavení</button>
                 <div class="user-greeting">Ahoj, <strong id="username-display">...</strong></div>
-                <button id="logout-btn" class="logout-btn" title="Odhlásit se">Odhlásit</button>
             </div>
         </div>
     </header>
 
-    <!-- Hlavní obsah a filtry -->
     <main class="container">
         <section class="controls-section">
             <div class="search-box">
                 <input type="text" id="search-input" placeholder="Hledat odborku podle názvu...">
             </div>
 
-            <!-- Filtr podle stavu -->
             <div class="filter-tabs" id="status-filters">
                 <button class="tab-btn active" data-status="all">Všechny</button>
                 <button class="tab-btn" data-status="chci_plnit">⭐ Seznam přání</button>
@@ -47,28 +42,25 @@
                 <button class="tab-btn" data-status="splneno">✅ Hotové</button>
             </div>
 
-            <!-- Filtr podle kategorie -->
             <div class="category-filters" id="category-filters">
                 <!-- Generováno JS -->
             </div>
         </section>
 
-        <!-- Mřížka odborek -->
         <section class="badges-grid" id="badges-grid">
             <div class="loading">Načítám data z databáze a katalogu...</div>
         </section>
     </main>
 
-    <!-- Modální okno detailu odborky -->
     <div class="modal-overlay" id="badge-modal">
         <div class="modal-card">
             <button class="modal-close" id="modal-close-btn">&times;</button>
             
             <div class="modal-header">
                 <div class="modal-badge-meta">
-                    <img id="modal-badge-icon" src="" alt="" class="modal-badge-icon" style="display: none;">
+                    <img id="modal-badge-icon" src="" alt="" class="modal-badge-icon hidden">
                     <div>
-                        <div class="modal-meta-top" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 2px;">
+                        <div class="flex items-center gap-8 flex-wrap mb-2">
                             <span class="category-pill" id="modal-badge-category"></span>
                             <a id="modal-methodology-link" href="#" target="_blank" class="modal-external-link">Oficiální web ↗</a>
                             <a id="modal-junshop-link" href="#" target="_blank" class="modal-external-link">Junshop 🛍️</a>
@@ -111,61 +103,59 @@
         </div>
     </div>
 
-    <!-- Modální okno pro nastavení profilu -->
     <div class="modal-overlay" id="settings-modal">
-        <div class="modal-card" style="max-width: 420px; padding: 28px;">
+        <div class="modal-card small">
             <button class="modal-close" id="settings-close-btn">&times;</button>
-            <div class="modal-header" style="margin-bottom: 24px;">
-                <h2 style="font-size: 22px; font-weight: 800; color: var(--text-main);">Nastavení profilu</h2>
+            <div class="modal-header mb-24">
+                <h2 class="font-22 font-800 text-main">Nastavení profilu</h2>
             </div>
             
-            <div class="form-group" style="margin-bottom: 24px;">
-                <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">Věková kategorie</label>
-                <select id="settings-age-group" style="width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px;">
+            <div class="form-group mb-24">
+                <label class="block font-13 font-600 mb-6">Věková kategorie</label>
+                <select id="settings-age-group" class="w-100 p-10 rounded-8 border-top-1">
                     <option value="mladsi_skauti">Mladší skauti / skautky</option>
                     <option value="starsi_skauti">Starší skauti / skautky</option>
                     <option value="roveri">Roveři a rangers</option>
                 </select>
-                <small style="display: block; color: var(--text-muted); font-size: 12px; margin-top: 6px;">
+                <small class="block text-muted font-12 mt-6">
                     Změna kategorie automaticky přepočítá požadavky u všech odborek.
                 </small>
             </div>
 
-            <!-- Tmavý režim -->
-            <div class="form-group" style="margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);">
+            <div class="form-group flex justify-between items-center p-12 rounded-8 border-top-1 mb-24">
                 <div>
-                    <label style="display: block; font-size: 13px; font-weight: 700; margin-bottom: 2px;">🌙 Tmavý režim</label>
-                    <small style="color: var(--text-muted); font-size: 12px;">Šetří oči ve tmě</small>
+                    <label class="block font-13 font-700 mb-2">🌙 Tmavý režim</label>
+                    <small class="text-muted font-12">Šetří oči ve tmě</small>
                 </div>
-                <label class="toggle-label">
-                    <input type="checkbox" id="dark-mode-toggle" style="width: 18px; height: 18px; cursor: pointer;">
+                <label class="toggle-label large-toggle">
+                    <input type="checkbox" id="dark-mode-toggle" class="cursor-pointer">
                 </label>
             </div>
 
-            <hr style="border: 0; border-top: 1px solid var(--border); margin: 24px 0;">
+            <hr class="border-0 border-top-1 my-24">
 
-            <!-- Rozbalovací tlačítko pro změnu hesla -->
-            <button type="button" id="toggle-password-btn" style="width: 100%; padding: 12px 16px; background: transparent; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; color: var(--text-main); font-weight: 600; text-align: left; display: flex; justify-content: space-between; align-items: center;">
-                <span>🔒 Změnit heslo</span>
-                <span id="toggle-password-icon" style="color: var(--text-muted); font-size: 12px;">▼</span>
-            </button>
+            <div class="mb-24">
+                <h3 class="font-16 font-700 mb-12">Moje skupina</h3>
+                
+                <div id="user-group-info" class="hidden p-16 rounded-8 border-top-1 text-center bg-success-light">
+                    <p class="font-13 text-muted mb-4">Jsi členem skupiny:</p>
+                    <strong id="user-group-name" class="block font-18 text-primary">Název skupiny</strong>
+                </div>
 
-            <!-- Skrytá sekce s formulářem -->
-            <div id="password-section" style="display: none; margin-top: 16px;">
-                <form id="change-password-form">
-                    <div class="form-group" style="margin-bottom: 12px;">
-                        <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">Staré heslo</label>
-                        <input type="password" id="old-password" required style="width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px;">
+                <div id="join-group-form" class="hidden">
+                    <p class="font-13 text-muted mb-12">Zadej pozvací kód od svého vedoucího.</p>
+                    <div class="flex gap-8">
+                        <input type="text" id="invite-code-input" placeholder="Zadej kód (např. ABC123)" class="flex-grow p-10 rounded-8 border-top-1" style="text-transform: uppercase;">
+                        <button id="join-group-btn" class="settings-btn settings-btn-primary">Přidat se</button>
                     </div>
-                    <div class="form-group" style="margin-bottom: 16px;">
-                        <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">Nové heslo</label>
-                        <input type="password" id="new-password" required style="width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px;">
-                    </div>
-                    <div id="pwd-error" style="color: #dc2626; font-size: 13px; margin-bottom: 10px;"></div>
-                    <div id="pwd-success" style="color: #15803d; font-size: 13px; margin-bottom: 10px;"></div>
-                    <button type="submit" class="auth-btn" style="width: 100%; background: var(--primary); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 700; cursor: pointer;">Uložit nové heslo</button>
-                </form>
+                    <div id="group-error" class="text-danger font-13 mt-8"></div>
+                </div>
             </div>
+
+            <hr class="border-0 border-top-1 my-24">
+
+            <a href="zmena-hesla.html" class="settings-btn w-100 mb-12 font-600 no-underline">🔒 Přejít na změnu hesla</a>
+            <button id="logout-btn-settings" class="logout-btn w-100 p-12">🚪 Odhlásit se a přejít na přihlášení</button>
         </div>
     </div>
 

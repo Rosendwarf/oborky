@@ -7,16 +7,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (toRegister) {
         toRegister.addEventListener('click', (e) => {
             e.preventDefault();
-            loginForm.style.display = 'none';
-            registerForm.style.display = 'block';
+            loginForm.classList.add('hidden');
+            registerForm.classList.remove('hidden');
         });
     }
 
     if (toLogin) {
         toLogin.addEventListener('click', (e) => {
             e.preventDefault();
-            registerForm.style.display = 'none';
-            loginForm.style.display = 'block';
+            registerForm.classList.add('hidden');
+            loginForm.classList.remove('hidden');
         });
     }
 

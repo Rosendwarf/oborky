@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skupina - Skautské odborky</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <span class="logo-icon">⚜️</span>
+                <h1>Skautské odborky</h1>
+            </div>
+            <div class="user-panel">
+                <a href="aplikace.html" class="settings-btn no-underline">🏠 Zpět na mé odborky</a>
+                <button id="settings-btn" class="settings-btn" title="Nastavení profilu">⚙️ Profil</button>
+                <div class="user-greeting">Ahoj, <strong id="username-display">...</strong></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container pt-32">
+        <!-- Hlavička skupiny a Popis -->
+        <div class="group-header mb-24">
+            <div class="flex-between-start">
+                <div>
+                    <h1 id="group-name" class="mb-8">Načítám skupinu...</h1>
+                    <div id="group-desc-container" class="group-desc-container">
+                        <p id="group-desc-text" class="group-desc-text"></p>
+                        <button id="edit-desc-btn" class="settings-btn font-11 hidden">✏️ Upravit popis</button>
+                        
+                        <form id="edit-desc-form" class="hidden mt-12">
+                            <textarea id="desc-input" class="custom-textarea mb-8"></textarea>
+                            <button type="submit" class="auth-btn w-auto px-16 py-8">Uložit</button>
+                            <button type="button" id="cancel-desc-btn" class="settings-btn">Zrušit</button>
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <!-- Tlačítko Nastavení skupiny (jen pro adminy) -->
+                    <button id="group-settings-btn" class="settings-btn settings-btn-outline hidden">⚙️ Nastavení skupiny</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="group-grid">
+            <!-- LEVÝ SLOUPEC -->
+            <div>
+                <div class="badge-card primary-top">
+                    <h3 class="mb-16">Členové</h3>
+                    <ul id="members-list" class="members-list">
+                        <!-- Generováno JS -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PRAVÝ SLOUPEC -->
+            <div>
+                <div class="badge-card warning-top">
+                    <div class="flex-between mb-16">
+                        <h3 class="mb-0">🔥 Odborky ve skupině</h3>
+                        <button id="toggle-view-btn" class="settings-btn font-11 hidden">Rozbalit vše</button>
+                    </div>
+
+                    <div class="filter-tabs mb-20" id="group-aggregate-filters">
+                        <button class="tab-btn active" data-status="splneno">✅ Splněno</button>
+                        <button class="tab-btn" data-status="chci_plnit">⭐ Seznam přání</button>
+                        <button class="tab-btn" data-status="plnim">⏳ Právě plní</button>
+                    </div>
+
+                    <div id="aggregate-list" class="flex-col gap-12">
+                        <div class="loading">Načítám data...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modální okno pro detail člena -->
+    <div class="modal-overlay" id="member-modal">
+        <div class="modal-card medium">
+            <button class="modal-close" id="member-close-btn">&times;</button>
+            <div class="modal-header mb-24">
+                <h2 class="font-22 font-800 text-main">Postup: <span id="member-modal-name"></span></h2>
+            </div>
+            
+            <h3 class="font-14 text-success mb-8">✅ Splněno</h3>
+            <div id="member-done-badges" class="flex flex-wrap gap-8 mb-24"></div>
+
+            <h3 class="font-14 text-info mb-8">⏳ Právě plní</h3>
+            <div id="member-plnim-badges" class="flex flex-wrap gap-8 mb-24"></div>
+
+            <h3 class="font-14 text-warning mb-8">⭐ Chce plnit (Seznam přání)</h3>
+            <div id="member-wish-badges" class="flex flex-wrap gap-8"></div>
+        </div>
+    </div>
+
+    <!-- Modální okno detailu odborky (READ-ONLY) -->
+    <div class="modal-overlay" id="badge-modal">
+        <div class="modal-card">
+            <button class="modal-close" id="modal-close-btn">&times;</button>
+            
+            <div class="modal-header">
+                <div class="modal-badge-meta">
+                    <img id="modal-badge-icon" src="" alt="" class="modal-badge-icon hidden">
+                    <div>
+                        <div class="flex items-center gap-8 flex-wrap mb-2">
+                            <span class="category-pill" id="modal-badge-category"></span>
+                        </div>
+                        <h2 id="modal-badge-title">Název odborky</h2>
+                    </div>
+                </div>
+                <div class="modal-status-badge" id="modal-status-container"></div>
+            </div>
+
+            <p class="modal-description" id="modal-badge-desc"></p>
+
+            <div class="modal-progress-summary">
+                <div class="progress-box">
+                    <span>Dokaž to: <strong id="dt-progress-text">0 / 0</strong></span>
+                    <div class="progress-bar"><div class="progress-fill" id="dt-progress-bar"></div></div>
+                </div>
+                <div class="progress-box">
+                    <span>Ukaž se: <strong id="us-progress-text">0 / 0</strong></span>
+                    <div class="progress-bar"><div class="progress-fill" id="us-progress-bar"></div></div>
+                </div>
+            </div>
+
+            <div class="modal-tasks-container">
+                <div class="task-section">
+                    <div class="task-section-header">
+                        <h3>DOKAŽ TO <span>(hlavní podmínky)</span></h3>
+                        <span class="req-label" id="dt-req-label"></span>
+                    </div>
+                    <ul class="task-list" id="dt-task-list"></ul>
+                </div>
+                <div class="task-section">
+                    <div class="task-section-header">
+                        <h3>UKAŽ SE <span>(doplňující podmínky)</span></h3>
+                        <span class="req-label" id="us-req-label"></span>
+                    </div>
+                    <ul class="task-list" id="us-task-list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modální okno pro NASTAVENÍ SKUPINY (Admin) -->
+    <div class="modal-overlay" id="group-settings-modal">
+        <div class="modal-card small">
+            <button class="modal-close" id="group-settings-close-btn">&times;</button>
+            <div class="modal-header mb-16">
+                <h2 class="font-22 font-800 text-main">Nastavení skupiny</h2>
+            </div>
+            
+            <div class="bg-card p-16 rounded-8 border-top-1">
+                <strong>👑 Nástroje vedoucího</strong>
+                <p class="font-13 text-muted mb-8">Pozvací kód pro nové členy:</p>
+                <div class="flex-col items-start gap-8">
+                    <code id="invite-code-display" class="invite-code-box"></code>
+                    <button id="generate-code-btn" class="settings-btn w-100">Generovat nový kód</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modální okno pro nastavení profilu -->
+    <div class="modal-overlay" id="settings-modal">
+        <div class="modal-card small">
+            <button class="modal-close" id="settings-close-btn">&times;</button>
+            <div class="modal-header mb-24">
+                <h2 class="font-22 font-800 text-main">Nastavení profilu</h2>
+            </div>
+            
+            <div class="form-group flex justify-between items-center p-12 rounded-8 border-top-1 mb-24">
+                <div>
+                    <label class="block font-13 font-700 mb-2">🌙 Tmavý režim</label>
+                    <small class="text-muted font-12">Šetří oči ve tmě</small>
+                </div>
+                <label class="toggle-label large-toggle">
+                    <input type="checkbox" id="dark-mode-toggle" class="cursor-pointer">
+                </label>
+            </div>
+
+            <hr class="border-0 border-top-1 my-24">
+
+            <a href="zmena-hesla.html" class="settings-btn w-100 mb-12 font-600 no-underline">🔒 Přejít na změnu hesla</a>
+            <button id="logout-btn-settings" class="logout-btn w-100 p-12">🚪 Odhlásit se a přejít na přihlášení</button>
+        </div>
+    </div>
+
+    <script src="skupina.js"></script>
+</body>
+</html>
