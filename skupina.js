@@ -1,4 +1,7 @@
-// Aplikování dark mode
+/**
+ * Správa klientské logiky pro skupinu (Live verze)
+ */
+
 if (localStorage.getItem('darkMode') === 'true') {
     document.body.classList.add('dark-mode');
 }
@@ -50,7 +53,8 @@ async function initGroupApp() {
         setupBadgeModalEvents();
 
     } catch (err) {
-        console.error("Chyba:", err);
+        const descEl = document.getElementById('group-desc-text');
+        if (descEl) descEl.textContent = 'Data skupiny se nepodařilo načíst.';
     }
 }
 
@@ -180,66 +184,70 @@ function renderMembers() {
 }
 
 async function openMemberModal(clenId) {
-    const res = await fetch(`api.php?akce=detail_clena&clen_id=${clenId}`, { credentials: 'include' });
-    if (!res.ok) return;
-    const data = await res.json();
+    try {
+        const res = await fetch(`api.php?akce=detail_clena&clen_id=${clenId}`, { credentials: 'include' });
+        if (!res.ok) return;
+        const data = await res.json();
 
-    currentMemberProfile.prezdivka = data.prezdivka;
-    currentMemberProfile.vekova_kategorie = data.vekova_kategorie || 'starsi_skauti';
-    currentMemberProfile.stavyOdborek = {};
-    currentMemberProfile.ukolyStavy = {};
+        currentMemberProfile.prezdivka = data.prezdivka;
+        currentMemberProfile.vekova_kategorie = data.vekova_kategorie || 'starsi_skauti';
+        currentMemberProfile.stavyOdborek = {};
+        currentMemberProfile.ukolyStavy = {};
 
-    data.odborky.forEach(o => {
-        if (o.stav) currentMemberProfile.stavyOdborek[o.odborka_id] = o.stav;
-    });
+        data.odborky.forEach(o => {
+            if (o.stav) currentMemberProfile.stavyOdborek[o.odborka_id] = o.stav;
+        });
 
-    data.splnene_ukoly.forEach(u => {
-        currentMemberProfile.ukolyStavy[`${u.odborka_id}:${u.ukol_id}`] = u.stav || 'splneno';
-    });
+        data.splnene_ukoly.forEach(u => {
+            currentMemberProfile.ukolyStavy[`${u.odborka_id}:${u.ukol_id}`] = u.stav || 'splneno';
+        });
 
-    document.getElementById('member-modal-name').textContent = data.prezdivka;
-    
-    const doneContainer = document.getElementById('member-done-badges');
-    const plnimContainer = document.getElementById('member-plnim-badges');
-    const wishContainer = document.getElementById('member-wish-badges');
-    
-    doneContainer.innerHTML = '';
-    plnimContainer.innerHTML = '';
-    wishContainer.innerHTML = '';
-
-    let counts = { splneno: 0, chci_plnit: 0, plnim: 0 };
-
-    data.odborky.forEach(o => {
-        const b = badgesCatalog[o.odborka_id];
-        if (!b) return;
+        document.getElementById('member-modal-name').textContent = data.prezdivka;
         
-        const createBadgeEl = () => {
-            const el = document.createElement('div');
-            el.className = 'badge-mini-item';
-            el.innerHTML = `
-                <img src="data/nasivky/${b.id}.png" class="badge-mini-icon" title="${b.name}">
-                <span class="badge-mini-title">${b.name}</span>
-            `;
-            el.addEventListener('click', () => openReadonlyBadgeModal(b.id));
-            return el;
-        };
-
-        if (o.stav === 'splneno') {
-            doneContainer.appendChild(createBadgeEl()); counts.splneno++;
-        } else if (o.stav === 'plnim') {
-            plnimContainer.appendChild(createBadgeEl()); counts.plnim++;
-        }
+        const doneContainer = document.getElementById('member-done-badges');
+        const plnimContainer = document.getElementById('member-plnim-badges');
+        const wishContainer = document.getElementById('member-wish-badges');
         
-        if (o.v_seznamu_prani == 1) {
-            wishContainer.appendChild(createBadgeEl()); counts.chci_plnit++;
-        }
-    });
+        doneContainer.innerHTML = '';
+        plnimContainer.innerHTML = '';
+        wishContainer.innerHTML = '';
 
-    if (counts.splneno === 0) doneContainer.innerHTML = '<span class="text-muted font-13">Zatím žádné splněné odborky.</span>';
-    if (counts.plnim === 0) plnimContainer.innerHTML = '<span class="text-muted font-13">Momentálně nic neplní.</span>';
-    if (counts.chci_plnit === 0) wishContainer.innerHTML = '<span class="text-muted font-13">Žádné odborky v plánu.</span>';
+        let counts = { splneno: 0, chci_plnit: 0, plnim: 0 };
 
-    document.getElementById('member-modal').classList.add('open');
+        data.odborky.forEach(o => {
+            const b = badgesCatalog[o.odborka_id];
+            if (!b) return;
+            
+            const createBadgeEl = () => {
+                const el = document.createElement('div');
+                el.className = 'badge-mini-item';
+                el.innerHTML = `
+                    <img src="data/nasivky/${b.id}.png" class="badge-mini-icon" title="${b.name}">
+                    <span class="badge-mini-title">${b.name}</span>
+                `;
+                el.addEventListener('click', () => openReadonlyBadgeModal(b.id));
+                return el;
+            };
+
+            if (o.stav === 'splneno') {
+                doneContainer.appendChild(createBadgeEl()); counts.splneno++;
+            } else if (o.stav === 'plnim') {
+                plnimContainer.appendChild(createBadgeEl()); counts.plnim++;
+            }
+            
+            if (o.v_seznamu_prani == 1) {
+                wishContainer.appendChild(createBadgeEl()); counts.chci_plnit++;
+            }
+        });
+
+        if (counts.splneno === 0) doneContainer.innerHTML = '<span class="text-muted font-13">Zatím žádné splněné odborky.</span>';
+        if (counts.plnim === 0) plnimContainer.innerHTML = '<span class="text-muted font-13">Momentálně nic neplní.</span>';
+        if (counts.chci_plnit === 0) wishContainer.innerHTML = '<span class="text-muted font-13">Žádné odborky v plánu.</span>';
+
+        document.getElementById('member-modal').classList.add('open');
+    } catch (e) {
+        // Tiché selhání bez rušení uživatele
+    }
 }
 
 function openReadonlyBadgeModal(badgeId) {

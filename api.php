@@ -1,10 +1,19 @@
 <?php
-// Vynucení parametrů session cookie pro localhost před samotným startem session
+/**
+ * Produkční API Endpoint - Skautské odborky
+ */
+
+// Vypnutí zobrazování chyb uživateli (bezpečnost na produkci)
+ini_set('display_errors', '0');
+ini_set('display_startup_errors', '0');
+error_reporting(E_ALL);
+
+// Session nastavení pro produkční prostředí
 session_set_cookie_params([
     'lifetime' => 0,
-    'path' => '/',
-    'domain' => '',
-    'secure' => false,
+    'path'     => '/',
+    'domain'   => '',
+    'secure'   => isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on',
     'httponly' => true,
     'samesite' => 'Lax'
 ]);
@@ -32,19 +41,23 @@ $dsn = "mysql:host={$host};port={$port};dbname={$db};charset={$charset}";
 
 try {
     $pdo = new PDO($dsn, $user, $pass, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES   => false
     ]);
 } catch (PDOException $e) {
+    error_log("DB Connection error: " . $e->getMessage());
     http_response_code(500);
-    echo json_encode(['chyba' => 'Nepodařilo se připojit k databázi.']);
+    echo json_encode(['chyba' => 'Došlo k chybě na straně serveru. Zkuste to prosím později.']);
     exit;
 }
 
 $input = json_decode(file_get_contents('php://input'), true);
 $metoda = $_SERVER['REQUEST_METHOD'];
 
-// 1. Zpracování akcí, které NEVYŽADUJÍ přihlášení
+// =========================================
+// 1. VEŘEJNÉ AKCE (nevyžadují přihlášení)
+// =========================================
 if ($metoda === 'POST' && isset($input['akce'])) {
     $akce = $input['akce'];
 
@@ -54,13 +67,17 @@ if ($metoda === 'POST' && isset($input['akce'])) {
         $vekova_kategorie = $input['vekova_kategorie'] ?? 'starsi_skauti';
 
         if (empty($prezdivka) || empty($heslo)) {
-            http_response_code(400); echo json_encode(['chyba' => 'Vyplňte přezdívku a heslo.']); exit;
+            http_response_code(400);
+            echo json_encode(['chyba' => 'Vyplňte přezdívku a heslo.']);
+            exit;
         }
 
         $stmt = $pdo->prepare("SELECT id FROM uzivatele WHERE prezdivka = ?");
         $stmt->execute([$prezdivka]);
         if ($stmt->fetch()) {
-            http_response_code(400); echo json_encode(['chyba' => 'Tato přezdívka je již obsazená.']); exit;
+            http_response_code(400);
+            echo json_encode(['chyba' => 'Tato přezdívka je již obsazená.']);
+            exit;
         }
 
         $hash = password_hash($heslo, PASSWORD_DEFAULT);
@@ -69,7 +86,8 @@ if ($metoda === 'POST' && isset($input['akce'])) {
         
         $_SESSION['uzivatel_id'] = $pdo->lastInsertId();
         session_write_close();
-        echo json_encode(['uspech' => true]); exit;
+        echo json_encode(['uspech' => true]);
+        exit;
     }
 
     if ($akce === 'prihlasit') {
@@ -85,7 +103,8 @@ if ($metoda === 'POST' && isset($input['akce'])) {
             session_write_close();
             echo json_encode(['uspech' => true]);
         } else {
-            http_response_code(401); echo json_encode(['chyba' => 'Neplatná přezdívka nebo heslo.']);
+            http_response_code(401);
+            echo json_encode(['chyba' => 'Neplatná přezdívka nebo heslo.']);
         }
         exit;
     }
@@ -93,17 +112,24 @@ if ($metoda === 'POST' && isset($input['akce'])) {
     if ($akce === 'odhlasit') {
         unset($_SESSION['uzivatel_id']);
         session_destroy();
-        echo json_encode(['uspech' => true]); exit;
+        echo json_encode(['uspech' => true]);
+        exit;
     }
 }
 
-// 2. KONTROLA PŘIHLÁŠENÍ
+// =========================================
+// 2. KONTROLA PŘIHLÁŠENÍ PRO PRIVÁTNÍ AKCE
+// =========================================
 if (!isset($_SESSION['uzivatel_id'])) {
-    http_response_code(401); echo json_encode(['chyba' => 'Nejste přihlášen.']); exit;
+    http_response_code(401);
+    echo json_encode(['chyba' => 'Nejste přihlášen.']);
+    exit;
 }
 $uzivatelId = $_SESSION['uzivatel_id'];
 
+// =========================================
 // 3. GET: Načtení dat
+// =========================================
 if ($metoda === 'GET') {
     $akce = $_GET['akce'] ?? 'profil';
 
@@ -114,7 +140,9 @@ if ($metoda === 'GET') {
 
         if (!$uzivatel) {
             unset($_SESSION['uzivatel_id']);
-            http_response_code(401); echo json_encode(['chyba' => 'Uživatel nenalezen']); exit;
+            http_response_code(401);
+            echo json_encode(['chyba' => 'Uživatel nenalezen.']);
+            exit;
         }
 
         $stmtStavy = $pdo->prepare("SELECT odborka_id, stav, v_seznamu_prani FROM odborky_uzivatele WHERE uzivatel_id = ?");
@@ -154,7 +182,9 @@ if ($metoda === 'GET') {
         $skupina = $stmt->fetch();
 
         if (!$skupina) {
-            http_response_code(403); echo json_encode(['chyba' => 'Nejste členem žádné skupiny.']); exit;
+            http_response_code(403);
+            echo json_encode(['chyba' => 'Nejste členem žádné skupiny.']);
+            exit;
         }
 
         $jeAdmin = ($skupina['role'] === 'admin');
@@ -206,7 +236,9 @@ if ($metoda === 'GET') {
         ");
         $stmt->execute([$uzivatelId, $clenId]);
         if (!$stmt->fetch()) {
-            http_response_code(403); echo json_encode(['chyba' => 'K tomuto profilu nemáte přístup.']); exit;
+            http_response_code(403);
+            echo json_encode(['chyba' => 'K tomuto profilu nemáte přístup.']);
+            exit;
         }
 
         $stmt = $pdo->prepare("SELECT prezdivka, vekova_kategorie FROM uzivatele WHERE id = ?");
@@ -231,7 +263,9 @@ if ($metoda === 'GET') {
     }
 }
 
+// =========================================
 // 4. POST: Ukládání změn
+// =========================================
 if ($metoda === 'POST') {
     $data = json_decode(file_get_contents('php://input'), true);
     $akce = $data['akce'] ?? '';
@@ -251,7 +285,8 @@ if ($metoda === 'POST') {
             $stmt = $pdo->prepare("DELETE FROM splnene_ukoly WHERE uzivatel_id = ? AND odborka_id = ? AND ukol_id = ?");
             $stmt->execute([$uzivatelId, $odborkaId, $ukolId]);
         }
-        echo json_encode(['uspech' => true]); exit;
+        echo json_encode(['uspech' => true]);
+        exit;
     }
 
     if ($akce === 'nastavit_stav_odborky') {
@@ -267,7 +302,8 @@ if ($metoda === 'POST') {
             $stmt->execute([$uzivatelId, $odborkaId]);
         }
         $pdo->prepare($cleanup_sql)->execute([$uzivatelId]);
-        echo json_encode(['uspech' => true]); exit;
+        echo json_encode(['uspech' => true]);
+        exit;
     }
 
     if ($akce === 'prepnout_wishlist') {
@@ -279,14 +315,16 @@ if ($metoda === 'POST') {
         $stmt->execute([$uzivatelId, $odborkaId, $prani]);
         
         $pdo->prepare($cleanup_sql)->execute([$uzivatelId]);
-        echo json_encode(['uspech' => true]); exit;
+        echo json_encode(['uspech' => true]);
+        exit;
     }
 
     if ($akce === 'zmenit_kategorii') {
         $kategorie = $data['vekova_kategorie'] ?? '';
         $stmt = $pdo->prepare("UPDATE uzivatele SET vekova_kategorie = ? WHERE id = ?");
         $stmt->execute([$kategorie, $uzivatelId]);
-        echo json_encode(['uspech' => true]); exit;
+        echo json_encode(['uspech' => true]);
+        exit;
     }
 
     if ($akce === 'zmenit_heslo') {
@@ -301,12 +339,13 @@ if ($metoda === 'POST') {
             $stmt->execute([password_hash($nove, PASSWORD_DEFAULT), $uzivatelId]);
             echo json_encode(['uspech' => true]);
         } else {
-            http_response_code(400); echo json_encode(['chyba' => 'Staré heslo není správné.']);
+            http_response_code(400);
+            echo json_encode(['chyba' => 'Staré heslo není správné.']);
         }
         exit;
     }
 
-    // SKUPINY
+    // Skupinové akce
     if ($akce === 'pripojit_skupinu') {
         $kod = trim($data['kod'] ?? '');
         $stmt = $pdo->prepare("SELECT id FROM skupiny WHERE pozvaci_kod = ?");
@@ -318,7 +357,8 @@ if ($metoda === 'POST') {
             $stmt->execute([$skupina['id'], $uzivatelId]);
             echo json_encode(['uspech' => true]);
         } else {
-            http_response_code(400); echo json_encode(['chyba' => 'Neplatný pozvací kód.']);
+            http_response_code(400);
+            echo json_encode(['chyba' => 'Neplatný pozvací kód.']);
         }
         exit;
     }
@@ -335,13 +375,14 @@ if ($metoda === 'POST') {
             $stmt->execute([$popis, $skupina['id']]);
             echo json_encode(['uspech' => true]);
         } else {
-            http_response_code(403); echo json_encode(['chyba' => 'Nemáte administrátorská práva.']);
+            http_response_code(403);
+            echo json_encode(['chyba' => 'Nemáte administrátorská práva.']);
         }
         exit;
     }
 
     if ($akce === 'generovat_kod') {
-        $novyKod = strtoupper(substr(md5(uniqid(rand(), true)), 0, 8));
+        $novyKod = strtoupper(substr(md5(uniqid((string)rand(), true)), 0, 8));
         
         $stmt = $pdo->prepare("SELECT s.id FROM skupiny s JOIN clenove_skupiny cs ON s.id = cs.skupina_id WHERE cs.uzivatel_id = ? AND cs.role = 'admin' LIMIT 1");
         $stmt->execute([$uzivatelId]);
@@ -352,7 +393,8 @@ if ($metoda === 'POST') {
             $stmt->execute([$novyKod, $skupina['id']]);
             echo json_encode(['uspech' => true, 'kod' => $novyKod]);
         } else {
-            http_response_code(403); echo json_encode(['chyba' => 'Nemáte administrátorská práva.']);
+            http_response_code(403);
+            echo json_encode(['chyba' => 'Nemáte administrátorská práva.']);
         }
         exit;
     }
@@ -382,5 +424,7 @@ if ($metoda === 'POST') {
         exit;
     }
 
-    http_response_code(400); echo json_encode(['chyba' => 'Neznámá akce']); exit;
+    http_response_code(400);
+    echo json_encode(['chyba' => 'Neznámá akce.']);
+    exit;
 }

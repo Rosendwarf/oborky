@@ -1,3 +1,7 @@
+/**
+ * Hlavní aplikační logika pro Tracker odborek (Live verze)
+ */
+
 if (localStorage.getItem('darkMode') === 'true') {
     document.body.classList.add('dark-mode');
 }
@@ -41,7 +45,7 @@ async function initApp() {
             return;
         }
 
-        if (!apiRes.ok) throw new Error(`api.php vrátilo kód ${apiRes.status}`);
+        if (!apiRes.ok) throw new Error();
         const apiData = await apiRes.json();
 
         state.user = apiData.uzivatel;
@@ -63,12 +67,11 @@ async function initApp() {
         await loadBadgesCatalog(false);
 
     } catch (err) {
-        console.error("Chyba při inicializaci:", err);
         if (grid) {
             grid.innerHTML = `
-                <div class="bg-warning-light border-top-1 text-danger p-24 rounded-12 w-100">
-                    <h3 class="mb-8 font-800">⚠️ Chyba při načítání</h3>
-                    <p class="font-monospace bg-card p-10 rounded-6 border-top-1">${err.message}</p>
+                <div class="bg-warning-light border-top-1 text-danger p-24 rounded-12 w-100 text-center">
+                    <h3 class="mb-8 font-800">⚠️ Aplikaci se nepodařilo načíst</h3>
+                    <p class="text-muted font-14">Zkontrolujte prosím připojení k internetu nebo to zkuste za chvíli znovu.</p>
                 </div>
             `;
         }
@@ -83,7 +86,7 @@ async function loadBadgesCatalog(isLegacy) {
 
     try {
         const res = await fetch(jsonFile);
-        if (!res.ok) throw new Error(`Nepodařilo se načíst ${jsonFile}`);
+        if (!res.ok) throw new Error();
         state.badges = await res.json();
         state.filters.category = 'all';
 
@@ -91,8 +94,7 @@ async function loadBadgesCatalog(isLegacy) {
         renderBadgesGrid();
         closeModal();
     } catch (err) {
-        console.error("Chyba při načítání:", err);
-        if (grid) grid.innerHTML = `<div class="loading text-danger">Nepodařilo se načíst soubor ${jsonFile}.</div>`;
+        if (grid) grid.innerHTML = `<div class="loading text-danger">Katalog odborek je momentálně nedostupný.</div>`;
     }
 }
 
@@ -585,7 +587,7 @@ function updateDualProgressBar(type, count, planned, targetSafe) {
     if (!barContainer) {
         const barWrapper = document.getElementById(`${type}-progress-bar`).parentElement;
         barWrapper.innerHTML = `
-            <div id="${type}-progress-bar-container" class="relative w-100 h-100 rounded-4 overflow-hidden bg-border">
+            <div id="${type}-progress-bar-container" class="relative w-100 h-100 rounded-4 overflow-hidden border-top-1">
                 <div id="${type}-planned-fill" class="absolute top-0 left-0 h-100 rounded-4 progress-fill-planned"></div>
                 <div id="${type}-done-fill" class="absolute top-0 left-0 h-100 rounded-4 progress-fill"></div>
             </div>
@@ -610,7 +612,7 @@ async function postApi(data) {
         });
         return await res.json();
     } catch (err) {
-        console.error('Chyba komunikace s API:', err);
+        return { chyba: 'Chyba při komunikaci se serverem.' };
     }
 }
 
